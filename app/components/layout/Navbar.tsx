@@ -60,7 +60,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <header className="w-full fixed top-0 left-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
       <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-3">
 
         {/* Logo */}
@@ -75,7 +75,7 @@ export default function Navbar() {
         </Link>
 
         {/* Menu */}
-        <nav className="hidden md:flex items-center gap-6 relative">
+        <nav className="hidden md:flex items-center gap-7 relative">
           {menu.map((item, index) => (
             <div
               key={index}
@@ -87,17 +87,17 @@ export default function Navbar() {
               {item.href ? (
                 <Link
                   href={item.href}
-                  className="text-gray-700 hover:text-black transition font-medium"
+                  className="text-muted hover:text-black transition-colors duration-200 text-sm font-medium"
                 >
                   {item.name}
                 </Link>
               ) : (
                 <button
-                  className="flex items-center gap-1 text-gray-700 hover:text-black transition font-medium"
+                  className="flex items-center gap-1 text-muted hover:text-black transition-colors duration-200 text-sm font-medium"
                 >
                   {item.name}
                   <svg
-                    className={`w-4 h-4 transition-transform duration-200 ${active === index ? "rotate-180" : ""}`}
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${active === index ? "rotate-180" : ""}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -110,7 +110,7 @@ export default function Navbar() {
               {/* Dropdown */}
               {item.children && active === index && (
                 <div
-                  className="absolute top-full left-0 mt-1 w-52 bg-white shadow-lg rounded-xl border border-gray-100 p-2"
+                  className="absolute top-full left-0 mt-2 w-52 bg-white shadow-lg border border-border p-1.5"
                   onMouseEnter={() => openMenu(index)}
                   onMouseLeave={scheduleClose}
                 >
@@ -118,7 +118,7 @@ export default function Navbar() {
                     <Link
                       key={i}
                       href={child.href || "#"}
-                      className="block px-4 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100 hover:text-black transition"
+                      className="block px-4 py-2.5 text-sm text-muted hover:text-black hover:bg-surface transition-colors duration-150"
                       onClick={() => setActive(null)}
                     >
                       {child.name}
@@ -130,15 +130,6 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Buttons */}
-        {/* <div className="hidden md:flex items-center gap-4">
-          <button className="text-sm text-gray-600 hover:text-black">
-            Client Login
-          </button>
-          <button className="bg-black text-white text-sm px-4 py-2 rounded-lg hover:bg-gray-800 transition">
-            Invest Now
-          </button>
-        </div> */}
       </div>
     </header>
   );

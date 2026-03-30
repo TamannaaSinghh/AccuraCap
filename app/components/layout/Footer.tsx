@@ -1,50 +1,75 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="relative w-full mt-20">
+    <footer className="w-full bg-[#272830] border-t border-white/10">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 py-16">
 
-      {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#0f172a] via-gray-300 to-[#E2E5EA]" />
+        {/* Top */}
+        <div className="flex flex-col md:flex-row items-start justify-between gap-12">
 
-      <div className="max-w-[1200px] mx-auto px-6 py-10">
-        
-        {/* Top Footer */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border-t border-gray-200 pt-8">
-
-          {/* Logo */}
-          <div className="flex items-center gap-3">
+          {/* Logo + tagline */}
+          <div className="shrink-0">
             <Image
-              src="/AccuraCap-Logo.png" // replace with your actual logo path
+              src="/AccuraCap-Logo.png"
               alt="AccuraCap"
               width={140}
               height={50}
               className="object-contain"
             />
+            <p className="mt-3 text-white/40 text-sm max-w-[260px] leading-relaxed">
+              Intelligent Investing. Effortless Results.
+            </p>
           </div>
 
-          {/* Office Info */}
-          <div className="text-sm text-gray-600 leading-relaxed max-w-[800px]">
+          {/* Quick links */}
+          <div className="flex gap-16">
+            <div>
+              <p className="text-xs tracking-[0.2em] uppercase text-white/35 mb-4 font-medium">Company</p>
+              <nav className="flex flex-col gap-2.5 text-sm text-white/60">
+                <Link href="/philosophy" className="hover:text-white transition-colors">Our Philosophy</Link>
+                <Link href="/people" className="hover:text-white transition-colors">People</Link>
+                <Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link>
+              </nav>
+            </div>
+            <div>
+              <p className="text-xs tracking-[0.2em] uppercase text-white/35 mb-4 font-medium">Products</p>
+              <nav className="flex flex-col gap-2.5 text-sm text-white/60">
+                <Link href="/products/#pms" className="hover:text-white transition-colors">PMS</Link>
+                <Link href="/products/#aif" className="hover:text-white transition-colors">AIF</Link>
+                <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
+              </nav>
+            </div>
+          </div>
+
+          {/* Office info */}
+          <div className="text-sm text-white/50 leading-relaxed max-w-[320px]">
+            <p className="text-xs tracking-[0.2em] uppercase text-white/35 mb-4 font-medium">Corporate Office</p>
             <p>
-              <span className="font-semibold text-gray-900">Corporate Office:</span>{" "}
-              Accuracap Consultancy Services Pvt. Ltd. 61, 2nd Floor, Panchkuian Road,
-              New Delhi, India -110001 | Contact No: +91 77389 76675
+              Accuracap Consultancy Services Pvt. Ltd.
+              <br />
+              61, 2nd Floor, Panchkuian Road,
+              <br />
+              New Delhi, India - 110001
             </p>
-
-            <p className="mt-2">
-              <span className="font-semibold text-gray-900">Registered Office:</span>{" "}
-              Accuracap Consultancy Services Pvt. Ltd. 61, 2nd Floor, Panchkuian Road,
-              New Delhi, India -110001
-            </p>
+            <p className="mt-3 text-white font-medium">+91 77389 76675</p>
           </div>
         </div>
 
-        {/* Bottom Line */}
-        <div className="mt-8 pt-6 border-t border-gray-200 text-center text-xs text-gray-400">
-          © {new Date().getFullYear()} AccuraCap. All rights reserved.
+        {/* Bottom */}
+        <div className="mt-14 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-white/30">
+            &copy; {new Date().getFullYear()} AccuraCap. All rights reserved.
+          </p>
+          <div className="flex gap-6 text-xs text-white/30">
+            <Link href="/grievance" className="hover:text-white/60 transition-colors">Grievance</Link>
+            <Link href="/kyc_status_check" className="hover:text-white/60 transition-colors">KYC Status</Link>
+          </div>
         </div>
+
       </div>
     </footer>
   );

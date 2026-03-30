@@ -4,138 +4,101 @@ import Image from "next/image";
 
 export default function PMSPage() {
   return (
-    <main className="relative w-full px-6 py-20 overflow-hidden">
+    <main className="w-full bg-white py-28 px-6">
+      <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
-      {/* Background */}
-      <div className="absolute inset-0 -z-20 bg-gradient-to-b from-white via-gray-50 to-white" />
+        {/* Header */}
+        <div className="flex items-center gap-3 mb-3">
+          <span className="h-px w-8 bg-accent" />
+          <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
+            Investor Information
+          </span>
+        </div>
 
-      <div className="max-w-[1100px] mx-auto space-y-16">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+          PMS
+        </h1>
+        <div className="mt-4 h-[2px] w-12 bg-accent" />
 
-        {/* ================= HEADER ================= */}
-        <section className="text-center space-y-4 pt-10">
-          <h1 className="text-4xl md:text-5xl font-serif text-gray-900">
-            PMS
-          </h1>
+        {/* Details */}
+        <div className="mt-12 space-y-5 max-w-3xl">
+          <div>
+            <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">SEBI Registration Number</p>
+            <p className="text-sm text-black">INP000008844</p>
+          </div>
 
-          <p className="text-gray-600">
-            <span className="font-medium text-gray-900">
-              SEBI registration number:
-            </span>{" "}
-            INP000008844
-          </p>
-
-          <p className="text-gray-600">
-            Validated UPI ID for payment for additional investment:
-          </p>
-
-          <p className="text-gray-800 font-medium">
-            accuracap.pms@validibl
-          </p>
+          <div>
+            <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">UPI ID for Additional Investment</p>
+            <p className="text-sm text-black font-medium">accuracap.pms@validibl</p>
+          </div>
 
           {/* QR */}
-          <div className="flex justify-center">
-            <div className="p-4 rounded-2xl bg-white/60 backdrop-blur-xl border border-white/40 shadow-md">
-              <Image
-                src="/pms-qr.png" // 👈 your QR image in public folder
-                alt="QR Code"
-                width={200}
-                height={200}
-                className="object-contain"
-              />
-            </div>
+          <div className="inline-block border border-border p-4">
+            <Image
+              src="/pms-qr.png"
+              alt="QR Code"
+              width={200}
+              height={200}
+              className="object-contain"
+            />
           </div>
 
-          <p className="text-sm text-gray-600">
-            Authorised Person (Motilal Oswal Financial Services Pvt Ltd)
-          </p>
+          <div>
+            <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">Authorised Person</p>
+            <p className="text-sm text-muted">Motilal Oswal Financial Services Pvt Ltd</p>
+            <p className="text-xs text-muted mt-1">NSE: AP0297117363, BSE: AP01044601104990</p>
+          </div>
+        </div>
 
-          <p className="text-sm text-gray-500">
-            NSE: AP0297117363, BSE: AP01044601104990
-          </p>
-        </section>
-
-        {/* ================= DOCUMENTS ================= */}
-
-        <section className="grid md:grid-cols-3 gap-8">
-
-          {/* Disclosure */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-red-700 text-center">
-              AccuraCap Disclosure
-            </h3>
-
-            <div className="rounded-xl overflow-hidden shadow-md border">
-              <iframe
-                src="/disclosure.pdf"
-                className="w-full h-[300px]"
-              />
-            </div>
+        {/* Documents */}
+        <div className="mt-20">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="h-px w-8 bg-accent" />
+            <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
+              Documents
+            </span>
           </div>
 
-          {/* Investor Charter */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-red-700 text-center">
-              Investor Charter PMS
-            </h3>
+          <h2 className="text-2xl md:text-3xl text-black mb-10">
+            Disclosures &amp; Compliance
+          </h2>
 
-            <div className="rounded-xl overflow-hidden shadow-md border">
-              <iframe
-                src="/Investor_Charter-pms.pdf"
-                className="w-full h-[300px]"
-              />
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { title: "AccuraCap Disclosure", src: "/disclosure.pdf" },
+              { title: "Investor Charter PMS", src: "/Investor_Charter-pms.pdf" },
+              { title: "PMS Complaint Status Feb 26", src: "/complaint-status.pdf" },
+            ].map((doc) => (
+              <div key={doc.title} className="border border-border overflow-hidden">
+                <div className="px-6 py-4 bg-surface border-b border-border">
+                  <h3 className="text-sm font-semibold text-black">{doc.title}</h3>
+                </div>
+                <iframe src={doc.src} className="w-full h-[300px]" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom row */}
+        <div className="mt-12 grid md:grid-cols-2 gap-6">
+          <div className="border border-border overflow-hidden">
+            <div className="px-6 py-4 bg-surface border-b border-border">
+              <h3 className="text-sm font-semibold text-black">Form_MGT_7A_Accuracap</h3>
             </div>
+            <iframe src="/mgt-form.pdf" className="w-full h-[350px]" />
           </div>
 
-          {/* Complaint */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-red-700 text-center">
-              PMS Complaint Status Feb 26
-            </h3>
-
-            <div className="rounded-xl overflow-hidden shadow-md border">
-              <iframe
-                src="/complaint-status.pdf"
-                className="w-full h-[300px]"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* ================= BOTTOM ================= */}
-
-        <section className="grid md:grid-cols-2 gap-10 items-start">
-
-          {/* Form */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-red-700 text-center">
-              Form_MGT_7A_Accuracap
-            </h3>
-
-            <div className="rounded-xl overflow-hidden shadow-md border">
-              <iframe
-                src="/mgt-form.pdf"
-                className="w-full h-[350px]"
-              />
-            </div>
-          </div>
-
-          {/* Fee Illustration */}
-          <div className="space-y-4 text-center flex flex-col items-center justify-center">
-
-            <h3 className="text-lg font-semibold text-red-700">
-              Fee Illustration
-            </h3>
-
+          <div className="border border-border p-8 flex flex-col items-center justify-center text-center">
+            <h3 className="text-sm font-semibold text-black mb-4">Fee Illustration</h3>
             <a
               href="/Fee-Illustration_multi-year_hybrid-fee.xlsx"
               download
-              className="text-red-600 underline hover:text-red-800 transition"
+              className="text-accent text-sm font-medium hover:text-accent-dark transition-colors"
             >
-              Please click here to download the illustration
+              Click here to download the illustration
             </a>
           </div>
-
-        </section>
+        </div>
 
       </div>
     </main>

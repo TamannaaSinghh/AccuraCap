@@ -4,123 +4,108 @@ import { FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn } from "react-icons/fa"
 
 export default function ContactPage() {
   return (
-    <main className="w-full px-6 py-20 bg-white">
+    <main className="w-full bg-white py-28 px-6">
+      <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
-      <div className="max-w-[1200px] mx-auto pt-20">
-
-        {/* ================= HEADER ================= */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-serif text-red-600">
-            Contact Us
-          </h1>
-
-          <p className="mt-4 text-gray-700">
-            For direct onboarding or any query, please contact us on{" "}
-            <span className="text-red-600">info@accuracap.com</span> or{" "}
-            <span className="text-red-600">+91 77389 76675</span>
-          </p>
+        {/* Header */}
+        <div className="flex items-center gap-3 mb-3">
+          <span className="h-px w-8 bg-accent" />
+          <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
+            Get In Touch
+          </span>
         </div>
 
-        {/* ================= CONTENT ================= */}
-        <div className="grid md:grid-cols-2 gap-12">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+          Contact Us
+        </h1>
+        <div className="mt-4 h-[2px] w-12 bg-accent" />
 
-          {/* ================= FORM ================= */}
+        <p className="mt-6 text-muted">
+          For direct onboarding or any query, please contact us at{" "}
+          <span className="text-accent font-medium">info@accuracap.com</span> or{" "}
+          <span className="text-accent font-medium">+91 77389 76675</span>
+        </p>
+
+        {/* Content */}
+        <div className="mt-16 grid md:grid-cols-2 gap-16">
+
+          {/* Form */}
           <form className="space-y-5">
+            {[
+              { label: "Name", type: "text", placeholder: "Name" },
+              { label: "Email", type: "email", placeholder: "Email" },
+              { label: "Phone", type: "text", placeholder: "Enter your contact details" },
+              { label: "Subject", type: "text", placeholder: "Subject" },
+            ].map((field) => (
+              <div key={field.label}>
+                <label className="text-black text-sm font-medium">{field.label}</label>
+                <input
+                  type={field.type}
+                  placeholder={field.placeholder}
+                  className="w-full mt-1.5 px-4 py-3 bg-surface border border-border text-sm text-black placeholder:text-muted/50 focus:outline-none focus:border-black transition-colors"
+                />
+              </div>
+            ))}
 
             <div>
-              <label className="text-red-600 text-sm">Name</label>
-              <input
-                type="text"
-                placeholder="Name"
-                className="w-full mt-1 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
-              />
-            </div>
-
-            <div>
-              <label className="text-red-600 text-sm">Email</label>
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full mt-1 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
-              />
-            </div>
-
-            <div>
-              <label className="text-red-600 text-sm">Phone</label>
-              <input
-                type="text"
-                placeholder="Enter your contact details"
-                className="w-full mt-1 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
-              />
-            </div>
-
-            <div>
-              <label className="text-red-600 text-sm">Subject</label>
-              <input
-                type="text"
-                placeholder="Subject"
-                className="w-full mt-1 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
-              />
-            </div>
-
-            <div>
-              <label className="text-red-600 text-sm">Message</label>
+              <label className="text-black text-sm font-medium">Message</label>
               <textarea
                 rows={5}
                 placeholder="Message"
-                className="w-full mt-1 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
+                className="w-full mt-1.5 px-4 py-3 bg-surface border border-border text-sm text-black placeholder:text-muted/50 focus:outline-none focus:border-black transition-colors"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-red-600 text-white py-3 rounded-md font-medium hover:bg-red-700 transition"
+              className="w-full bg-accent text-white py-3.5 text-sm tracking-[0.1em] uppercase font-medium hover:bg-accent-dark transition-colors duration-300"
             >
-              Send
+              Send Message
             </button>
           </form>
 
-          {/* ================= RIGHT SIDE ================= */}
-          <div className="space-y-8">
+          {/* Right side */}
+          <div className="space-y-10">
 
-            {/* Corporate Office */}
             <div>
-              <h3 className="text-red-600 font-semibold text-lg">
-                Corporate Office
-              </h3>
-              <p className="mt-2 text-gray-700">
-                Accuracap Consultancy Services Pvt. Ltd. 61, 2nd Floor,
-                Panchkuian Road, New Delhi, India -110001 <br />
+              <p className="text-muted/60 text-xs uppercase tracking-wider mb-2">Corporate Office</p>
+              <p className="text-muted text-sm leading-relaxed">
+                Accuracap Consultancy Services Pvt. Ltd.
+                <br />
+                61, 2nd Floor, Panchkuian Road,
+                <br />
+                New Delhi, India - 110001
+                <br />
                 Contact No: +91 77389 76675
               </p>
             </div>
 
-            {/* Registered Office */}
             <div>
-              <h3 className="text-red-600 font-semibold text-lg">
-                Registered Office
-              </h3>
-              <p className="mt-2 text-gray-700">
-                Accuracap Consultancy Services Pvt. Ltd. 61, 2nd Floor,
-                Panchkuian Road, New Delhi, India -110001
+              <p className="text-muted/60 text-xs uppercase tracking-wider mb-2">Registered Office</p>
+              <p className="text-muted text-sm leading-relaxed">
+                Accuracap Consultancy Services Pvt. Ltd.
+                <br />
+                61, 2nd Floor, Panchkuian Road,
+                <br />
+                New Delhi, India - 110001
               </p>
             </div>
 
             {/* Social Icons */}
-            <div className="flex gap-6 text-xl text-black mt-6">
-              <FaFacebookF className="cursor-pointer hover:text-red-600" />
-              <FaTwitter className="cursor-pointer hover:text-red-600" />
-              <FaYoutube className="cursor-pointer hover:text-red-600" />
-              <FaLinkedinIn className="cursor-pointer hover:text-red-600" />
+            <div className="flex gap-6 text-lg text-black">
+              <FaFacebookF className="cursor-pointer hover:text-accent transition-colors" />
+              <FaTwitter className="cursor-pointer hover:text-accent transition-colors" />
+              <FaYoutube className="cursor-pointer hover:text-accent transition-colors" />
+              <FaLinkedinIn className="cursor-pointer hover:text-accent transition-colors" />
             </div>
           </div>
         </div>
 
-        {/* ================= MAP ================= */}
-        <div className="mt-16">
+        {/* Map */}
+        <div className="mt-20 border border-border overflow-hidden">
           <iframe
             src="https://www.google.com/maps?q=Wave%20Silver%20Tower%20Noida&output=embed"
-            className="w-full h-[400px] rounded-lg border"
+            className="w-full h-[400px]"
             loading="lazy"
           ></iframe>
         </div>

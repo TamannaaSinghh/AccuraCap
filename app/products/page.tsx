@@ -35,7 +35,7 @@ const pmsProducts = [
       },
       {
         label: "Universe of Investment",
-        value: "Stocks within top 100–800 by market capitalization.",
+        value: "Stocks within top 100\u2013800 by market capitalization.",
       },
       { label: "No. of companies in the portfolio", value: "Generally, 30 to 40" },
       { label: "Return benchmarked against", value: "S&P BSE 500 TRI" },
@@ -50,9 +50,9 @@ const pmsProducts = [
       {
         label: "Product Profile",
         value:
-          "The strategy seeks to provide long-term capital appreciation by investing primarily in stocks with smaller market cap and high growth potential. Dynamo is designed for investors seeking to capture the higher return potential of India's small cap segment, accepting higher short-term volatility in exchange for superior long-term compounding.",
+          "The strategy seeks to provide long-term capital appreciation by investing primarily in stocks with smaller market cap and high growth potential. Dynamo is designed for investors seeking to capture the higher return potential of India\u2019s small cap segment, accepting higher short-term volatility in exchange for superior long-term compounding.",
       },
-      { label: "Universe of Investments", value: "Stocks ranked 501–800 by market cap." },
+      { label: "Universe of Investments", value: "Stocks ranked 501\u2013800 by market cap." },
       { label: "No. of companies in the portfolio", value: "Generally 25 to 35" },
       { label: "Returns benchmarked against", value: "S&P BSE 500 TRI" },
       { label: "CAGR since Inception (2016)", value: "22.2% (vs Benchmark 15.4%)" },
@@ -98,34 +98,32 @@ const aifProducts = [
 
 export default function ProductsPage() {
   return (
-    <main className="relative w-full px-6 py-28 overflow-hidden">
+    <main className="w-full bg-white">
 
-      {/* Background */}
-      <div className="absolute inset-0 -z-20 bg-gradient-to-b from-white via-[#F8FAFC] to-white" />
-      <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#0B1F3A]/5 blur-[120px] rounded-full -z-10" />
+      {/* ═══ PMS Section ═══ */}
+      <section id="pms" className="py-28 px-6">
+        <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
-      <div className="max-w-[1100px] mx-auto space-y-32">
-
-        {/* ── PMS ── */}
-        <section id="pms" className="space-y-12">
-
-          <div className="text-center space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#C9A74D]">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="h-px w-8 bg-accent" />
+            <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
               Portfolio Management Services
-            </p>
-            <h1 className="text-4xl md:text-5xl font-serif text-[#0B1F3A]">
-              Our PMS Strategies
-            </h1>
+            </span>
           </div>
 
-          <div className="space-y-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+            Our PMS Strategies
+          </h1>
+          <div className="mt-4 h-[2px] w-12 bg-accent" />
+
+          <div className="mt-16 space-y-6">
             {pmsProducts.map((product) => (
               <div
                 key={product.name}
-                className="rounded-2xl bg-white/70 backdrop-blur-xl border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-transform duration-300 overflow-hidden"
+                className="border border-border overflow-hidden"
               >
                 {/* Card Header */}
-                <div className="flex items-center gap-5 px-8 py-5 border-b border-gray-100 bg-white/80">
+                <div className="flex items-center gap-5 px-8 py-5 border-b border-border bg-surface">
                   <Image
                     src={product.logo}
                     alt={product.name}
@@ -136,61 +134,62 @@ export default function ProductsPage() {
                 </div>
 
                 {/* Card Body */}
-                <div className="px-8 py-6 grid sm:grid-cols-2 gap-x-12 gap-y-4">
+                <div className="px-8 py-6 grid sm:grid-cols-2 gap-x-12 gap-y-5">
                   {product.fields.map((f) => (
                     <div key={f.label} className={f.label === "Product Profile" ? "sm:col-span-2" : ""}>
-                      <p className="text-[11px] font-semibold uppercase tracking-wider text-[#C9A74D] mb-0.5">
+                      <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">
                         {f.label}
                       </p>
-                      <p className="text-sm text-gray-600 leading-relaxed">{f.value}</p>
+                      <p className="text-sm text-muted leading-relaxed">{f.value}</p>
                     </div>
                   ))}
                 </div>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ── AIF ── */}
-        <section id="aif" className="space-y-12">
+      {/* ═══ AIF Section ═══ */}
+      <section id="aif" className="bg-surface py-28 px-6">
+        <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
-          <div className="text-center space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#C9A74D]">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="h-px w-8 bg-accent" />
+            <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
               Alternative Investment Funds
-            </p>
-            <h1 className="text-4xl md:text-5xl font-serif text-[#0B1F3A]">
-              Our AIF Strategies
-            </h1>
+            </span>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-[800px] mx-auto">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+            Our AIF Strategies
+          </h1>
+          <div className="mt-4 h-[2px] w-12 bg-accent" />
+
+          <div className="mt-16 grid md:grid-cols-2 gap-px bg-border max-w-[800px]">
             {aifProducts.map((product) => (
               <div
                 key={product.name}
-                className="rounded-2xl bg-white/70 backdrop-blur-xl border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-transform duration-300 overflow-hidden"
+                className="bg-white p-8"
               >
-                {/* Card Header */}
-                <div className="px-7 py-5 border-b border-gray-100 bg-white/80">
-                  <h3 className="text-xl font-semibold text-[#0B1F3A]">{product.name}</h3>
-                </div>
-
-                {/* Card Body */}
-                <div className="px-7 py-5 space-y-3">
+                <h3 className="text-xl font-semibold text-black">{product.name}</h3>
+                <div className="mt-4 h-px w-full bg-border" />
+                <div className="mt-4 space-y-4">
                   {product.fields.map((f) => (
                     <div key={f.label}>
-                      <p className="text-[11px] font-semibold uppercase tracking-wider text-[#C9A74D] mb-0.5">
+                      <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">
                         {f.label}
                       </p>
-                      <p className="text-sm text-gray-600">{f.value}</p>
+                      <p className="text-sm text-muted">{f.value}</p>
                     </div>
                   ))}
                 </div>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-      </div>
     </main>
   );
 }

@@ -1,151 +1,77 @@
 "use client";
 
+const documents = [
+  { title: "Accuracap Stewardship Policy", src: "/Accuracap_Stewardship-Policy-1.pdf" },
+  { title: "AIF Voting Policy", src: "/Voting-policy_AIF.pdf" },
+  { title: "AIF Disclosure of Voting Q1 FY25-26", src: "/Voting-Disclosure-Q1-FY-25-26.pdf" },
+  { title: "Accuracap Stewardship Compliance Status FY 24-25", src: "/Compliance-Status-FY-24-25.pdf" },
+  { title: "AIF Disclosure of Voting Q2 FY25-26", src: "/Voting-Disclosure-Q2-FY-25-26.pdf" },
+  { title: "AIF Disclosure of Voting Q3 FY25-26", src: "/Disclosure-of-voting-Q3-2025-26-final.pdf" },
+  { title: "AIF Disclosure of Voting Q3 FY24-25", src: "/Voting-Disclosure-Q3-1.pdf" },
+  { title: "AIF Disclosure of Voting Q4 FY24-25", src: "/Voting-Disclosure-Q4-2025.pdf" },
+];
+
 export default function AIFPage() {
   return (
-    <main className="relative w-full px-6 py-20 overflow-hidden">
+    <main className="w-full bg-white py-28 px-6">
+      <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
-      {/* Background */}
-      <div className="absolute inset-0 -z-20 bg-gradient-to-b from-white via-gray-50 to-white" />
+        {/* Header */}
+        <div className="flex items-center gap-3 mb-3">
+          <span className="h-px w-8 bg-accent" />
+          <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
+            Investor Information
+          </span>
+        </div>
 
-      <div className="max-w-[1100px] mx-auto space-y-16 pt-10">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+          AIF
+        </h1>
+        <div className="mt-4 h-[2px] w-12 bg-accent" />
 
-        {/* ================= HEADER ================= */}
-        <section className="text-center space-y-3">
-          <h1 className="text-4xl md:text-5xl font-serif text-gray-900">
-            AIF
-          </h1>
+        {/* Details */}
+        <div className="mt-12 grid sm:grid-cols-2 gap-x-12 gap-y-5 max-w-3xl">
+          {[
+            { label: "AIF Category", value: "Category III Investment Fund" },
+            { label: "Registration Number", value: "IN/AIF3/17-18/0521" },
+            { label: "Minimum Investment", value: "1 Crore" },
+            { label: "Fund Manager", value: "Accuracap Technologies LLP" },
+            { label: "Sponsor", value: "Accuracap Consultancy Services Pvt Ltd" },
+          ].map((item) => (
+            <div key={item.label}>
+              <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">{item.label}</p>
+              <p className="text-sm text-black">{item.value}</p>
+            </div>
+          ))}
+        </div>
 
-          <p className="text-gray-600">
-            <span className="font-medium text-gray-900">AIF Category:</span>{" "}
-            Category III Investment Fund
-          </p>
-
-          <p className="text-gray-600">
-            <span className="font-medium text-gray-900">Registration Number:</span>{" "}
-            IN/AIF3/17-18/0521
-          </p>
-
-          <p className="text-gray-600">
-            <span className="font-medium text-gray-900">Minimum Investment:</span>{" "}
-            1 Crore
-          </p>
-
-          <p className="text-gray-600">
-            <span className="font-medium text-gray-900">Fund Manager:</span>{" "}
-            Accuracap Technologies LLP
-          </p>
-
-          <p className="text-gray-600">
-            <span className="font-medium text-gray-900">Sponsor:</span>{" "}
-            Accuracap Consultancy Services Pvt Ltd
-          </p>
-        </section>
-
-        {/* ================= FIRST ROW ================= */}
-        <section className="grid md:grid-cols-2 gap-10">
-
-          {/* Stewardship Policy */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-red-700 text-center">
-              Accuracap Stewardship Policy
-            </h3>
-
-            <iframe
-              src="/Accuracap_Stewardship-Policy-1.pdf"
-              className="w-full h-[350px] rounded-xl border shadow"
-            />
+        {/* Documents */}
+        <div className="mt-20">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="h-px w-8 bg-accent" />
+            <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
+              Documents &amp; Disclosures
+            </span>
           </div>
 
-          {/* Voting Policy */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-red-700 text-center">
-              AIF Voting Policy
-            </h3>
+          <h2 className="text-2xl md:text-3xl text-black mb-10">
+            Policies &amp; Voting Records
+          </h2>
 
-            <iframe
-              src="/Voting-policy_AIF.pdf"
-              className="w-full h-[350px] rounded-xl border shadow"
-            />
+          <div className="grid md:grid-cols-2 gap-6">
+            {documents.map((doc) => (
+              <div key={doc.title} className="border border-border overflow-hidden">
+                <div className="px-6 py-4 bg-surface border-b border-border">
+                  <h3 className="text-sm font-semibold text-black">{doc.title}</h3>
+                </div>
+                <iframe
+                  src={doc.src}
+                  className="w-full h-[350px]"
+                />
+              </div>
+            ))}
           </div>
-        </section>
-
-        {/* ================= SECOND ROW ================= */}
-        <section className="grid md:grid-cols-2 gap-10">
-
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-red-700 text-center">
-              AIF Disclosure of voting Q1 FY25-26
-            </h3>
-
-            <iframe
-              src="/Voting-Disclosure-Q1-FY-25-26.pdf"
-              className="w-full h-[350px] rounded-xl border shadow"
-            />
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-red-700 text-center">
-              Accuracap Stewardship Compliance Status-FY 24-25
-            </h3>
-
-            <iframe
-              src="/Compliance-Status-FY-24-25.pdf"
-              className="w-full h-[350px] rounded-xl border shadow"
-            />
-          </div>
-        </section>
-
-        {/* ================= THIRD ROW ================= */}
-        <section className="grid md:grid-cols-2 gap-10">
-
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-red-700 text-center">
-              AIF Disclosure of voting Q2 FY25-26
-            </h3>
-
-            <iframe
-              src="/Voting-Disclosure-Q2-FY-25-26.pdf"
-              className="w-full h-[350px] rounded-xl border shadow"
-            />
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-red-700 text-center">
-              AIF Disclosure of voting Q3 FY25-26
-            </h3>
-
-            <iframe
-              src="/Disclosure-of-voting-Q3-2025-26-final.pdf"
-              className="w-full h-[350px] rounded-xl border shadow"
-            />
-          </div>
-        </section>
-
-        {/* ================= FOURTH ROW ================= */}
-        <section className="grid md:grid-cols-2 gap-10">
-
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-red-700 text-center">
-              AIF Disclosure of voting Q3 FY24-25
-            </h3>
-
-            <iframe
-              src="/Voting-Disclosure-Q3-1.pdf"
-              className="w-full h-[350px] rounded-xl border shadow"
-            />
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-red-700 text-center">
-              AIF Disclosure of voting Q4 FY24-25
-            </h3>
-
-            <iframe
-              src="/Voting-Disclosure-Q4-2025.pdf"
-              className="w-full h-[350px] rounded-xl border shadow"
-            />
-          </div>
-        </section>
+        </div>
 
       </div>
     </main>

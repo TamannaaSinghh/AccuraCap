@@ -1,83 +1,115 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative w-full py-28 px-6 overflow-hidden">
-      
-      {/* 🌊 Base Gradient */}
-      <div className="absolute inset-0 -z-30 bg-gradient-to-r from-white via-gray-100 to-[#0f172a]" />
+    <section className="relative w-full min-h-screen flex items-center overflow-hidden">
 
-      {/* ✨ Soft Radial Glow */}
-      <div className="absolute right-[-100px] top-[-50px] w-[600px] h-[600px] bg-white/20 blur-[120px] rounded-full -z-20" />
+      {/* Background Image */}
+      <Image
+        src="/hero-bg.png"
+        alt=""
+        fill
+        priority
+        className="object-cover"
+      />
 
-      {/* 🌫️ Secondary Blur Layer */}
-      <div className="absolute right-[10%] top-[30%] w-[400px] h-[400px] bg-gray-200/30 blur-[100px] rounded-full -z-20" />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50" />
 
-      <div className="max-w-[1100px] mx-auto text-center">
-        
+      {/* Content */}
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto text-left px-6 md:px-16 lg:px-24 py-36 md:py-44">
+
+        {/* Accent tag */}
+        <div className="flex items-center gap-3 mb-8">
+          <span className="h-px w-8 bg-accent" />
+          <span className="text-white/80 text-xs tracking-[0.3em] uppercase font-medium">
+            Established 2011
+          </span>
+        </div>
+
         {/* Heading */}
-        <h1 className="text-4xl md:text-5xl text-gray-900 leading-tight font-serif">
-          Delivering Consistent Outperformance
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight">
+          Delivering Consistent
+          <br />
+          Outperformance
         </h1>
 
-        {/* Description */}
-        <p className="mt-4 text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
-          Founded in 2011, AccuraCap is a boutique fund manager delivering exceptional returns driven by
-          our proprietary research and disciplined investment.
+        {/* Red accent line below heading */}
+        <div className="mt-6 h-[3px] w-16 bg-accent" />
+
+        {/* Subtext */}
+        <p className="mt-6 text-white/60 max-w-lg text-base md:text-lg leading-relaxed font-light">
+          A boutique fund manager delivering exceptional returns through
+          proprietary research and disciplined investment strategies.
         </p>
 
-        {/* Cards */}
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-4">
-          
-          <div className="group relative p-8 rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white shadow-xl hover:-translate-y-2 transition duration-300">
-            <h2 className="text-3xl font-semibold">1492%</h2>
-            <p className="mt-2 text-sm opacity-80">Absolute Returns</p>
-            <p className="text-xs opacity-60 mt-1">
-              Lowest Cap is 60 Crore
-            </p>
-          </div>
-
-          <div className="group relative p-8 rounded-2xl bg-white/60 backdrop-blur-xl border border-white/30 shadow-lg hover:-translate-y-2 transition duration-300">
-            <h2 className="text-2xl font-semibold text-gray-900">21.3%</h2>
-            <p className="mt-2 text-sm text-gray-600">CAGR since 2011</p>
-            <p className="text-xs text-gray-400 mt-1">
-              (vs 14% benchmark)
-            </p>
-          </div>
-
-          <div className="group relative p-8 rounded-2xl bg-white/60 backdrop-blur-xl border border-white/30 shadow-lg hover:-translate-y-2 transition duration-300">
-            <h2 className="text-2xl font-semibold text-gray-900">#1</h2>
-            <p className="mt-2 text-sm text-gray-600">Risk Adjusted PMS</p>
-            <p className="text-xs text-gray-400 mt-1">
-              by PMS AIF World for 2021 and 2022
-            </p>
-          </div>
-        </div>
-
         {/* CTA */}
-        <div className="mt-8">
-          <button className="relative px-8 py-3 rounded-lg text-sm font-medium text-white overflow-hidden group">
-            
-            <span className="absolute inset-0 bg-gradient-to-r from-[#b89b6c] via-[#d4af37] to-[#b89b6c]"></span>
-
-            <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition">
-              <span className="absolute top-0 left-[-100%] w-full h-full bg-white/30 skew-x-12 animate-[shine_1.2s]"></span>
-            </span>
-
-            <span className="relative z-10">Find Out More</span>
-          </button>
+        <div className="mt-10 md:mt-12 flex items-center gap-5">
+          <a
+            href="#solutions"
+            className="inline-block px-8 py-3.5 bg-accent text-white text-sm tracking-[0.1em] uppercase font-medium hover:bg-accent-dark transition-colors duration-300"
+          >
+            Explore Strategies
+          </a>
+          <a
+            href="/contact"
+            className="inline-block px-8 py-3.5 border border-white/30 text-white text-sm tracking-[0.1em] uppercase font-medium hover:bg-white hover:text-black transition-all duration-300"
+          >
+            Contact Us
+          </a>
         </div>
+
+        {/* Stats strip */}
+        <div className="mt-20 md:mt-28 border-t border-white/15 pt-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 w-full">
+
+            {/* Stat 1 */}
+            <div className="py-6 md:py-0 text-center border-b md:border-b-0 md:border-r border-white/15">
+              <p className="text-3xl md:text-4xl text-white tracking-tight">
+                1,492<span className="text-accent-light">%</span>
+              </p>
+              <p className="mt-2 text-white/50 text-sm tracking-wide uppercase">
+                Absolute Returns
+              </p>
+            </div>
+
+            {/* Stat 2 */}
+            <div className="py-6 md:py-0 text-center border-b md:border-b-0 md:border-r border-white/15">
+              <p className="text-3xl md:text-4xl text-white tracking-tight">
+                21.3<span className="text-accent-light">%</span>
+              </p>
+              <p className="mt-2 text-white/50 text-sm tracking-wide uppercase">
+                CAGR Since 2011
+              </p>
+              <p className="mt-1 text-white/30 text-xs">
+                vs 14% benchmark
+              </p>
+            </div>
+
+            {/* Stat 3 */}
+            <div className="py-6 md:py-0 text-center">
+              <p className="text-3xl md:text-4xl text-white tracking-tight">
+                <span className="text-accent-light">#</span>1
+              </p>
+              <p className="mt-2 text-white/50 text-sm tracking-wide uppercase">
+                Risk-Adjusted PMS
+              </p>
+              <p className="mt-1 text-white/30 text-xs">
+                PMS AIF World 2021 &amp; 2022
+              </p>
+            </div>
+
+          </div>
+        </div>
+
       </div>
 
-      {/* ✨ Shine Animation */}
-      <style jsx>{`
-        @keyframes shine {
-          0% { left: -100%; }
-          100% { left: 100%; }
-        }
-      `}</style>
+      {/* Bottom fade into white page */}
+      {/* <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent z-10" /> */}
+
     </section>
   );
 }

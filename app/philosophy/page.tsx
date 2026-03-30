@@ -2,108 +2,128 @@
 
 export default function PhilosophyPage() {
   return (
-    <main className="relative w-full px-6 py-28 overflow-hidden">
+    <main className="w-full bg-white">
 
-      {/* 🌊 Background */}
-      <div className="absolute inset-0 -z-20 bg-gradient-to-b from-white via-gray-50 to-white" />
-      <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-gray-200/40 blur-[120px] rounded-full -z-10" />
+      {/* ═══ Hero / Philosophy ═══ */}
+      <section className="py-28 px-6">
+        <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
-      <div className="max-w-[1200px] mx-auto space-y-28">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
 
-        {/* ================= HERO / PHILOSOPHY ================= */}
-        <section className="grid md:grid-cols-2 gap-12 items-center">
-
-          {/* Left */}
-          <div className="space-y-6 text-center md:text-left">
-            <p className="text-sm text-gray-400 tracking-widest">— Our Philosophy —</p>
-
-            <h1 className="text-4xl md:text-5xl font-serif text-gray-900 leading-tight">
-              The Art of <span className="italic">Disciplined Investing.</span>
-            </h1>
-
-            <p className="text-gray-600 leading-relaxed">
-              At AccuraCap, we believe that the markets are a pendulum, swinging
-              between overvaluation and undervaluation. Our philosophy is rooted
-              in capturing these swings through a systematic fundamental approach.
-            </p>
-          </div>
-
-          {/* Right Points */}
-          <div className="space-y-6">
-            {[
-              {
-                title: "Data Over Intuition",
-                desc: "Our systematic model removes emotional bias and human error, relying on data and proven mathematical frameworks back tested since 1999.",
-              },
-              {
-                title: "Patience as a Strategy",
-                desc: "We believe in the power of compounding and long-term holding. Our model identifies winners early and rides them for years, not weeks.",
-              },
-              {
-                title: "Rigorous Risk Mitigation",
-                desc: "Every portfolio is built with strict equi-weighting and sectoral caps to ensure no single point of failure.",
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="p-6 rounded-2xl bg-white/60 backdrop-blur-xl border border-white/30 shadow-lg"
-              >
-                <h3 className="font-semibold text-gray-900 mb-2">
-                  • {item.title}
-                </h3>
-                <p className="text-sm text-gray-600">{item.desc}</p>
+            {/* Left */}
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="h-px w-8 bg-accent" />
+                <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
+                  Our Philosophy
+                </span>
               </div>
-            ))}
+
+              <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+                The Art of
+                <br />
+                <span className="italic">Disciplined Investing.</span>
+              </h1>
+              <div className="mt-4 h-[2px] w-12 bg-accent" />
+
+              <p className="mt-8 text-muted leading-relaxed">
+                At AccuraCap, we believe that the markets are a pendulum, swinging
+                between overvaluation and undervaluation. Our philosophy is rooted
+                in capturing these swings through a systematic fundamental approach.
+              </p>
+            </div>
+
+            {/* Right — Principles */}
+            <div className="space-y-0 border-t border-border">
+              {[
+                {
+                  title: "Data Over Intuition",
+                  desc: "Our systematic model removes emotional bias and human error, relying on data and proven mathematical frameworks back tested since 1999.",
+                },
+                {
+                  title: "Patience as a Strategy",
+                  desc: "We believe in the power of compounding and long-term holding. Our model identifies winners early and rides them for years, not weeks.",
+                },
+                {
+                  title: "Rigorous Risk Mitigation",
+                  desc: "Every portfolio is built with strict equi-weighting and sectoral caps to ensure no single point of failure.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="py-6 border-b border-border"
+                >
+                  <h3 className="text-black font-semibold mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ================= CORE STRATEGY ================= */}
-        <section className="space-y-8">
+      {/* ═══ Core Strategy ═══ */}
+      <section className="bg-surface py-28 px-6">
+        <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
-          <h2 className="text-3xl md:text-4xl font-serif text-gray-900">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="h-px w-8 bg-accent" />
+            <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
+              How We Invest
+            </span>
+          </div>
+
+          <h2 className="text-3xl md:text-4xl text-black leading-tight">
             Our Core Strategy
           </h2>
+          <div className="mt-4 h-[2px] w-12 bg-accent" />
 
-          <div className="space-y-6 text-gray-700 leading-relaxed bg-white/60 backdrop-blur-xl border border-white/30 shadow-xl rounded-2xl p-8">
-
+          <div className="mt-12 max-w-3xl space-y-5 text-muted leading-relaxed">
             <p>
               AccuraCap has developed a unique{" "}
-              <span className="font-semibold text-gray-900">
-                ranking algorithm
-              </span>{" "}
+              <span className="font-semibold text-black">ranking algorithm</span>{" "}
               that conducts extensive{" "}
-              <span className="font-semibold text-gray-900">
-                “Spatio-temporal”
-              </span>{" "}
+              <span className="font-semibold text-black">&ldquo;Spatio-temporal&rdquo;</span>{" "}
               analysis of every business in the investment universe,
               comparing it against others across space and time.
             </p>
 
             <p>
               Using the{" "}
-              <span className="font-semibold text-gray-900">
-                “Pendulum Hypothesis”
-              </span>, we buy high-quality businesses at reasonable valuations,
+              <span className="font-semibold text-black">&ldquo;Pendulum Hypothesis&rdquo;</span>,
+              we buy high-quality businesses at reasonable valuations,
               forming equi-weight portfolios designed to hold winners and weed
               out losers with minimal manual intervention.
             </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ================= STEP BY STEP ================= */}
-        <section className="space-y-12 text-center">
+      {/* ═══ Step-by-Step ═══ */}
+      <section className="py-28 px-6">
+        <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
-          <h2 className="text-3xl md:text-4xl font-serif text-gray-900">
-            Step-by-Step Selection
-          </h2>
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <span className="h-px w-8 bg-accent" />
+              <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
+                Our Process
+              </span>
+              <span className="h-px w-8 bg-accent" />
+            </div>
 
-          <div className="grid md:grid-cols-3 gap-8 items-center">
+            <h2 className="text-3xl md:text-4xl text-black">
+              Step-by-Step Selection
+            </h2>
+            <div className="mt-4 mx-auto h-[2px] w-12 bg-accent" />
+          </div>
 
+          <div className="grid md:grid-cols-3 gap-px bg-border">
             {[
               {
                 step: "I",
                 title: "Universe Selection",
-                desc: "We track the top 500–800 companies by market cap, filtering out weak or poorly governed entities.",
+                desc: "We track the top 500\u2013800 companies by market cap, filtering out weak or poorly governed entities.",
               },
               {
                 step: "II",
@@ -116,34 +136,20 @@ export default function PhilosophyPage() {
                 desc: "Stocks are placed in equi-weight portfolios and reviewed quarterly to maintain top performance.",
               },
             ].map((item, i) => (
-              <div key={i} className="relative group">
-
-                {/* Card */}
-                <div className="p-8 rounded-2xl bg-white/60 backdrop-blur-xl border border-white/30 shadow-lg hover:-translate-y-2 transition duration-300 text-left">
-                  
-                  <div className="text-sm text-gray-400 mb-2">
-                    {item.step}
-                  </div>
-
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-sm text-gray-600">{item.desc}</p>
-                </div>
-
-                {/* Arrow */}
-                {i !== 2 && (
-                  <div className="hidden md:block absolute top-1/2 -right-6 transform -translate-y-1/2 text-gray-300 text-3xl">
-                    →
-                  </div>
-                )}
+              <div key={i} className="bg-white p-8">
+                <span className="text-accent text-xs tracking-[0.2em] uppercase font-medium">
+                  Step {item.step}
+                </span>
+                <h3 className="mt-3 text-xl text-black font-semibold">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm text-muted leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-      </div>
     </main>
   );
 }

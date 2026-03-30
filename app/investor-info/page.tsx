@@ -7,31 +7,57 @@ const documents = [
 
 export default function InvestorInfo() {
   return (
-    <div className="max-w-3xl mx-auto py-16 px-6">
-      <h1 className="text-4xl font-bold text-primary mb-6">Investor Information</h1>
-      <p className="text-gray-600 mb-10">
-        Access fund documents, performance reports, and important disclosures below.
-      </p>
+    <main className="w-full bg-white py-28 px-6">
+      <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
-      <h2 className="text-xl font-semibold text-primary mb-4">Documents</h2>
-      <ul className="space-y-3">
-        {documents.map((doc, i) => (
-          <li key={i} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
-            <span className="text-gray-800">{doc.title}</span>
-            <span className="text-xs bg-accent text-primary font-semibold px-2 py-1 rounded">
-              {doc.type}
-            </span>
-          </li>
-        ))}
-      </ul>
+        {/* Header */}
+        <div className="flex items-center gap-3 mb-3">
+          <span className="h-px w-8 bg-accent" />
+          <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
+            Resources
+          </span>
+        </div>
 
-      <div className="mt-10 p-6 bg-gray-50 rounded-xl">
-        <h2 className="text-lg font-semibold text-primary mb-2">Minimum Investment</h2>
-        <p className="text-gray-600">
-          The minimum investment for all AccuraCap funds is <strong>&#8377;25,00,000</strong>.
-          Please contact us to begin the onboarding process.
+        <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+          Investor Information
+        </h1>
+        <div className="mt-4 h-[2px] w-12 bg-accent" />
+
+        <p className="mt-6 text-muted text-sm">
+          Access fund documents, performance reports, and important disclosures below.
         </p>
+
+        {/* Documents */}
+        <div className="mt-12">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="h-px w-8 bg-accent" />
+            <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
+              Documents
+            </span>
+          </div>
+
+          <div className="border-t border-border">
+            {documents.map((doc, i) => (
+              <div key={i} className="flex items-center justify-between py-4 border-b border-border">
+                <span className="text-sm text-black">{doc.title}</span>
+                <span className="px-3 py-1 bg-surface border border-border text-xs font-medium text-muted uppercase tracking-wider">
+                  {doc.type}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Minimum Investment */}
+        <div className="mt-16 border border-border p-8">
+          <h2 className="text-lg font-semibold text-black mb-3">Minimum Investment</h2>
+          <p className="text-sm text-muted leading-relaxed">
+            The minimum investment for all AccuraCap funds is <strong className="text-black">&#8377;25,00,000</strong>.
+            Please contact us to begin the onboarding process.
+          </p>
+        </div>
+
       </div>
-    </div>
+    </main>
   );
 }

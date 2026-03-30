@@ -2,180 +2,226 @@
 
 import Image from "next/image";
 
-const ROW_H = "h-[52px]";
-
-const labels = ["Category", "Market Cap", "Stocks", "*Absolute Returns"];
-
-const cards = [
+const products = [
   {
     logo: "/ALPHA10-Logo.png",
     title: "Alpha10",
     logoClass: "w-[100px] h-[36px]",
-    data: [
-      "Large Cap",
-      "Top 200 companies",
-      "10-20",
-      "493% (vs 492% Nifty 50 TRI)",
-    ],
+    category: "Large Cap",
+    marketCap: "Top 200 companies",
+    stocks: "10–20",
+    returns: "493%",
+    benchmark: "vs 492% Nifty 50 TRI",
   },
   {
     logo: "/PicoPower-Logo.png",
     title: "PicoPower",
     logoClass: "w-[140px] h-[50px]",
-    data: [
-      "Mid & Small Cap",
-      "Top 100-800",
-      "30-40",
-      "1492% (vs 594% S&P BSE 500 TRI)",
-    ],
+    category: "Mid & Small Cap",
+    marketCap: "Top 100–800",
+    stocks: "30–40",
+    returns: "1,492%",
+    benchmark: "vs 594% S&P BSE 500 TRI",
   },
   {
     logo: "/DYNAMO-Logo_RGB1.png",
     title: "Dynamo",
     logoClass: "w-[100px] h-[36px]",
-    data: [
-      "Micro Cap",
-      "Top 500-800",
-      "30-40",
-      "518% (vs 267% S&P BSE 500 TRI)",
-    ],
+    category: "Micro Cap",
+    marketCap: "Top 500–800",
+    stocks: "30–40",
+    returns: "518%",
+    benchmark: "vs 267% S&P BSE 500 TRI",
   },
   {
     logo: "/AlphaGen-1.png",
     title: "AlphaGen",
     logoClass: "w-[140px] h-[50px]",
-    data: [
-      "Multi Cap",
-      "Across Market cap",
-      "30-50",
-      "231% (vs 285% S&P BSE 500 TRI)",
-    ],
+    category: "Multi Cap",
+    marketCap: "Across Market Cap",
+    stocks: "30–50",
+    returns: "231%",
+    benchmark: "vs 285% S&P BSE 500 TRI",
+  },
+];
+
+const aifFunds = [
+  {
+    name: "Vectra Fund",
+    type: "CAT III Long Only",
+    focus: "Small & Micro Cap",
+    description:
+      "Concentrated portfolio targeting high-growth small and micro cap opportunities with rigorous bottom-up research.",
+  },
+  {
+    name: "AlphaGen Next Fund",
+    type: "CAT III Long Only",
+    focus: "Multi-Cap",
+    description:
+      "Flexible multi-cap strategy designed to capture alpha across market capitalizations through proprietary models.",
   },
 ];
 
 export default function InvestmentSolutions() {
   return (
-    <section className="relative w-full py-24 px-6 overflow-hidden">
+    <>
+      {/* ════════════ PMS — Dark Section ════════════ */}
+      <section id="solutions" className="relative w-full bg-white py-28 px-6">
+        <div className="max-w-[1400px] mx-auto">
 
-      {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-gray-50 to-white" />
+          {/* Header — left aligned to match hero */}
+          <div className="flex items-center gap-3 mb-3">
+            <span className="h-px w-8 bg-accent" />
+            <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
+              Portfolio Management Services
+            </span>
+          </div>
 
-      <div className="max-w-[1200px] mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+              Our Investment
+              <br />
+              Solutions
+            </h2>
+            <p className="text-muted max-w-md text-sm leading-relaxed md:text-right">
+              Four distinct strategies engineered to deliver consistent
+              outperformance across market capitalizations.
+            </p>
+          </div>
 
-        {/* ================= PMS SECTION ================= */}
+          {/* Product cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+            {products.map((p, i) => (
+              <div
+                key={i}
+                className="group bg-white p-8 flex flex-col hover:bg-surface transition-colors duration-300"
+              >
+                {/* Logo */}
+                <div className="h-12 flex items-center mb-6">
+                  <Image
+                    src={p.logo}
+                    alt={p.title}
+                    width={140}
+                    height={50}
+                    className={`${p.logoClass} object-contain`}
+                  />
+                </div>
 
-        <h2 className="text-4xl md:text-5xl font-serif text-center text-gray-900">
-          Our Investment Solutions
-        </h2>
+                {/* Category tag */}
+                <span className="text-accent text-xs tracking-[0.2em] uppercase font-medium">
+                  {p.category}
+                </span>
 
-        <p className="text-center mt-3 text-gray-500 font-medium">
-          Portfolio Management Services
-        </p>
+                {/* Returns — hero number */}
+                <p className="mt-4 text-4xl md:text-5xl text-black tracking-tight">
+                  {p.returns}
+                </p>
+                <p className="mt-1 text-muted text-xs">
+                  *Absolute Returns
+                </p>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-5 gap-4 items-start">
+                {/* Divider */}
+                <div className="my-6 h-px w-full bg-border" />
 
-          {/* Labels */}
-          <div className="hidden md:flex flex-col text-gray-500 text-sm font-medium">
-            <div className="h-[64px]" />
-            {labels.map((label) => (
-              <div key={label} className={`${ROW_H} flex items-center border-t border-gray-100`}>
-                {label}
+                {/* Details */}
+                <div className="flex flex-col gap-4 text-sm">
+                  <div>
+                    <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">Market Cap</p>
+                    <p className="text-black/70">{p.marketCap}</p>
+                  </div>
+                  <div>
+                    <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">Stocks</p>
+                    <p className="text-black/70">{p.stocks}</p>
+                  </div>
+                  <div>
+                    <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">Benchmark</p>
+                    <p className="text-black/70">{p.benchmark}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
 
-          {/* Cards */}
-          {cards.map((item, i) => (
-            <div
-              key={i}
-              className="group rounded-2xl bg-white/60 backdrop-blur-xl border border-white/30 shadow-lg hover:-translate-y-2 transition duration-300 overflow-hidden"
+          {/* Disclaimer + CTA */}
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between mt-10 gap-6">
+            <p className="text-xs text-muted">
+              *as on 31st Jan 2026 &middot; net of all expenses/fees
+            </p>
+            <a
+              href="/products"
+              className="inline-block px-8 py-3.5 bg-accent text-white text-sm tracking-[0.1em] uppercase font-medium hover:bg-accent-dark transition-colors duration-300"
             >
-              {/* Logo */}
-              <div className="h-[64px] flex items-center justify-center px-5 bg-white/80">
-                <Image
-                  src={item.logo}
-                  alt={item.title}
-                  width={140}
-                  height={50}
-                  className={`${item.logoClass} object-contain`}
-                />
-              </div>
-
-              {/* Data */}
-              {item.data.map((d, idx) => (
-                <div
-                  key={idx}
-                  className={`${ROW_H} flex items-center px-5 text-sm text-gray-600 border-t border-gray-100`}
-                >
-                  {d}
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-
-        {/* Footer */}
-        <div className="flex flex-col md:flex-row items-center justify-between mt-10 gap-6">
-          <p className="text-xs text-gray-400 text-center md:text-left">
-            *as on 31st Jan 2026 <br />
-            *net of all expenses/fees
-          </p>
-
-          <button className="relative px-6 py-3 rounded-lg text-sm font-medium text-white overflow-hidden group">
-            <span className="absolute inset-0 bg-gradient-to-r from-[#b89b6c] via-[#d4af37] to-[#b89b6c]"></span>
-            <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition">
-              <span className="absolute top-0 left-[-100%] w-full h-full bg-white/30 skew-x-12 animate-[shine_1.2s]"></span>
-            </span>
-            <span className="relative z-10">Find Out More</span>
-          </button>
-        </div>
-
-        {/* ================= AIF SECTION ================= */}
-
-        <div className="mt-24">
-
-          <h3 className="text-3xl md:text-4xl font-serif text-center text-gray-900">
-            Alternative Investment Funds
-          </h3>
-
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[800px] mx-auto">
-
-            {/* Vectra Fund */}
-            <div className="group p-6 rounded-2xl bg-white/60 backdrop-blur-xl border border-white/30 shadow-lg hover:-translate-y-2 transition duration-300">
-              <h4 className="text-lg font-semibold text-[#1e293b] mb-4">
-                Vectra Fund
-              </h4>
-
-              <div className="flex flex-col gap-3 text-sm text-gray-600">
-                <p>CAT III Long only</p>
-                <p>Small & Micro Cap</p>
-              </div>
-            </div>
-
-            {/* AlphaGen Next Fund */}
-            <div className="group p-6 rounded-2xl bg-white/60 backdrop-blur-xl border border-white/30 shadow-lg hover:-translate-y-2 transition duration-300">
-              <h4 className="text-lg font-semibold text-[#1e293b] mb-4">
-                AlphaGen Next Fund
-              </h4>
-
-              <div className="flex flex-col gap-3 text-sm text-gray-600">
-                <p>CAT III Long only</p>
-                <p>Multi-Cap</p>
-              </div>
-            </div>
-
+              View All Products
+            </a>
           </div>
+
         </div>
+      </section>
 
-      </div>
+      {/* ════════════ AIF — Light Section ════════════ */}
+      <section className="relative w-full bg-surface py-28 px-6">
+        <div className="max-w-[1400px] mx-auto">
 
-      {/* Animation */}
-      <style jsx>{`
-        @keyframes shine {
-          0% { left: -100%; }
-          100% { left: 100%; }
-        }
-      `}</style>
-    </section>
+          {/* Header */}
+          <div className="flex items-center gap-3 mb-3">
+            <span className="h-px w-8 bg-accent" />
+            <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
+              CAT III Funds
+            </span>
+          </div>
+
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+              Alternative Investment
+              <br />
+              Funds
+            </h2>
+            <p className="text-muted max-w-md text-sm leading-relaxed md:text-right">
+              Category III long-only funds designed for qualified investors
+              seeking differentiated exposure.
+            </p>
+          </div>
+
+          {/* AIF cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
+            {aifFunds.map((fund, i) => (
+              <div
+                key={i}
+                className="group bg-white p-8 flex flex-col hover:bg-surface transition-colors duration-300"
+              >
+                {/* Type tag */}
+                <span className="text-accent text-xs tracking-[0.2em] uppercase font-medium">
+                  {fund.type}
+                </span>
+
+                {/* Fund name */}
+                <h3 className="mt-4 text-4xl md:text-5xl text-black tracking-tight">
+                  {fund.name}
+                </h3>
+                <p className="mt-1 text-muted text-xs">
+                  Alternative Investment Fund
+                </p>
+
+                {/* Divider */}
+                <div className="my-6 h-px w-full bg-border" />
+
+                {/* Details */}
+                <div className="flex flex-col gap-4 text-sm">
+                  <div>
+                    <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">Focus</p>
+                    <p className="text-black/70">{fund.focus}</p>
+                  </div>
+                  <div>
+                    <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">Strategy</p>
+                    <p className="text-black/70">{fund.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+    </>
   );
 }
