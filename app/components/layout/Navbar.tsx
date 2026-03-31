@@ -87,13 +87,13 @@ export default function Navbar() {
               {item.href ? (
                 <Link
                   href={item.href}
-                  className="text-muted hover:text-black transition-colors duration-200 text-sm font-medium"
+                  className="text-muted hover:text-black transition-colors duration-200 text-lg font-medium"
                 >
                   {item.name}
                 </Link>
               ) : (
                 <button
-                  className="flex items-center gap-1 text-muted hover:text-black transition-colors duration-200 text-sm font-medium"
+                  className="flex items-center gap-1 text-muted hover:text-black transition-colors duration-200 text-lg font-medium"
                 >
                   {item.name}
                   <svg

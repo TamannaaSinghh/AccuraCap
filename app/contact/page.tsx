@@ -42,7 +42,7 @@ export default function ContactPage() {
                 <input
                   type={field.type}
                   placeholder={field.placeholder}
-                  className="w-full mt-1.5 px-4 py-3 bg-surface border border-border text-sm text-black placeholder:text-muted/50 focus:outline-none focus:border-black transition-colors"
+                  className="w-full mt-1.5 px-4 py-3 bg-surface border border-gray text-sm text-black placeholder:text-muted/50 focus:outline-none focus:border-black transition-colors"
                 />
               </div>
             ))}
@@ -52,7 +52,7 @@ export default function ContactPage() {
               <textarea
                 rows={5}
                 placeholder="Message"
-                className="w-full mt-1.5 px-4 py-3 bg-surface border border-border text-sm text-black placeholder:text-muted/50 focus:outline-none focus:border-black transition-colors"
+                className="w-full mt-1.5 px-4 py-3 bg-surface border border-gray text-sm text-black placeholder:text-muted/50 focus:outline-none focus:border-black transition-colors"
               />
             </div>
 

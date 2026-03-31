@@ -13,13 +13,15 @@ export default function Footer() {
 
           {/* Logo + tagline */}
           <div className="shrink-0">
-            <Image
-              src="/AccuraCap-Logo.png"
-              alt="AccuraCap"
-              width={140}
-              height={50}
-              className="object-contain"
-            />
+            <Link href="/">
+              <Image
+                src="/AccuraCap-Logo.png"
+                alt="AccuraCap"
+                width={140}
+                height={50}
+                className="object-contain"
+              />
+            </Link>
             <p className="mt-3 text-white/40 text-sm max-w-[260px] leading-relaxed">
               Intelligent Investing. Effortless Results.
             </p>
