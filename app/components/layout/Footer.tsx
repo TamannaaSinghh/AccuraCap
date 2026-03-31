@@ -15,10 +15,10 @@ export default function Footer() {
           <div className="shrink-0">
             <Link href="/">
               <Image
-                src="/AccuraCap-Logo.png"
+                src="/Accuracap-logo.png"
                 alt="AccuraCap"
                 width={140}
-                height={50}
+                height={40}
                 className="object-contain"
               />
             </Link>
