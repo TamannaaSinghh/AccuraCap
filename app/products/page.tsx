@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 
 const pmsProducts = [
   {
@@ -101,7 +100,7 @@ export default function ProductsPage() {
     <main className="w-full bg-white">
 
       {/* ═══ PMS Section ═══ */}
-      <section id="pms" className="py-28 px-6">
+      <section id="pms" className="pt-28 px-6">
         <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
           <div className="flex items-center gap-3 mb-3">
@@ -114,23 +113,17 @@ export default function ProductsPage() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
             Our PMS Strategies
           </h1>
-          <div className="mt-4 h-[2px] w-12 bg-accent" />
+          <div className="mt-2 h-[2px] w-12 bg-accent" />
 
-          <div className="mt-16 space-y-6">
+          <div className="mt-10 space-y-6">
             {pmsProducts.map((product) => (
               <div
                 key={product.name}
                 className="border border-border overflow-hidden"
               >
                 {/* Card Header */}
-                <div className="flex items-center gap-5 px-8 py-5 border-b border-border bg-surface">
-                  <Image
-                    src={product.logo}
-                    alt={product.name}
-                    width={150}
-                    height={48}
-                    className={`${product.logoClass} object-contain`}
-                  />
+                <div className="flex items-center gap-5 px-8 py-5 border-b border-accent/20 bg-accent/5">
+                  <h3 className="text-2xl font-bold text-accent">{product.name}</h3>
                 </div>
 
                 {/* Card Body */}
@@ -151,7 +144,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ═══ AIF Section ═══ */}
-      <section id="aif" className="bg-surface py-28 px-6">
+      <section id="aif" className="bg-surface pb-12 pt-22 px-6">
         <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
           <div className="flex items-center gap-3 mb-3">
@@ -164,16 +157,16 @@ export default function ProductsPage() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
             Our AIF Strategies
           </h1>
-          <div className="mt-4 h-[2px] w-12 bg-accent" />
+          <div className="mt-2 h-[2px] w-12 bg-accent" />
 
-          <div className="mt-16 grid md:grid-cols-2 gap-px bg-border max-w-[800px]">
+          <div className="mt-10 grid md:grid-cols-2 gap-px bg-border max-w-[800px]">
             {aifProducts.map((product) => (
               <div
                 key={product.name}
                 className="bg-white p-8"
               >
-                <h3 className="text-xl font-semibold text-black">{product.name}</h3>
-                <div className="mt-4 h-px w-full bg-border" />
+                <h3 className="text-2xl font-bold text-accent">{product.name}</h3>
+                <div className="mt-4 h-px w-full bg-accent/20" />
                 <div className="mt-4 space-y-4">
                   {product.fields.map((f) => (
                     <div key={f.label}>

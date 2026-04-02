@@ -2,9 +2,9 @@
 
 @theme {
   /* ── Brand Palette ── */
-  --color-accent: #ad271b;
-  --color-accent-dark: #8c1f15;
-  --color-accent-light: #c9362a;
+  --color-accent: #e9bc31;
+  --color-accent-dark: #FFDE4D;
+  --color-accent-light: #FFF0DD;
 
   --color-black: #111111;
   --color-dark: #1a1a1a;
@@ -27,6 +27,6 @@ h1, h2, h3 {
 
 /* ── Selection highlight ── */
 ::selection {
-  background-color: #ad271b;
+  background-color: #e9bc31;
   color: #ffffff;
 }

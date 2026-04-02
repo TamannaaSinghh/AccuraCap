@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 
 const products = [
   {
@@ -66,22 +65,22 @@ export default function InvestmentSolutions() {
   return (
     <>
       {/* ════════════ PMS — Dark Section ════════════ */}
-      <section id="solutions" className="relative w-full bg-white py-28 px-6">
+      <section id="solutions" className="relative w-full bg-white py-12 px-6">
         <div className="max-w-[1400px] mx-auto">
 
           {/* Header — left aligned to match hero */}
           <div className="flex items-center gap-3 mb-3">
             <span className="h-px w-8 bg-accent" />
             <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
-              Portfolio Management Services
+              Our Investment Solutions
             </span>
           </div>
 
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
-              Our Investment
+              Portfolio Management
               <br />
-              Solutions
+              Services
             </h2>
             <p className="text-muted max-w-md text-sm leading-relaxed md:text-right">
               Four distinct strategies engineered to deliver consistent
@@ -96,19 +95,13 @@ export default function InvestmentSolutions() {
                 key={i}
                 className="group bg-white p-8 flex flex-col hover:bg-surface transition-colors duration-300"
               >
-                {/* Logo */}
-                <div className="h-12 flex items-center mb-6">
-                  <Image
-                    src={p.logo}
-                    alt={p.title}
-                    width={140}
-                    height={50}
-                    className={`${p.logoClass} object-contain`}
-                  />
-                </div>
+                {/* Name */}
+                <h3 className="text-4xl md:text-5xl text-accent tracking-tight">
+                  {p.title}
+                </h3>
 
                 {/* Category tag */}
-                <span className="text-accent text-xs tracking-[0.2em] uppercase font-medium">
+                <span className="text-muted text-xs tracking-[0.2em] uppercase font-medium pt-1">
                   {p.category}
                 </span>
 
@@ -159,7 +152,7 @@ export default function InvestmentSolutions() {
       </section>
 
       {/* ════════════ AIF — Light Section ════════════ */}
-      <section className="relative w-full bg-surface py-28 px-6">
+      <section className="relative w-full bg-surface py-5 px-6">
         <div className="max-w-[1400px] mx-auto">
 
           {/* Header */}
@@ -187,15 +180,13 @@ export default function InvestmentSolutions() {
             {aifFunds.map((fund, i) => (
               <div
                 key={i}
-                className="group bg-white p-8 flex flex-col hover:bg-surface transition-colors duration-300"
+                className="group bg-white p-4 flex flex-col hover:bg-surface transition-colors duration-300"
               >
                 {/* Type tag */}
-                <span className="text-accent text-xs tracking-[0.2em] uppercase font-medium">
-                  {fund.type}
-                </span>
+               
 
                 {/* Fund name */}
-                <h3 className="mt-4 text-4xl md:text-5xl text-black tracking-tight">
+                <h3 className="mt-2 text-4xl md:text-5xl text-accent tracking-tight">
                   {fund.name}
                 </h3>
                 <p className="mt-1 text-muted text-xs">

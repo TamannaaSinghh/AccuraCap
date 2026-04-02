@@ -61,21 +61,21 @@ export default function Navbar() {
 
   return (
     <header className="w-full fixed top-0 left-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-3">
+      <div className="max-w-[1800px] mx-auto flex items-center px-14 py-4">
 
         {/* Logo */}
-        <Link href="/">
+        <Link href="/" className="shrink-0">
           <Image
             src="/Accuracap-logo.png"
             alt="Logo"
-            width={120}
-            height={40}
+            width={100}
+            height={46}
             className="object-contain"
           />
         </Link>
 
         {/* Menu */}
-        <nav className="hidden md:flex items-center gap-7 relative">
+        <nav className="hidden md:flex flex-1 items-center justify-end gap-14 ml-10 relative">
           {menu.map((item, index) => (
             <div
               key={index}

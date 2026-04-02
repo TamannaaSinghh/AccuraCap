@@ -1,18 +1,20 @@
 "use client";
 
+import Image from "next/image";
+
 export default function PhilosophyPage() {
   return (
     <main className="w-full bg-white">
 
       {/* ═══ Hero / Philosophy ═══ */}
-      <section className="py-28 px-6">
+      <section className="pb-5 pt-28 px-6">
         <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
           <div className="grid md:grid-cols-2 gap-16 items-start">
 
             {/* Left */}
             <div>
-              <div className="flex items-center gap-3 mb-3">
+              <div className="flex items-center gap-3 mb-1">
                 <span className="h-px w-8 bg-accent" />
                 <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
                   Our Philosophy
@@ -31,30 +33,64 @@ export default function PhilosophyPage() {
                 between overvaluation and undervaluation. Our philosophy is rooted
                 in capturing these swings through a systematic fundamental approach.
               </p>
+
+              <div className="mt-0">
+                <Image
+                  src="/philosophy.png"
+                  alt="Our Philosophy"
+                  width={500}
+                  height={350}
+                  className="w-full h-auto object-cover rounded-xl"
+                />
+              </div>
             </div>
 
             {/* Right — Principles */}
-            <div className="space-y-0 border-t border-border">
+            <div className="flex flex-col gap-6">
               {[
                 {
                   title: "Data Over Intuition",
                   desc: "Our systematic model removes emotional bias and human error, relying on data and proven mathematical frameworks back tested since 1999.",
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 13h2l3-8 4 16 3-8h6" />
+                    </svg>
+                  ),
                 },
                 {
                   title: "Patience as a Strategy",
                   desc: "We believe in the power of compounding and long-term holding. Our model identifies winners early and rides them for years, not weeks.",
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
                 },
                 {
                   title: "Rigorous Risk Mitigation",
                   desc: "Every portfolio is built with strict equi-weighting and sectoral caps to ensure no single point of failure.",
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  ),
                 },
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="py-6 border-b border-border"
+                  className="group relative flex items-start gap-5 p-6 rounded-2xl border border-border bg-white hover:shadow-lg hover:border-accent/30 hover:-translate-y-1 transition-all duration-300"
                 >
-                  <h3 className="text-black font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
+                  {/* Bubble icon */}
+                  <div className="shrink-0 w-12 h-12 rounded-full bg-accent/10 text-accent flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                    {item.icon}
+                  </div>
+
+                  <div>
+                    <h3 className="text-black font-semibold mb-1.5 group-hover:text-accent transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -63,7 +99,7 @@ export default function PhilosophyPage() {
       </section>
 
       {/* ═══ Core Strategy ═══ */}
-      <section className="bg-surface py-28 px-6">
+      <section className="bg-surface py-2 px-6">
         <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
           <div className="flex items-center gap-3 mb-3">
@@ -78,29 +114,41 @@ export default function PhilosophyPage() {
           </h2>
           <div className="mt-4 h-[2px] w-12 bg-accent" />
 
-          <div className="mt-12 max-w-3xl space-y-5 text-muted leading-relaxed">
-            <p>
-              AccuraCap has developed a unique{" "}
-              <span className="font-semibold text-black">ranking algorithm</span>{" "}
-              that conducts extensive{" "}
-              <span className="font-semibold text-black">&ldquo;Spatio-temporal&rdquo;</span>{" "}
-              analysis of every business in the investment universe,
-              comparing it against others across space and time.
-            </p>
+          <div className="mt-10 flex flex-col md:flex-row gap-12 items-start">
+            <div className="flex-1 space-y-5 text-muted leading-relaxed">
+              <p>
+                AccuraCap has developed a unique{" "}
+                <span className="font-semibold text-black">ranking algorithm</span>{" "}
+                that conducts extensive{" "}
+                <span className="font-semibold text-black">&ldquo;Spatio-temporal&rdquo;</span>{" "}
+                analysis of every business in the investment universe,
+                comparing it against others across space and time.
+              </p>
 
-            <p>
-              Using the{" "}
-              <span className="font-semibold text-black">&ldquo;Pendulum Hypothesis&rdquo;</span>,
-              we buy high-quality businesses at reasonable valuations,
-              forming equi-weight portfolios designed to hold winners and weed
-              out losers with minimal manual intervention.
-            </p>
+              <p>
+                Using the{" "}
+                <span className="font-semibold text-black">&ldquo;Pendulum Hypothesis&rdquo;</span>,
+                we buy high-quality businesses at reasonable valuations,
+                forming equi-weight portfolios designed to hold winners and weed
+                out losers with minimal manual intervention.
+              </p>
+            </div>
+
+            <div className="shrink-0 md:w-[400px]">
+              <Image
+                src="/strategy.png"
+                alt="Our Core Strategy"
+                width={400}
+                height={300}
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* ═══ Step-by-Step ═══ */}
-      <section className="py-28 px-6">
+      <section className="py-12 px-6">
         <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
           <div className="text-center mb-16">
