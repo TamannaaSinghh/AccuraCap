@@ -49,7 +49,7 @@ export default function Hero() {
         {/* CTA */}
         <div className="mt-4 md:mt-12 flex items-center gap-5">
           <a
-            href="/philosophy"
+            href="/products"
             className="inline-block px-8 py-3.5 bg-accent text-white text-sm tracking-[0.1em] uppercase font-medium hover:bg-accent-dark transition-colors duration-300"
           >
             Explore Strategies

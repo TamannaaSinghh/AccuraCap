@@ -13,5 +13,7 @@ export const TEAM_MEMBERS_QUERY = `*[_type == "teamMember" && memberType == "tea
   name,
   slug,
   role,
+  image,
+  bio,
   order
 }`;
