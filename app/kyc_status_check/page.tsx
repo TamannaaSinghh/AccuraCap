@@ -26,7 +26,7 @@ export default function KYCPage() {
         </div>
 
         {/* Content */}
-        <div className="mt-12 max-w-3xl space-y-12 text-muted text-sm leading-relaxed">
+        <div className="mt-12 space-y-12 text-muted text-sm leading-relaxed">
 
           {/* Section 1 */}
           <section className="space-y-4">

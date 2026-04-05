@@ -7,13 +7,13 @@ export default function ContactPage() {
     <main className="w-full bg-white py-28 px-6">
       <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
-        {/* Header */}
+        {/* Header
         <div className="flex items-center gap-3 mb-3">
           <span className="h-px w-8 bg-accent" />
           <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
             Get In Touch
           </span>
-        </div>
+        </div> */}
 
         <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
           Contact Us
