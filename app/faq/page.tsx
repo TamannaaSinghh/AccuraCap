@@ -14,14 +14,14 @@ export default function FAQPage() {
       <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
         {/* Header */}
-        <div className="flex items-center gap-3 mb-3">
+        {/* <div className="flex items-center gap-3 mb-3">
           <span className="h-px w-8 bg-accent" />
           <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
             Support
           </span>
-        </div>
+        </div> */}
 
-        <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
           Frequently Asked Questions
         </h1>
         <div className="mt-4 h-[2px] w-12 bg-accent" />
@@ -36,7 +36,7 @@ export default function FAQPage() {
                 onClick={() => toggle(i)}
                 className="w-full flex items-center justify-between gap-4 px-0 py-5 text-left text-black font-medium hover:text-accent transition-colors"
               >
-                <span className="text-sm">{item.q}</span>
+                <span className="text-sm md:text-base">{item.q}</span>
                 <span className="text-xl shrink-0 text-muted">
                   {open === i ? "\u2212" : "+"}
                 </span>
@@ -44,7 +44,7 @@ export default function FAQPage() {
 
               {/* Answer */}
               {open === i && (
-                <div className="pb-6 text-muted text-sm leading-relaxed">
+                <div className="pb-6 text-muted text-sm md:text-base leading-relaxed">
                   {item.a}
                 </div>
               )}

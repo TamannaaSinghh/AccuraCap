@@ -6,14 +6,14 @@ export default function KYCPage() {
       <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
         {/* Header */}
-        <div className="flex items-center gap-3 mb-3">
+        {/* <div className="flex items-center gap-3 mb-3">
           <span className="h-px w-8 bg-accent" />
           <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
             Investor Information
           </span>
-        </div>
+        </div> */}
 
-        <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
           KYC Status Check
         </h1>
         <div className="mt-4 h-[2px] w-12 bg-accent" />
@@ -26,7 +26,7 @@ export default function KYCPage() {
         </div>
 
         {/* Content */}
-        <div className="mt-12 space-y-12 text-muted text-sm leading-relaxed">
+        <div className="mt-12 space-y-12 text-muted text-sm md:text-base leading-relaxed">
 
           {/* Section 1 */}
           <section className="space-y-4">
@@ -66,7 +66,7 @@ export default function KYCPage() {
               number (where provided) as follows:
             </p>
 
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
               {["KYC Validated", "KYC Registered", "KYC On Hold"].map((status) => (
                 <span key={status} className="px-4 py-2 bg-surface border border-border text-xs font-medium text-black uppercase tracking-wider">
                   {status}
@@ -141,14 +141,14 @@ export default function KYCPage() {
               KYC Contact Details Validation Links
             </h3>
 
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-sm md:text-base">
               {[
                 { name: "CAMS KRA", url: "https://camskra.com/PanDetailsUpdate.aspx" },
                 { name: "CVL KRA", url: "https://validate.cvlindia.com/CVLKRAVerification_V1" },
                 { name: "NDML KRA", url: "https://kra.ndml.in/ClientInitiatedKYC-webApp/#/ClientInitiatedKYC" },
                 { name: "KARVY KRA", url: "https://www.karvykra.com/KYC_Validation/Default.aspx" },
               ].map((link) => (
-                <li key={link.name} className="flex items-center gap-2">
+                <li key={link.name} className="flex flex-wrap items-center gap-2">
                   <span className="h-px w-3 bg-accent" />
                   <span className="font-medium text-black">{link.name}:</span>
                   <a href={link.url} target="_blank" className="text-accent hover:text-accent-dark transition-colors break-all">
@@ -165,13 +165,13 @@ export default function KYCPage() {
               KYC PAN Aadhaar Validation Links
             </h3>
 
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-sm md:text-base">
               {[
                 { name: "CAMS KRA", url: "https://camskra.com/pan_aadhaarlink.aspx" },
                 { name: "CVL KRA", url: "https://validate.cvlindia.com/CVLKRAVerification_V1" },
                 { name: "NDML KRA", url: "https://kra.ndml.in/ClientInitiatedKYC-webApp/#/ClientInitiatedKYC" },
               ].map((link) => (
-                <li key={link.name} className="flex items-center gap-2">
+                <li key={link.name} className="flex flex-wrap items-center gap-2">
                   <span className="h-px w-3 bg-accent" />
                   <span className="font-medium text-black">{link.name}:</span>
                   <a href={link.url} target="_blank" className="text-accent hover:text-accent-dark transition-colors break-all">

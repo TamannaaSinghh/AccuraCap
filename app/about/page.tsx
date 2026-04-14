@@ -11,13 +11,13 @@ export default function About() {
           </span>
         </div>
 
-        <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
           About AccuraCap
         </h1>
         <div className="mt-4 h-[2px] w-12 bg-accent" />
 
         {/* Content */}
-        <div className="mt-12 max-w-3xl space-y-6 text-muted text-base leading-relaxed">
+        <div className="mt-12 max-w-3xl space-y-6 text-muted text-sm md:text-base leading-relaxed">
           <p>
             AccuraCap is a boutique fund manager with over 15 years of experience in
             delivering superior risk-adjusted returns. Our investment philosophy is

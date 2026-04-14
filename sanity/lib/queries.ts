@@ -40,3 +40,33 @@ export const PMS_DOCUMENTS_QUERY = `*[_type == "pmsDocument"] | order(order asc)
   "fileUrl": file.asset->url,
   order
 }`;
+
+export const REGISTERED_OFFICE_QUERY = `*[_type == "registeredOffice"] | order(_createdAt asc)[0] {
+  _id,
+  heading,
+  addressLine1,
+  addressLine2,
+  addressLine3
+}`;
+
+export const PMS_PRODUCTS_QUERY = `*[_type == "pmsProduct"] | order(order asc) {
+  _id,
+  name,
+  fields[] {
+    label,
+    value,
+    fullWidth
+  },
+  order
+}`;
+
+export const AIF_PRODUCTS_QUERY = `*[_type == "aifProduct"] | order(order asc) {
+  _id,
+  name,
+  fields[] {
+    label,
+    value,
+    fullWidth
+  },
+  order
+}`;

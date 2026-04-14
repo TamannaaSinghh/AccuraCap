@@ -16,14 +16,14 @@ export default async function AIFPage() {
       <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
         {/* Header */}
-        <div className="flex items-center gap-3 mb-3">
+        {/* <div className="flex items-center gap-3 mb-3">
           <span className="h-px w-8 bg-accent" />
           <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
             Investor Information
           </span>
-        </div>
+        </div> */}
 
-        <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
           AIF
         </h1>
         <div className="mt-4 h-[2px] w-12 bg-accent" />
@@ -39,7 +39,7 @@ export default async function AIFPage() {
           ].map((item) => (
             <div key={item.label}>
               <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">{item.label}</p>
-              <p className="text-sm text-black">{item.value}</p>
+              <p className="text-sm md:text-base text-black">{item.value}</p>
             </div>
           ))}
         </div>
@@ -47,14 +47,14 @@ export default async function AIFPage() {
         {/* Documents — driven entirely by Sanity CMS */}
         {documents.length > 0 && (
           <div className="mt-20">
-            <div className="flex items-center gap-3 mb-3">
+            {/* <div className="flex items-center gap-3 mb-3">
               <span className="h-px w-8 bg-accent" />
               <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
                 Documents &amp; Disclosures
               </span>
-            </div>
+            </div> */}
 
-            <h2 className="text-2xl md:text-3xl text-black mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl text-black mb-10">
               Policies &amp; Voting Records
             </h2>
 

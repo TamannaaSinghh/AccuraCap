@@ -42,51 +42,52 @@ const reasons: Reason[] = [
 
 export default function WhyUs() {
   return (
-    <section className="w-full bg-surface py-12 px-6">
+    <section className="w-full bg-surface pt-6 md:pt-8 lg:pt-10 pb-16 md:pb-20 lg:pb-24 px-6">
       <div className="max-w-[1400px] mx-auto">
-        <div className="flex items-center gap-3 mb-3">
-          <span className="h-px w-8 bg-accent" />
-          <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
-            What Sets Us Apart
-          </span>
-        </div>
 
-        <h2 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
-          Why Us?
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black leading-tight">
+          Key Differentiators
         </h2>
-        
 
-        <div className="mt-10 flex flex-col gap-px bg-border border border-border">
+        {/* Cards */}
+        <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {reasons.map((item, i) => (
-            <div
+            <article
               key={i}
-              className="flex flex-col md:flex-row bg-white"
+              className="group relative bg-white border border-border rounded-2xl p-7 md:p-8 hover:shadow-lg hover:border-black/15 hover:-translate-y-1 transition-all duration-300"
             >
-              {/* Title */}
-              <div className="md:w-[240px] shrink-0 px-8 py-6 flex items-center border-b md:border-b-0 md:border-r border-border">
-                <h3 className="text-base font-semibold text-black leading-snug">
-                  {item.title}
-                </h3>
+              {/* Number badge */}
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-accent text-sm font-bold tracking-wider">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="h-px w-8 bg-accent" />
               </div>
 
-              {/* Content */}
-              <div className="flex-1 px-8 py-6 flex items-center">
-                {"points" in item ? (
-                  <ul className="space-y-1.5">
-                    {item.points.map((point, j) => (
-                      <li key={j} className="text-sm text-muted leading-relaxed flex items-start gap-2">
-                        <span className="text-accent mt-0.5 shrink-0">&rarr;</span>
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-sm text-muted leading-relaxed">
-                    {item.description}
-                  </p>
-                )}
-              </div>
-            </div>
+              {/* Title */}
+              <h3 className="text-xl md:text-2xl font-bold text-black leading-snug">
+                {item.title}
+              </h3>
+
+              {/* Body */}
+              {"points" in item ? (
+                <ul className="mt-4 space-y-3">
+                  {item.points.map((point, j) => (
+                    <li
+                      key={j}
+                      className="text-base md:text-[17px] text-black/70 leading-relaxed flex items-start gap-3"
+                    >
+                      <span className="text-accent mt-1.5 shrink-0 h-1.5 w-1.5 rounded-full bg-accent" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mt-4 text-base md:text-[17px] text-black/70 leading-relaxed">
+                  {item.description}
+                </p>
+              )}
+            </article>
           ))}
         </div>
       </div>

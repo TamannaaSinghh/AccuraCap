@@ -16,8 +16,8 @@ const menu: MenuItem[] = [
     href: "/",
   },
   {
-    name: "About Us",
-    children: [{ name: "Our Philosophy", href: "/philosophy" }],
+    name: "Philosophy",
+    href: "/philosophy",
   },
   {
     name: "Products",
@@ -61,21 +61,21 @@ export default function Navbar() {
 
   return (
     <header className="w-full fixed top-0 left-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-[1800px] mx-auto flex items-center px-14 py-4">
+      <div className="max-w-[1800px] mx-auto flex items-center px-4 md:px-6 lg:px-14 py-2.5 md:py-3 lg:py-4">
 
         {/* Logo */}
         <Link href="/" className="shrink-0">
           <Image
             src="/Accuracap-logo.png"
             alt="Logo"
-            width={100}
-            height={46}
-            className="object-contain"
+            width={140}
+            height={74}
+            className="object-contain w-[100px] md:w-[115px] lg:w-[140px] h-auto"
           />
         </Link>
 
         {/* Menu */}
-        <nav className="hidden md:flex flex-1 items-center justify-end gap-14 ml-10 relative">
+        <nav className="hidden md:flex flex-1 items-center justify-end gap-3 lg:gap-8 xl:gap-12 ml-4 lg:ml-8 relative">
           {menu.map((item, index) => (
             <div
               key={index}
@@ -87,13 +87,13 @@ export default function Navbar() {
               {item.href ? (
                 <Link
                   href={item.href}
-                  className="text-muted hover:text-black transition-colors duration-200 text-lg font-medium"
+                  className="text-muted hover:text-black transition-colors duration-200 text-[12px] lg:text-base xl:text-lg font-medium whitespace-nowrap"
                 >
                   {item.name}
                 </Link>
               ) : (
                 <button
-                  className="flex items-center gap-1 text-muted hover:text-black transition-colors duration-200 text-lg font-medium"
+                  className="flex items-center gap-1 text-muted hover:text-black transition-colors duration-200 text-[12px] lg:text-base xl:text-lg font-medium whitespace-nowrap"
                 >
                   {item.name}
                   <svg

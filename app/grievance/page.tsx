@@ -6,24 +6,24 @@ export default function GrievancePage() {
       <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
 
         {/* Header */}
-        <div className="flex items-center gap-3 mb-3">
+        {/* <div className="flex items-center gap-3 mb-3">
           <span className="h-px w-8 bg-accent" />
           <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
             Investor Support
           </span>
-        </div>
+        </div> */}
 
-        <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
           Grievance
         </h1>
         <div className="mt-4 h-[2px] w-12 bg-accent" />
 
         {/* Content */}
-        <div className="mt-12 space-y-12 text-muted text-sm leading-relaxed">
+        <div className="mt-12 space-y-12 text-muted text-sm md:text-base leading-relaxed">
 
           {/* Policy */}
           <section className="space-y-4">
-            <h2 className="text-xl font-semibold text-black">
+            <h2 className="text-xl md:text-2xl font-semibold text-black">
               Grievance Redressal Policy
             </h2>
 
@@ -75,7 +75,7 @@ export default function GrievancePage() {
 
           {/* Mechanism */}
           <section className="space-y-4">
-            <h2 className="text-xl font-semibold text-black">
+            <h2 className="text-xl md:text-2xl font-semibold text-black">
               Grievance Redressal and Dispute Handling Mechanism
             </h2>
 

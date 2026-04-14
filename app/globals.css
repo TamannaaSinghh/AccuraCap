@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Brand Palette ── */
-  --color-accent: #e9bc31;
-  --color-accent-dark: #FFDE4D;
-  --color-accent-light: #FFF0DD;
+  /* ── Brand Palette ──
+     Accent matches the AccuraCap logo mark. Used purely for branding
+     (eyebrow lines, CTAs, hovers, focus rings) — never for error or
+     validation states. */
+  --color-accent: #B22234;
+  --color-accent-dark: #8E1A29;
+  --color-accent-light: #FBEAEC;
 
   --color-black: #111111;
   --color-dark: #1a1a1a;
@@ -14,19 +17,37 @@
   --color-white: #ffffff;
 }
 
+/* ── Large-screen root scale ──
+   Lifts every rem-based size (text + spacing) modestly on wide
+   displays, where the default 16px reads tiny. Smaller breakpoints
+   stay at the browser default. */
+@media (min-width: 1280px) {
+  html { font-size: 18.5px; }
+}
+@media (min-width: 1536px) {
+  html { font-size: 20.5px; }
+}
+@media (min-width: 1920px) {
+  html { font-size: 22.5px; }
+}
+
 body {
   font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* ── Serif headings ── */
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 /* ── Selection highlight ── */
 ::selection {
-  background-color: #e9bc31;
+  background-color: #B22234;
   color: #ffffff;
 }

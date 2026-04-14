@@ -68,24 +68,16 @@ export default function InvestmentSolutions() {
       <section id="solutions" className="relative w-full bg-white py-12 px-6">
         <div className="max-w-[1400px] mx-auto">
 
-          {/* Header — left aligned to match hero */}
-          <div className="flex items-center gap-3 mb-3">
-            <span className="h-px w-8 bg-accent" />
-            <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
-              Our Investment Solutions
-            </span>
-          </div>
-
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
               Portfolio Management
               <br />
               Services
             </h2>
-            <p className="text-muted max-w-md text-sm leading-relaxed md:text-right">
+            {/* <p className="text-muted max-w-md text-sm md:text-base leading-relaxed md:text-right">
               Four distinct strategies engineered to deliver consistent
               outperformance across market capitalizations.
-            </p>
+            </p> */}
           </div>
 
           {/* Product cards */}
@@ -96,7 +88,7 @@ export default function InvestmentSolutions() {
                 className="group bg-white p-8 flex flex-col hover:bg-surface transition-colors duration-300"
               >
                 {/* Name */}
-                <h3 className="text-4xl md:text-5xl text-accent tracking-tight">
+                <h3 className="text-3xl md:text-4xl text-accent tracking-tight">
                   {p.title}
                 </h3>
 
@@ -106,7 +98,7 @@ export default function InvestmentSolutions() {
                 </span>
 
                 {/* Returns — hero number */}
-                <p className="mt-4 text-4xl md:text-5xl text-black tracking-tight">
+                <p className="mt-4 text-3xl md:text-4xl text-black tracking-tight">
                   {p.returns}
                 </p>
                 <p className="mt-1 text-muted text-xs">
@@ -142,7 +134,7 @@ export default function InvestmentSolutions() {
             </p>
             <a
               href="/products"
-              className="inline-block px-8 py-3.5 bg-accent text-white text-sm tracking-[0.1em] uppercase font-medium hover:bg-accent-dark transition-colors duration-300"
+              className="inline-block px-8 py-3.5 bg-black text-white text-sm tracking-[0.1em] uppercase font-medium hover:bg-black/85 transition-colors duration-300"
             >
               View All Products
             </a>
@@ -156,23 +148,23 @@ export default function InvestmentSolutions() {
         <div className="max-w-[1400px] mx-auto">
 
           {/* Header */}
-          <div className="flex items-center gap-3 mb-3">
+          {/* <div className="flex items-center gap-3 mb-3">
             <span className="h-px w-8 bg-accent" />
             <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
               CAT III Funds
             </span>
-          </div>
+          </div> */}
 
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
               Alternative Investment
               <br />
               Funds
             </h2>
-            <p className="text-muted max-w-md text-sm leading-relaxed md:text-right">
+            {/* <p className="text-muted max-w-md text-sm md:text-base leading-relaxed md:text-right">
               Category III long-only funds designed for qualified investors
               seeking differentiated exposure.
-            </p>
+            </p> */}
           </div>
 
           {/* AIF cards */}
@@ -186,12 +178,12 @@ export default function InvestmentSolutions() {
                
 
                 {/* Fund name */}
-                <h3 className="mt-2 text-4xl md:text-5xl text-accent tracking-tight">
+                <h3 className="mt-2 text-3xl md:text-4xl text-accent tracking-tight">
                   {fund.name}
                 </h3>
-                <p className="mt-1 text-muted text-xs">
+                {/* <p className="mt-1 text-muted text-xs">
                   Alternative Investment Fund
-                </p>
+                </p> */}
 
                 {/* Divider */}
                 <div className="my-6 h-px w-full bg-border" />

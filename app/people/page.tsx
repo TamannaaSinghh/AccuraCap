@@ -16,78 +16,53 @@ function getInitials(name: string) {
   return name
     .split(" ")
     .map((n) => n[0])
-    .join("");
+    .join("")
+    .slice(0, 2);
 }
 
+/* ─────────── Photo on the left, all text on the right ─────────── */
 function MemberCard({ member }: { member: Member }) {
   const hasBio = member.bio && member.bio.length > 0;
 
   return (
-    <div className="group border border-border rounded-2xl overflow-hidden hover:shadow-lg hover:border-accent/30 transition-all duration-300">
-      {/* Header with photo + name + role */}
-      <div className="flex items-center gap-5 px-6 py-5 bg-accent/5 border-b border-accent/20">
+    <article className="group flex flex-row gap-5 md:gap-6 bg-white border border-border rounded-xl p-4 md:p-5 hover:shadow-md hover:border-black/15 hover:-translate-y-0.5 transition-all duration-300">
+      {/* Square photo, fixed size, top-aligned */}
+      <div className="relative shrink-0 self-start aspect-square w-24 sm:w-28 md:w-32 lg:w-36 bg-surface overflow-hidden rounded-md">
         {member.image ? (
-          <div className="relative w-16 h-16 rounded-full overflow-hidden shrink-0 ring-2 ring-accent/20">
-            <Image
-              src={urlFor(member.image).width(128).height(128).url()}
-              alt={member.name}
-              fill
-              className="object-cover object-top"
-            />
-          </div>
+          <Image
+            src={urlFor(member.image).width(320).height(320).url()}
+            alt={member.name}
+            fill
+            sizes="144px"
+            className="object-cover object-top"
+          />
         ) : (
-          <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center shrink-0 ring-2 ring-accent/20">
-            <span className="text-accent text-xl font-bold">
+          <div className="w-full h-full flex items-center justify-center">
+            <span className="text-black/25 text-2xl md:text-3xl font-bold tracking-tight">
               {getInitials(member.name)}
             </span>
           </div>
         )}
-        <div>
-          <h2 className="text-lg font-bold text-black">{member.name}</h2>
-          {member.role && (
-            <p className="text-xs text-accent font-medium mt-0.5">
-              {member.role}
-            </p>
-          )}
-        </div>
       </div>
 
-      {/* Bio */}
-      {hasBio && (
-        <div className="px-6 py-5 space-y-2.5 text-sm text-muted leading-relaxed">
-          <PortableText value={member.bio!} />
-        </div>
-      )}
-    </div>
-  );
-}
-
-function SimpleCard({ member }: { member: Member }) {
-  return (
-    <div className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-border bg-white hover:shadow-md hover:border-accent/30 hover:-translate-y-0.5 transition-all duration-300">
-      {member.image ? (
-        <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 group-hover:ring-2 ring-accent/20 transition-all duration-300">
-          <Image
-            src={urlFor(member.image).width(80).height(80).url()}
-            alt={member.name}
-            fill
-            className="object-cover object-top"
-          />
-        </div>
-      ) : (
-        <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
-          <span className="text-accent text-sm font-bold group-hover:text-white transition-colors duration-300">
-            {getInitials(member.name)}
-          </span>
-        </div>
-      )}
-      <div>
-        <span className="text-sm text-black font-medium">{member.name}</span>
+      {/* All text fills the right side, no clipping */}
+      <div className="flex-1 min-w-0">
+        <h2 className="text-base md:text-lg font-bold text-black leading-snug break-words">
+          {member.name}
+        </h2>
         {member.role && (
-          <p className="text-xs text-muted">{member.role}</p>
+          <p className="mt-0.5 text-xs md:text-sm text-black/55 font-medium break-words">
+            {member.role}
+          </p>
+        )}
+
+        {hasBio && (
+          <div className="mt-2.5 space-y-2 text-[13px] md:text-sm text-black/70 leading-relaxed [&_p]:m-0 [&_p+p]:mt-2 break-words">
+            <PortableText value={member.bio!} />
+          </div>
         )}
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -97,67 +72,31 @@ export default async function PeoplePage() {
     client.fetch<Member[]>(TEAM_MEMBERS_QUERY),
   ]);
 
-  // Team members with a bio get the full card treatment
-  const richTeamMembers = teamMembers.filter(
-    (m) => m.bio && m.bio.length > 0
-  );
-  const simpleTeamMembers = teamMembers.filter(
-    (m) => !m.bio || m.bio.length === 0
-  );
-
   return (
     <main className="w-full bg-white">
-      <section className="pt-28 pb-16 px-6">
+      <section className="pt-28 pb-20 px-6">
         <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
-          <div className="flex items-center gap-3 mb-3">
-            <span className="h-px w-8 bg-accent" />
-            <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
-              The People
-            </span>
-          </div>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
             Meet Our Team
           </h1>
           <div className="mt-4 h-[2px] w-12 bg-accent" />
-          <p className="mt-4 text-muted">
-            The minds behind disciplined investing
-          </p>
 
-          {/* Leadership Cards */}
+          {/* Leadership — one member per row, full width */}
           {leadership.length > 0 && (
-            <div className="mt-12 grid md:grid-cols-2 gap-6">
+            <div className="mt-12 flex flex-col gap-5 md:gap-6">
               {leadership.map((member) => (
                 <MemberCard key={member._id} member={member} />
               ))}
             </div>
           )}
 
-          {/* Team Members with bios — full cards */}
-          {richTeamMembers.length > 0 && (
-            <div className="mt-12 grid md:grid-cols-2 gap-6">
-              {richTeamMembers.map((member) => (
+          {/* All team members — same horizontal card layout, one per row */}
+          {teamMembers.length > 0 && (
+            <div className="mt-5 md:mt-6 flex flex-col gap-5 md:gap-6">
+              {teamMembers.map((member) => (
                 <MemberCard key={member._id} member={member} />
               ))}
-            </div>
-          )}
-
-          {/* Team Members without bios — compact cards */}
-          {simpleTeamMembers.length > 0 && (
-            <div className="mt-14">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="h-px w-8 bg-accent" />
-                <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
-                  Our People
-                </span>
-              </div>
-              <h2 className="text-2xl text-black mb-6">Team Members</h2>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {simpleTeamMembers.map((member) => (
-                  <SimpleCard key={member._id} member={member} />
-                ))}
-              </div>
             </div>
           )}
         </div>

@@ -16,22 +16,14 @@ export default async function Hero() {
 
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-40 pb-10">
-
       {/* Background Image */}
-      <Image
-        src="/herobg.jpeg"
-        alt=""
-        fill
-        priority
-        className="object-cover"
-      />
+      <Image src="/herobg.jpeg" alt="" fill priority className="object-cover" />
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto text-left px-6 md:px-16 lg:px-24">
-
         {/* Accent tag */}
         <div className="flex items-center gap-3 mb-8">
           <span className="h-px w-8 bg-accent" />
@@ -41,10 +33,10 @@ export default async function Hero() {
         </div>
 
         {/* Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight">
-          Intelligent Investing
+        <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-6xl text-white leading-[1.5] tracking-tight">
+          Boutique Fund Management
           <br />
-          Effortless Results
+          for Long-Term Investors
         </h1>
 
         {/* Red accent line below heading */}
@@ -52,15 +44,19 @@ export default async function Hero() {
 
         {/* Subtext */}
         <p className="mt-6 text-white max-w-lg text-base md:text-lg leading-relaxed font-medium">
-          A boutique fund manager delivering exceptional returns through
-          proprietary research and disciplined investment strategies.
+          AccuraCap is a SEBI-registered Portfolio Management Service and
+          Category III Alternative Investment Fund manager. We manage long-only
+          equity portfolios through proprietary, AI-driven algorithms that have
+          consistently outperformed benchmark returns. We serve high-net-worth
+          individuals, family offices, and institutions seeking disciplined,
+          systematic investment management.
         </p>
 
         {/* CTA */}
         <div className="mt-4 md:mt-12 flex items-center gap-5">
           <a
             href="/products"
-            className="inline-block px-8 py-3.5 bg-accent text-white text-sm tracking-[0.1em] uppercase font-medium hover:bg-accent-dark transition-colors duration-300"
+            className="inline-block px-8 py-3.5 bg-white text-black text-sm tracking-[0.1em] uppercase font-medium hover:bg-white/85 transition-colors duration-300"
           >
             Explore Strategies
           </a>
@@ -74,14 +70,14 @@ export default async function Hero() {
 
         {/* Stats strip — driven entirely by Sanity CMS */}
         {stats.length > 0 && (
-          <div className="mt-20 md:mt-28 border-t border-accent-light pt-3">
+          <div className="mt-20 md:mt-28 border-t border-white/20 pt-3">
             <div className="grid grid-cols-1 md:grid-cols-3 w-full">
               {stats.map((stat, index) => (
                 <div
                   key={stat._id}
                   className={`py-6 md:py-0 text-center ${
                     index < stats.length - 1
-                      ? "border-b md:border-b-0 md:border-r border-accent-light"
+                      ? "border-b md:border-b-0 md:border-r border-white/20"
                       : ""
                   }`}
                 >
@@ -92,18 +88,14 @@ export default async function Hero() {
                     {stat.heading}
                   </p>
                   {stat.subheading && (
-                    <p className="mt-1 text-white text-xs">
-                      {stat.subheading}
-                    </p>
+                    <p className="mt-1 text-white text-xs">{stat.subheading}</p>
                   )}
                 </div>
               ))}
             </div>
           </div>
         )}
-
       </div>
-
     </section>
   );
 }
