@@ -9,17 +9,17 @@ export default function Footer() {
       <div className="w-full max-w-[1800px] mx-auto px-4 md:px-6 lg:px-14 py-7 md:py-7 lg:py-12">
 
         {/* Top */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-7 md:gap-6 lg:gap-12">
+        <div className="grid grid-cols-2 md:flex md:flex-row md:items-start md:justify-between gap-y-7 gap-x-6 md:gap-6 lg:gap-12">
 
           {/* Logo */}
-          <div className="shrink-0">
+          <div className="col-span-2 md:col-span-1 shrink-0">
             <Link href="/">
               <Image
                 src="/Accuracap-logo.png"
                 alt="AccuraCap"
                 width={140}
                 height={52}
-                className="object-contain w-[100px] md:w-[100px] lg:w-[140px] h-auto"
+                className="object-contain w-[120px] md:w-[100px] lg:w-[140px] h-auto"
               />
             </Link>
           </div>
@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
 
           {/* Office info */}
-          <div className="text-xs md:text-[12px] lg:text-base xl:text-lg text-black/60 leading-relaxed max-w-[280px] md:max-w-[260px] lg:max-w-[360px] xl:max-w-[420px]">
+          <div className="col-span-2 md:col-span-1 text-xs md:text-[12px] lg:text-base xl:text-lg text-black/60 leading-relaxed md:max-w-[260px] lg:max-w-[360px] xl:max-w-[420px]">
             <p className="text-[11px] md:text-[10px] lg:text-sm tracking-[0.2em] uppercase text-black/40 mb-2.5 md:mb-2.5 font-medium">Corporate Office</p>
             <p>
               Office Number 919, 9th Floor,
@@ -58,7 +58,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-7 md:mt-6 lg:mt-10 pt-4 md:pt-4 border-t border-black/10 flex flex-col md:flex-row items-center justify-between gap-2.5 md:gap-2.5">
+        <div className="mt-7 md:mt-6 lg:mt-10 pt-4 md:pt-4 border-t border-black/10 flex flex-col-reverse md:flex-row items-center md:items-center justify-between gap-3 md:gap-2.5 text-center md:text-left">
           <p className="text-[11px] md:text-[10px] lg:text-sm text-black/40">
             &copy; {new Date().getFullYear()} AccuraCap. All rights reserved.
           </p>

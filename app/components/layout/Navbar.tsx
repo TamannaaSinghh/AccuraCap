@@ -48,6 +48,8 @@ const menu: MenuItem[] = [
 
 export default function Navbar() {
   const [active, setActive] = useState<number | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState<number | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const openMenu = (index: number) => {
@@ -59,6 +61,11 @@ export default function Navbar() {
     closeTimer.current = setTimeout(() => setActive(null), 100);
   };
 
+  const closeMobile = () => {
+    setMobileOpen(false);
+    setMobileExpanded(null);
+  };
+
   return (
     <header className="w-full fixed top-0 left-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
       <div className="max-w-[1800px] mx-auto flex items-center px-4 md:px-6 lg:px-14 py-2.5 md:py-3 lg:py-4">
@@ -68,11 +75,31 @@ export default function Navbar() {
           <Image
             src="/Accuracap-logo.png"
             alt="Logo"
-            width={140}
-            height={74}
-            className="object-contain w-[100px] md:w-[115px] lg:w-[140px] h-auto"
+            width={220}
+            height={116}
+            style={{ height: "auto" }}
+            className="object-contain w-[100px] md:w-[100px] lg:w-[150px]"
           />
         </Link>
+
+        {/* Mobile hamburger */}
+        <button
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((v) => !v)}
+          className="md:hidden ml-auto p-2 text-muted hover:text-black"
+        >
+          {mobileOpen ? (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 6l12 12M6 18L18 6" />
+            </svg>
+          ) : (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </button>
 
         {/* Menu */}
         <nav className="hidden md:flex flex-1 items-center justify-end gap-3 lg:gap-8 xl:gap-12 ml-4 lg:ml-8 relative">
@@ -131,6 +158,62 @@ export default function Navbar() {
         </nav>
 
       </div>
+
+      {/* Mobile menu panel */}
+      {mobileOpen && (
+        <nav className="md:hidden border-t border-border bg-white max-h-[calc(100vh-70px)] overflow-y-auto">
+          <ul className="flex flex-col px-4 py-2">
+            {menu.map((item, index) => (
+              <li key={index} className="border-b border-border last:border-b-0">
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    onClick={closeMobile}
+                    className="block py-3 text-muted hover:text-black text-base font-medium"
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setMobileExpanded(mobileExpanded === index ? null : index)
+                      }
+                      className="flex items-center justify-between w-full py-3 text-muted hover:text-black text-base font-medium"
+                    >
+                      {item.name}
+                      <svg
+                        className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === index ? "rotate-180" : ""}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {mobileExpanded === index && item.children && (
+                      <ul className="pb-2 pl-4">
+                        {item.children.map((child, i) => (
+                          <li key={i}>
+                            <Link
+                              href={child.href || "#"}
+                              onClick={closeMobile}
+                              className="block py-2 text-sm text-muted hover:text-black"
+                            >
+                              {child.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }
