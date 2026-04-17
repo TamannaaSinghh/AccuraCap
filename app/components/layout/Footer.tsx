@@ -6,28 +6,28 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="w-full bg-[#F4F4F4] border-t border-black/10">
-      <div className="w-full max-w-[1800px] mx-auto px-4 md:px-6 lg:px-14 py-7 md:py-7 lg:py-12">
+      <div className="w-full max-w-[1600px] mx-auto px-5 md:px-8 lg:px-12 py-10 md:py-12 lg:py-14">
 
         {/* Top */}
-        <div className="grid grid-cols-2 md:flex md:flex-row md:items-start md:justify-between gap-y-7 gap-x-6 md:gap-6 lg:gap-12">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:flex lg:flex-row lg:items-start lg:justify-between gap-y-8 gap-x-6 sm:gap-x-8 lg:gap-12 xl:gap-14">
 
           {/* Logo */}
-          <div className="col-span-2 md:col-span-1 shrink-0">
+          <div className="col-span-2 sm:col-span-4 lg:col-span-1 shrink-0">
             <Link href="/">
               <Image
                 src="/Accuracap-logo.png"
                 alt="AccuraCap"
                 width={140}
                 height={52}
-                className="object-contain w-[120px] md:w-[100px] lg:w-[140px] h-auto"
+                className="object-contain w-[110px] md:w-[110px] lg:w-[120px] h-auto"
               />
             </Link>
           </div>
 
           {/* Quick links */}
           <div>
-            <p className="text-[11px] md:text-[10px] lg:text-sm tracking-[0.2em] uppercase text-black/40 mb-2.5 md:mb-2.5 font-medium">Company</p>
-            <nav className="flex flex-col gap-1.5 md:gap-1.5 text-xs md:text-[12px] lg:text-base xl:text-lg text-black/70">
+            <p className="text-[11.5px] md:text-[12px] tracking-[0.18em] uppercase text-black/45 mb-3 font-medium">Company</p>
+            <nav className="flex flex-col gap-2 text-[14px] md:text-[14.5px] text-black/70">
               <Link href="/philosophy" className="hover:text-black transition-colors">Our Philosophy</Link>
               <Link href="/people" className="hover:text-black transition-colors">People</Link>
               <Link href="/contact" className="hover:text-black transition-colors">Contact Us</Link>
@@ -35,8 +35,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-[11px] md:text-[10px] lg:text-sm tracking-[0.2em] uppercase text-black/40 mb-2.5 md:mb-2.5 font-medium">Products</p>
-            <nav className="flex flex-col gap-1.5 md:gap-1.5 text-xs md:text-[12px] lg:text-base xl:text-lg text-black/70">
+            <p className="text-[11.5px] md:text-[12px] tracking-[0.18em] uppercase text-black/45 mb-3 font-medium">Products</p>
+            <nav className="flex flex-col gap-2 text-[14px] md:text-[14.5px] text-black/70">
               <Link href="/products/#pms" className="hover:text-black transition-colors">PMS</Link>
               <Link href="/products/#aif" className="hover:text-black transition-colors">AIF</Link>
               <Link href="/faq" className="hover:text-black transition-colors">FAQ</Link>
@@ -44,8 +44,8 @@ export default function Footer() {
           </div>
 
           {/* Office info */}
-          <div className="col-span-2 md:col-span-1 text-xs md:text-[12px] lg:text-base xl:text-lg text-black/60 leading-relaxed md:max-w-[260px] lg:max-w-[360px] xl:max-w-[420px]">
-            <p className="text-[11px] md:text-[10px] lg:text-sm tracking-[0.2em] uppercase text-black/40 mb-2.5 md:mb-2.5 font-medium">Corporate Office</p>
+          <div className="col-span-2 sm:col-span-2 lg:col-span-1 text-[14px] md:text-[14.5px] text-black/65 leading-relaxed lg:max-w-[280px] xl:max-w-[320px]">
+            <p className="text-[11.5px] md:text-[12px] tracking-[0.18em] uppercase text-black/45 mb-3 font-medium">Corporate Office</p>
             <p>
               Office Number 919, 9th Floor,
               <br />
@@ -53,16 +53,16 @@ export default function Footer() {
               <br />
               Noida, Uttar Pradesh 201301
             </p>
-            <p className="mt-2.5 md:mt-2.5 text-black font-medium">+91 77389 76675</p>
+            <p className="mt-3 text-black font-medium">+91 77389 76675</p>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="mt-7 md:mt-6 lg:mt-10 pt-4 md:pt-4 border-t border-black/10 flex flex-col-reverse md:flex-row items-center md:items-center justify-between gap-3 md:gap-2.5 text-center md:text-left">
-          <p className="text-[11px] md:text-[10px] lg:text-sm text-black/40">
+        <div className="mt-10 md:mt-12 pt-5 border-t border-black/10 flex flex-col-reverse sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <p className="text-[12.5px] md:text-[13px] text-black/45">
             &copy; {new Date().getFullYear()} AccuraCap. All rights reserved.
           </p>
-          <div className="flex gap-4 md:gap-4 text-[11px] md:text-[10px] lg:text-sm text-black/40">
+          <div className="flex gap-5 text-[12.5px] md:text-[13px] text-black/45">
             <Link href="/grievance" className="hover:text-black/70 transition-colors">Grievance</Link>
             <Link href="/kyc_status_check" className="hover:text-black/70 transition-colors">KYC Status</Link>
           </div>

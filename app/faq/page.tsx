@@ -10,41 +10,33 @@ export default function FAQPage() {
   };
 
   return (
-    <main className="w-full bg-white py-28 px-6">
-      <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
+    <main className="w-full bg-white pt-28 md:pt-32 pb-20 md:pb-24 px-6 md:px-10 lg:px-16">
+      <div className="max-w-[1280px] mx-auto">
 
-        {/* Header */}
-        {/* <div className="flex items-center gap-3 mb-3">
-          <span className="h-px w-8 bg-accent" />
-          <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
-            Support
-          </span>
-        </div> */}
-
-        <h1 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
+        <h1 className="text-[30px] sm:text-[34.5px] md:text-[41px] lg:text-[45.5px] text-black leading-[1.18] tracking-tight">
           Frequently Asked Questions
         </h1>
-        <div className="mt-4 h-[2px] w-12 bg-accent" />
+        <div className="mt-4 h-[2px] w-10 bg-accent" />
 
         {/* FAQ Items */}
-        <div className="mt-16 max-w-3xl border-t border-border">
+        <div className="mt-12 md:mt-14 max-w-[820px] border-t border-border">
           {faqData.map((item, i) => (
             <div key={i} className="border-b border-border">
 
               {/* Question */}
               <button
                 onClick={() => toggle(i)}
-                className="w-full flex items-center justify-between gap-4 px-0 py-5 text-left text-black font-medium hover:text-accent transition-colors"
+                className="w-full flex items-center justify-between gap-4 px-0 py-4 md:py-5 text-left text-black font-medium hover:text-accent transition-colors"
               >
-                <span className="text-sm md:text-base">{item.q}</span>
-                <span className="text-xl shrink-0 text-muted">
+                <span className="text-[15px] md:text-[16px] leading-snug">{item.q}</span>
+                <span className="text-lg shrink-0 text-muted">
                   {open === i ? "\u2212" : "+"}
                 </span>
               </button>
 
               {/* Answer */}
               {open === i && (
-                <div className="pb-6 text-muted text-sm md:text-base leading-relaxed">
+                <div className="pb-5 text-muted text-[14.5px] md:text-[15px] leading-[1.7]">
                   {item.a}
                 </div>
               )}
@@ -83,39 +75,39 @@ const faqData = [
     q: "How is PMS different from Mutual fund?",
     a: (
       <div className="overflow-x-auto mt-2">
-        <table className="w-full text-sm">
+        <table className="w-full min-w-[560px] text-[14px] md:text-[14.5px]">
           <thead>
             <tr className="border-b border-border">
-              <th className="py-3 pr-4 text-left text-black font-medium">Features</th>
-              <th className="py-3 pr-4 text-left text-black font-medium">PMS</th>
-              <th className="py-3 text-left text-black font-medium">Mutual Fund</th>
+              <th className="py-2.5 pr-4 text-left text-black font-semibold tracking-wide">Features</th>
+              <th className="py-2.5 pr-4 text-left text-black font-semibold tracking-wide">PMS</th>
+              <th className="py-2.5 text-left text-black font-semibold tracking-wide">Mutual Fund</th>
             </tr>
           </thead>
           <tbody className="text-muted">
             <tr className="border-b border-border">
-              <td className="py-3 pr-4 font-medium text-black">Management</td>
-              <td className="py-3 pr-4">Provide ongoing, personalized access to professional money management services</td>
-              <td className="py-3">Provide access to professional money management services</td>
+              <td className="py-2.5 pr-4 font-medium text-black">Management</td>
+              <td className="py-2.5 pr-4">Provide ongoing, personalized access to professional money management services</td>
+              <td className="py-2.5">Provide access to professional money management services</td>
             </tr>
             <tr className="border-b border-border">
-              <td className="py-3 pr-4 font-medium text-black">Customization</td>
-              <td className="py-3 pr-4">Portfolio can be tailored to address each investor&apos;s specific needs</td>
-              <td className="py-3">Portfolio structured to meet the fund&apos;s stated investment objectives</td>
+              <td className="py-2.5 pr-4 font-medium text-black">Customization</td>
+              <td className="py-2.5 pr-4">Portfolio can be tailored to address each investor&apos;s specific needs</td>
+              <td className="py-2.5">Portfolio structured to meet the fund&apos;s stated investment objectives</td>
             </tr>
             <tr className="border-b border-border">
-              <td className="py-3 pr-4 font-medium text-black">Ownership</td>
-              <td className="py-3 pr-4">Investors directly own the individual securities in their portfolio</td>
-              <td className="py-3">Trustee owns shares of the fund and cannot influence decisions</td>
+              <td className="py-2.5 pr-4 font-medium text-black">Ownership</td>
+              <td className="py-2.5 pr-4">Investors directly own the individual securities in their portfolio</td>
+              <td className="py-2.5">Trustee owns shares of the fund and cannot influence decisions</td>
             </tr>
             <tr className="border-b border-border">
-              <td className="py-3 pr-4 font-medium text-black">Minimums</td>
-              <td className="py-3 pr-4">Minimum investment \u2013 Rs. 50L</td>
-              <td className="py-3">Minimum Investment \u2013 Rs. 5,000</td>
+              <td className="py-2.5 pr-4 font-medium text-black">Minimums</td>
+              <td className="py-2.5 pr-4">Minimum investment \u2013 Rs. 50L</td>
+              <td className="py-2.5">Minimum Investment \u2013 Rs. 5,000</td>
             </tr>
             <tr>
-              <td className="py-3 pr-4 font-medium text-black">Flexibility</td>
-              <td className="py-3 pr-4">PMS products can be customized</td>
-              <td className="py-3">No customization possible</td>
+              <td className="py-2.5 pr-4 font-medium text-black">Flexibility</td>
+              <td className="py-2.5 pr-4">PMS products can be customized</td>
+              <td className="py-2.5">No customization possible</td>
             </tr>
           </tbody>
         </table>
@@ -170,60 +162,60 @@ const faqData = [
     q: "What is the fee structure?",
     a: (
       <div className="overflow-x-auto mt-2">
-        <table className="w-full text-sm">
+        <table className="w-full min-w-[560px] text-[14px] md:text-[14.5px]">
           <thead>
             <tr className="border-b border-border">
-              <th className="py-3 pr-4 text-left text-black font-medium">Category</th>
-              <th className="py-3 pr-4 text-left text-black font-medium">Fixed Fees</th>
-              <th className="py-3 text-left text-black font-medium">Variable Fees</th>
+              <th className="py-2.5 pr-4 text-left text-black font-semibold tracking-wide">Category</th>
+              <th className="py-2.5 pr-4 text-left text-black font-semibold tracking-wide">Fixed Fees</th>
+              <th className="py-2.5 text-left text-black font-semibold tracking-wide">Variable Fees</th>
             </tr>
           </thead>
           <tbody className="text-muted">
             <tr className="border-b border-border">
-              <td className="py-3 pr-4 font-medium text-black" colSpan={3}>Discretionary</td>
+              <td className="py-2.5 pr-4 font-medium text-black" colSpan={3}>Discretionary</td>
             </tr>
             <tr className="border-b border-border">
-              <td className="py-3 pr-4">Less than 5 Crores</td>
-              <td className="py-3 pr-4">2.5%</td>
-              <td className="py-3">1.5% + 20% Incentive fees over fixed hurdle</td>
+              <td className="py-2.5 pr-4">Less than 5 Crores</td>
+              <td className="py-2.5 pr-4">2.5%</td>
+              <td className="py-2.5">1.5% + 20% Incentive fees over fixed hurdle</td>
             </tr>
             <tr className="border-b border-border">
-              <td className="py-3 pr-4">Rs 5 Cr \u2013 less than 10 Cr</td>
-              <td className="py-3 pr-4">2%</td>
-              <td className="py-3">1.25% + 20% Incentive fees</td>
+              <td className="py-2.5 pr-4">Rs 5 Cr \u2013 less than 10 Cr</td>
+              <td className="py-2.5 pr-4">2%</td>
+              <td className="py-2.5">1.25% + 20% Incentive fees</td>
             </tr>
             <tr className="border-b border-border">
-              <td className="py-3 pr-4">Rs 10 Cr \u2013 less than 25 Cr</td>
-              <td className="py-3 pr-4">1.5%</td>
-              <td className="py-3">1% + 20% Incentive fees</td>
+              <td className="py-2.5 pr-4">Rs 10 Cr \u2013 less than 25 Cr</td>
+              <td className="py-2.5 pr-4">1.5%</td>
+              <td className="py-2.5">1% + 20% Incentive fees</td>
             </tr>
             <tr className="border-b border-border">
-              <td className="py-3 pr-4">Rs 25 Cr or more</td>
-              <td className="py-3 pr-4">1.25%</td>
-              <td className="py-3">0.75% + 20% Incentive fees</td>
+              <td className="py-2.5 pr-4">Rs 25 Cr or more</td>
+              <td className="py-2.5 pr-4">1.25%</td>
+              <td className="py-2.5">0.75% + 20% Incentive fees</td>
             </tr>
             <tr className="border-b border-border">
-              <td className="py-3 pr-4 font-medium text-black" colSpan={3}>Advisory / Direct</td>
+              <td className="py-2.5 pr-4 font-medium text-black" colSpan={3}>Advisory / Direct</td>
             </tr>
             <tr className="border-b border-border">
-              <td className="py-3 pr-4">Less than 5 Crores</td>
-              <td className="py-3 pr-4">2.0%</td>
-              <td className="py-3">1.0% + 20% Incentive fees</td>
+              <td className="py-2.5 pr-4">Less than 5 Crores</td>
+              <td className="py-2.5 pr-4">2.0%</td>
+              <td className="py-2.5">1.0% + 20% Incentive fees</td>
             </tr>
             <tr className="border-b border-border">
-              <td className="py-3 pr-4">Rs 5 Cr \u2013 less than 10 Cr</td>
-              <td className="py-3 pr-4">1.5%</td>
-              <td className="py-3">0.75% + 20% Incentive fees</td>
+              <td className="py-2.5 pr-4">Rs 5 Cr \u2013 less than 10 Cr</td>
+              <td className="py-2.5 pr-4">1.5%</td>
+              <td className="py-2.5">0.75% + 20% Incentive fees</td>
             </tr>
             <tr className="border-b border-border">
-              <td className="py-3 pr-4">Rs 10 Cr \u2013 less than 25 Cr</td>
-              <td className="py-3 pr-4">1.0%</td>
-              <td className="py-3">0.5% + 20% Incentive fees</td>
+              <td className="py-2.5 pr-4">Rs 10 Cr \u2013 less than 25 Cr</td>
+              <td className="py-2.5 pr-4">1.0%</td>
+              <td className="py-2.5">0.5% + 20% Incentive fees</td>
             </tr>
             <tr>
-              <td className="py-3 pr-4">Rs 25 Cr or more</td>
-              <td className="py-3 pr-4">0.75%</td>
-              <td className="py-3">0.25% + 20% Incentive fees</td>
+              <td className="py-2.5 pr-4">Rs 25 Cr or more</td>
+              <td className="py-2.5 pr-4">0.75%</td>
+              <td className="py-2.5">0.25% + 20% Incentive fees</td>
             </tr>
           </tbody>
         </table>

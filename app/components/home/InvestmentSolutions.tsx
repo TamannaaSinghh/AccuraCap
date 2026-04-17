@@ -65,62 +65,58 @@ export default function InvestmentSolutions() {
   return (
     <>
       {/* ════════════ PMS — Dark Section ════════════ */}
-      <section id="solutions" className="relative w-full bg-white py-12 px-6">
-        <div className="max-w-[1400px] mx-auto">
+      <section id="solutions" className="relative w-full bg-white py-20 md:py-24 px-6 md:px-10 lg:px-16">
+        <div className="max-w-[1280px] mx-auto">
 
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
+            <h2 className="text-[28px] sm:text-[32.5px] md:text-[39px] lg:text-[43px] text-black leading-[1.18] tracking-tight">
               Portfolio Management
               <br />
               Services
             </h2>
-            {/* <p className="text-muted max-w-md text-sm md:text-base leading-relaxed md:text-right">
-              Four distinct strategies engineered to deliver consistent
-              outperformance across market capitalizations.
-            </p> */}
           </div>
 
           {/* Product cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-px bg-border">
             {products.map((p, i) => (
               <div
                 key={i}
-                className="group bg-white p-8 flex flex-col hover:bg-surface transition-colors duration-300"
+                className="group bg-white p-6 md:p-7 flex flex-col hover:bg-surface transition-colors duration-300"
               >
                 {/* Name */}
-                <h3 className="text-3xl md:text-4xl text-accent tracking-tight">
+                <h3 className="text-[24px] md:text-[28px] text-accent tracking-tight">
                   {p.title}
                 </h3>
 
                 {/* Category tag */}
-                <span className="text-muted text-xs tracking-[0.2em] uppercase font-medium pt-1">
+                <span className="text-muted text-[11.5px] tracking-[0.2em] uppercase font-medium pt-1">
                   {p.category}
                 </span>
 
                 {/* Returns — hero number */}
-                <p className="mt-4 text-3xl md:text-4xl text-black tracking-tight">
+                <p className="mt-5 text-[28px] md:text-[32.5px] text-black tracking-tight">
                   {p.returns}
                 </p>
-                <p className="mt-1 text-muted text-xs">
+                <p className="mt-1 text-muted text-[12px]">
                   *Absolute Returns
                 </p>
 
                 {/* Divider */}
-                <div className="my-6 h-px w-full bg-border" />
+                <div className="my-5 h-px w-full bg-border" />
 
                 {/* Details */}
-                <div className="flex flex-col gap-4 text-sm">
+                <div className="flex flex-col gap-3.5 text-[14px]">
                   <div>
-                    <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">Market Cap</p>
-                    <p className="text-black/70">{p.marketCap}</p>
+                    <p className="text-muted/60 text-[11.5px] uppercase tracking-[0.14em] mb-1">Market Cap</p>
+                    <p className="text-black/75">{p.marketCap}</p>
                   </div>
                   <div>
-                    <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">Stocks</p>
-                    <p className="text-black/70">{p.stocks}</p>
+                    <p className="text-muted/60 text-[11.5px] uppercase tracking-[0.14em] mb-1">Stocks</p>
+                    <p className="text-black/75">{p.stocks}</p>
                   </div>
                   <div>
-                    <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">Benchmark</p>
-                    <p className="text-black/70">{p.benchmark}</p>
+                    <p className="text-muted/60 text-[11.5px] uppercase tracking-[0.14em] mb-1">Benchmark</p>
+                    <p className="text-black/75">{p.benchmark}</p>
                   </div>
                 </div>
               </div>
@@ -128,13 +124,13 @@ export default function InvestmentSolutions() {
           </div>
 
           {/* Disclaimer + CTA */}
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between mt-10 gap-6">
-            <p className="text-xs text-muted">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between mt-10 md:mt-12 gap-5">
+            <p className="text-[12.5px] text-muted">
               *as on 31st Jan 2026 &middot; net of all expenses/fees
             </p>
             <a
               href="/products"
-              className="inline-block px-8 py-3.5 bg-black text-white text-sm tracking-[0.1em] uppercase font-medium hover:bg-black/85 transition-colors duration-300"
+              className="inline-block px-6 md:px-7 py-3 bg-black text-white text-[13px] tracking-[0.14em] uppercase font-medium hover:bg-black/85 transition-colors duration-300"
             >
               View All Products
             </a>
@@ -144,27 +140,15 @@ export default function InvestmentSolutions() {
       </section>
 
       {/* ════════════ AIF — Light Section ════════════ */}
-      <section className="relative w-full bg-surface py-5 px-6">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="relative w-full bg-surface py-20 md:py-24 px-6 md:px-10 lg:px-16">
+        <div className="max-w-[1280px] mx-auto">
 
-          {/* Header */}
-          {/* <div className="flex items-center gap-3 mb-3">
-            <span className="h-px w-8 bg-accent" />
-            <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
-              CAT III Funds
-            </span>
-          </div> */}
-
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
+            <h2 className="text-[28px] sm:text-[32.5px] md:text-[39px] lg:text-[43px] text-black leading-[1.18] tracking-tight">
               Alternative Investment
               <br />
               Funds
             </h2>
-            {/* <p className="text-muted max-w-md text-sm md:text-base leading-relaxed md:text-right">
-              Category III long-only funds designed for qualified investors
-              seeking differentiated exposure.
-            </p> */}
           </div>
 
           {/* AIF cards */}
@@ -172,31 +156,25 @@ export default function InvestmentSolutions() {
             {aifFunds.map((fund, i) => (
               <div
                 key={i}
-                className="group bg-white p-4 flex flex-col hover:bg-surface transition-colors duration-300"
+                className="group bg-white p-6 md:p-7 flex flex-col hover:bg-surface transition-colors duration-300"
               >
-                {/* Type tag */}
-               
-
                 {/* Fund name */}
-                <h3 className="mt-2 text-3xl md:text-4xl text-accent tracking-tight">
+                <h3 className="text-[24px] md:text-[28px] text-accent tracking-tight">
                   {fund.name}
                 </h3>
-                {/* <p className="mt-1 text-muted text-xs">
-                  Alternative Investment Fund
-                </p> */}
 
                 {/* Divider */}
-                <div className="my-6 h-px w-full bg-border" />
+                <div className="my-5 h-px w-full bg-border" />
 
                 {/* Details */}
-                <div className="flex flex-col gap-4 text-sm">
+                <div className="flex flex-col gap-3.5 text-[14px]">
                   <div>
-                    <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">Focus</p>
-                    <p className="text-black/70">{fund.focus}</p>
+                    <p className="text-muted/60 text-[11.5px] uppercase tracking-[0.14em] mb-1">Focus</p>
+                    <p className="text-black/75">{fund.focus}</p>
                   </div>
                   <div>
-                    <p className="text-muted/60 text-xs uppercase tracking-wider mb-1">Strategy</p>
-                    <p className="text-black/70">{fund.description}</p>
+                    <p className="text-muted/60 text-[11.5px] uppercase tracking-[0.14em] mb-1">Strategy</p>
+                    <p className="text-black/75 leading-relaxed">{fund.description}</p>
                   </div>
                 </div>
               </div>

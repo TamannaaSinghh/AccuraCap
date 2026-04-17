@@ -18,23 +18,22 @@
 }
 
 /* ── Large-screen root scale ──
-   Lifts every rem-based size (text + spacing) modestly on wide
-   displays, where the default 16px reads tiny. Smaller breakpoints
-   stay at the browser default. */
+   A subtle lift for wide displays — kept conservative so type stays
+   refined and proportional rather than oversized. */
 @media (min-width: 1280px) {
-  html { font-size: 18.5px; }
+  html { font-size: 17px; }
 }
 @media (min-width: 1536px) {
-  html { font-size: 20.5px; }
+  html { font-size: 17.75px; }
 }
 @media (min-width: 1920px) {
-  html { font-size: 22.5px; }
+  html { font-size: 18.5px; }
 }
 
 body {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -42,8 +41,8 @@ body {
 /* ── Serif headings ── */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Georgia', 'Times New Roman', serif;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
 }
 
 /* ── Selection highlight ── */

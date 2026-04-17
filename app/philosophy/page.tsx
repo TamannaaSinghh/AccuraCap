@@ -40,21 +40,21 @@ export default function PhilosophyPage() {
     <main className="w-full bg-white">
 
       {/* ═══ Hero / Philosophy ═══ */}
-      <section className="pt-32 md:pt-40 pb-8 md:pb-15 px-3 md:px-4">
-        <div className="max-w-[1500px] mx-auto px-0 md:px-2 lg:px-4">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-14 lg:gap-16 items-center">
+      <section className="pt-28 md:pt-32 pb-16 md:pb-20 px-6 md:px-10 lg:px-16">
+        <div className="max-w-[1280px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-center">
 
             {/* Text — 3 of 5 columns (wider than image) */}
-            <div className="text-left order-2 md:order-1 md:col-span-3">
-              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl text-black leading-[1.1] tracking-tight">
+            <div className="text-left order-2 lg:order-1 lg:col-span-3">
+              <h1 className="text-[32.5px] sm:text-[39px] md:text-[45.5px] lg:text-[52px] text-black leading-[1.15] tracking-tight">
                 The Art of
                 <br />
                 <span className="italic">Disciplined Investing.</span>
               </h1>
 
-              <div className="mt-7 h-px w-16 bg-accent" />
+              <div className="mt-6 h-[2px] w-12 bg-accent" />
 
-              <p className="mt-8 max-w-2xl text-base md:text-lg text-black/70 leading-relaxed">
+              <p className="mt-7 max-w-[580px] text-[15.5px] md:text-[16.5px] text-black/70 leading-[1.75]">
                 At AccuraCap, we believe the markets move like a pendulum
                 &mdash; swinging between overvaluation and undervaluation. Our
                 philosophy is rooted in capturing these swings through a
@@ -63,7 +63,7 @@ export default function PhilosophyPage() {
             </div>
 
             {/* Image — 2 of 5 columns (narrower than text) */}
-            <div className="order-1 md:order-2 md:col-span-2">
+            <div className="order-1 lg:order-2 lg:col-span-2">
               <div className="group relative w-full aspect-[16/10] md:aspect-[4/3] overflow-hidden rounded-xl cursor-pointer">
                 <Image
                   src="/p1.jpg"
@@ -82,33 +82,33 @@ export default function PhilosophyPage() {
       </section>
 
       {/* ═══ Guiding Principles ═══ */}
-      <section className="bg-surface py-8 md:py-8 px-6 border-b border-border">
-        <div className="max-w-[1200px] mx-auto">
+      <section className="bg-surface py-20 md:py-24 px-6 md:px-10 lg:px-16 border-b border-border">
+        <div className="max-w-[1180px] mx-auto">
 
           <div className="text-center">
-            <h2 className="text-3xl sm:text-3xl md:text-4xl text-black leading-tight">
+            <h2 className="text-[28px] sm:text-[32.5px] md:text-[36.5px] text-black leading-[1.18] tracking-tight">
               Guiding Principles
             </h2>
-            <div className="mt-6 mx-auto h-px w-16 bg-accent" />
+            <div className="mt-5 mx-auto h-[2px] w-10 bg-accent" />
           </div>
 
-          <div className="mt-6 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
+          <div className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-3 gap-px bg-border border border-border">
             {principles.map((item, i) => (
               <article
                 key={i}
-                className="bg-white px-8 py-10 md:py-12 text-center flex flex-col items-center"
+                className="bg-white px-7 py-10 md:py-11 text-center flex flex-col items-center"
               >
-                <span className="text-xs tracking-[0.3em] uppercase text-accent font-medium">
+                <span className="text-[12px] tracking-[0.28em] uppercase text-accent font-medium">
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
-                <h3 className="mt-5 text-xl md:text-2xl text-black font-semibold leading-snug max-w-[280px]">
+                <h3 className="mt-4 text-[18.5px] md:text-[20.5px] text-black font-semibold leading-snug max-w-[260px]">
                   {item.title}
                 </h3>
 
                 <div className="mt-5 h-px w-8 bg-black/20" />
 
-                <p className="mt-5 text-sm md:text-base text-black/65 leading-relaxed max-w-[320px]">
+                <p className="mt-5 text-[14.5px] md:text-[15px] text-black/65 leading-[1.7] max-w-[300px]">
                   {item.desc}
                 </p>
               </article>
@@ -118,21 +118,21 @@ export default function PhilosophyPage() {
       </section>
 
       {/* ═══ Core Strategy ═══ */}
-      <section className="py-10 md:py-18 px-3 md:px-4">
-        <div className="max-w-[1500px] mx-auto px-0 md:px-2 lg:px-4">
+      <section className="py-20 md:py-24 px-6 md:px-10 lg:px-16">
+        <div className="max-w-[1280px] mx-auto">
 
           {/* Heading + image — content-heavy split */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-14 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-center">
 
             {/* Text — 3 of 5 columns (wider than image) */}
-            <div className="text-left md:col-span-3">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black leading-tight whitespace-nowrap">
+            <div className="text-left lg:col-span-3">
+              <h2 className="text-[30px] sm:text-[34.5px] md:text-[43px] lg:text-[47.5px] text-black leading-[1.18] tracking-tight">
                 Our Core Strategy
               </h2>
 
-              <div className="mt-7 h-px w-16 bg-accent" />
+              <div className="mt-6 h-[2px] w-12 bg-accent" />
 
-              <div className="mt-8 max-w-2xl space-y-5 text-base md:text-lg text-black/70 leading-relaxed">
+              <div className="mt-7 max-w-[580px] space-y-4 text-[15.5px] md:text-[16.5px] text-black/70 leading-[1.75]">
                 <p>
                   AccuraCap has developed a unique{" "}
                   <span className="font-semibold text-black">ranking algorithm</span>{" "}
@@ -153,7 +153,7 @@ export default function PhilosophyPage() {
             </div>
 
             {/* Image — 2 of 5 columns (narrower than text), same hover treatment */}
-            <div className="md:col-span-2">
+            <div className="lg:col-span-2">
               <div className="group relative w-full aspect-[16/10] md:aspect-[4/3] overflow-hidden rounded-xl cursor-pointer">
                 <Image
                   src="/p2.jpg"
@@ -169,23 +169,23 @@ export default function PhilosophyPage() {
           </div>
 
           {/* Steps */}
-          <div className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
+          <div className="mt-14 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-px bg-border border border-border">
             {steps.map((item, i) => (
               <div
                 key={i}
-                className="bg-white px-8 py-10 md:py-12 text-center flex flex-col items-center"
+                className="bg-white px-7 py-10 md:py-11 text-center flex flex-col items-center"
               >
-                <span className="text-xs tracking-[0.3em] uppercase text-accent font-medium">
+                <span className="text-[12px] tracking-[0.28em] uppercase text-accent font-medium">
                   Step {item.step}
                 </span>
 
-                <h3 className="mt-5 text-xl md:text-2xl text-black font-semibold leading-snug max-w-[280px]">
+                <h3 className="mt-4 text-[18.5px] md:text-[20.5px] text-black font-semibold leading-snug max-w-[260px]">
                   {item.title}
                 </h3>
 
                 <div className="mt-5 h-px w-8 bg-black/20" />
 
-                <p className="mt-5 text-sm md:text-base text-black/65 leading-relaxed max-w-[320px]">
+                <p className="mt-5 text-[14.5px] md:text-[15px] text-black/65 leading-[1.7] max-w-[300px]">
                   {item.desc}
                 </p>
               </div>

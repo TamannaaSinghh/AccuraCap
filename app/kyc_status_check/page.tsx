@@ -2,35 +2,27 @@
 
 export default function KYCPage() {
   return (
-    <main className="w-full bg-white py-28 px-6">
-      <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
+    <main className="w-full bg-white pt-28 md:pt-32 pb-20 md:pb-24 px-6 md:px-10 lg:px-16">
+      <div className="max-w-[1280px] mx-auto">
 
-        {/* Header */}
-        {/* <div className="flex items-center gap-3 mb-3">
-          <span className="h-px w-8 bg-accent" />
-          <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
-            Investor Information
-          </span>
-        </div> */}
-
-        <h1 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
+        <h1 className="text-[30px] sm:text-[34.5px] md:text-[41px] lg:text-[45.5px] text-black leading-[1.18] tracking-tight">
           KYC Status Check
         </h1>
-        <div className="mt-4 h-[2px] w-12 bg-accent" />
+        <div className="mt-4 h-[2px] w-10 bg-accent" />
 
         {/* Alert */}
-        <div className="mt-12 border border-accent/30 bg-accent/5 px-6 py-4">
-          <p className="text-accent font-semibold text-sm uppercase tracking-wide">
+        <div className="mt-10 md:mt-12 border border-accent/30 bg-accent/5 px-5 md:px-6 py-3.5 max-w-[920px]">
+          <p className="text-accent font-semibold text-[13.5px] md:text-[14px] uppercase tracking-[0.14em]">
             Has your KYC status changed?
           </p>
         </div>
 
         {/* Content */}
-        <div className="mt-12 space-y-12 text-muted text-sm md:text-base leading-relaxed">
+        <div className="mt-10 md:mt-12 space-y-10 md:space-y-12 text-muted text-[15px] md:text-[15.5px] leading-[1.75] max-w-[920px]">
 
           {/* Section 1 */}
-          <section className="space-y-4">
-            <h3 className="font-semibold text-black uppercase text-xs tracking-wider">
+          <section className="space-y-3">
+            <h3 className="font-semibold text-black uppercase text-[12px] tracking-[0.2em]">
               What is the change from 1st April 2024?
             </h3>
 
@@ -55,8 +47,8 @@ export default function KYCPage() {
           </section>
 
           {/* Section 2 */}
-          <section className="space-y-4">
-            <h3 className="font-semibold text-black uppercase text-xs tracking-wider">
+          <section className="space-y-3">
+            <h3 className="font-semibold text-black uppercase text-[12px] tracking-[0.2em]">
               What are the attributes affecting your KYC status?
             </h3>
 
@@ -66,9 +58,9 @@ export default function KYCPage() {
               number (where provided) as follows:
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3">
               {["KYC Validated", "KYC Registered", "KYC On Hold"].map((status) => (
-                <span key={status} className="px-4 py-2 bg-surface border border-border text-xs font-medium text-black uppercase tracking-wider">
+                <span key={status} className="px-3.5 py-1.5 bg-surface border border-border text-[12px] font-medium text-black uppercase tracking-[0.16em]">
                   {status}
                 </span>
               ))}
@@ -76,41 +68,41 @@ export default function KYCPage() {
           </section>
 
           {/* Table */}
-          <section className="space-y-4">
-            <h3 className="font-semibold text-black uppercase text-xs tracking-wider">
+          <section className="space-y-3">
+            <h3 className="font-semibold text-black uppercase text-[12px] tracking-[0.2em]">
               What are the implications?
             </h3>
 
             <div className="overflow-x-auto">
-              <table className="w-full text-sm">
+              <table className="w-full min-w-[600px] text-[14px] md:text-[14.5px]">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="py-3 pr-4 text-left text-black font-medium">KYC Status</th>
-                    <th className="py-3 pr-4 text-left text-black font-medium">Existing AMC</th>
-                    <th className="py-3 text-left text-black font-medium">New AMC</th>
+                    <th className="py-2.5 pr-4 text-left text-black font-semibold tracking-wide">KYC Status</th>
+                    <th className="py-2.5 pr-4 text-left text-black font-semibold tracking-wide">Existing AMC</th>
+                    <th className="py-2.5 text-left text-black font-semibold tracking-wide">New AMC</th>
                   </tr>
                 </thead>
                 <tbody className="text-muted">
                   <tr className="border-b border-border">
-                    <td className="py-3 pr-4 font-medium text-black">KYC Validated</td>
-                    <td className="py-3 pr-4">No implications.</td>
-                    <td className="py-3">No implications.</td>
+                    <td className="py-2.5 pr-4 font-medium text-black">KYC Validated</td>
+                    <td className="py-2.5 pr-4">No implications.</td>
+                    <td className="py-2.5">No implications.</td>
                   </tr>
                   <tr className="border-b border-border">
-                    <td className="py-3 pr-4 font-medium text-black">KYC Registered</td>
-                    <td className="py-3 pr-4">
+                    <td className="py-2.5 pr-4 font-medium text-black">KYC Registered</td>
+                    <td className="py-2.5 pr-4">
                       All financial transactions only in the AMC where investor already has investment are allowed.
                     </td>
-                    <td className="py-3">
+                    <td className="py-2.5">
                       Investors need to submit the set of KYC documents every time they invest with a new AMC.
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-3 pr-4 font-medium text-black">KYC On Hold</td>
-                    <td className="py-3 pr-4">
+                    <td className="py-2.5 pr-4 font-medium text-black">KYC On Hold</td>
+                    <td className="py-2.5 pr-4">
                       Investor will be able to transact after remediating the reason for KYC status On Hold.
                     </td>
-                    <td className="py-3">
+                    <td className="py-2.5">
                       Investor will be able to transact after remediating the reason for KYC status On Hold.
                     </td>
                   </tr>
@@ -120,8 +112,8 @@ export default function KYCPage() {
           </section>
 
           {/* Section 3 */}
-          <section className="space-y-4">
-            <h3 className="font-semibold text-black uppercase text-xs tracking-wider">
+          <section className="space-y-3">
+            <h3 className="font-semibold text-black uppercase text-[12px] tracking-[0.2em]">
               How can investors check their KYC status?
             </h3>
 
@@ -136,12 +128,12 @@ export default function KYCPage() {
           </section>
 
           {/* Links */}
-          <section className="space-y-4">
-            <h3 className="font-semibold text-black uppercase text-xs tracking-wider">
+          <section className="space-y-3">
+            <h3 className="font-semibold text-black uppercase text-[12px] tracking-[0.2em]">
               KYC Contact Details Validation Links
             </h3>
 
-            <ul className="space-y-2 text-sm md:text-base">
+            <ul className="space-y-2 text-[14.5px] md:text-[15px]">
               {[
                 { name: "CAMS KRA", url: "https://camskra.com/PanDetailsUpdate.aspx" },
                 { name: "CVL KRA", url: "https://validate.cvlindia.com/CVLKRAVerification_V1" },
@@ -160,12 +152,12 @@ export default function KYCPage() {
           </section>
 
           {/* PAN Aadhaar Links */}
-          <section className="space-y-4">
-            <h3 className="font-semibold text-black uppercase text-xs tracking-wider">
+          <section className="space-y-3">
+            <h3 className="font-semibold text-black uppercase text-[12px] tracking-[0.2em]">
               KYC PAN Aadhaar Validation Links
             </h3>
 
-            <ul className="space-y-2 text-sm md:text-base">
+            <ul className="space-y-2 text-[14.5px] md:text-[15px]">
               {[
                 { name: "CAMS KRA", url: "https://camskra.com/pan_aadhaarlink.aspx" },
                 { name: "CVL KRA", url: "https://validate.cvlindia.com/CVLKRAVerification_V1" },

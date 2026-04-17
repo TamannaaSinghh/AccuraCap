@@ -2,28 +2,20 @@
 
 export default function GrievancePage() {
   return (
-    <main className="w-full bg-white py-28 px-6">
-      <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
+    <main className="w-full bg-white pt-28 md:pt-32 pb-20 md:pb-24 px-6 md:px-10 lg:px-16">
+      <div className="max-w-[1280px] mx-auto">
 
-        {/* Header */}
-        {/* <div className="flex items-center gap-3 mb-3">
-          <span className="h-px w-8 bg-accent" />
-          <span className="text-muted text-xs tracking-[0.3em] uppercase font-medium">
-            Investor Support
-          </span>
-        </div> */}
-
-        <h1 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
+        <h1 className="text-[30px] sm:text-[34.5px] md:text-[41px] lg:text-[45.5px] text-black leading-[1.18] tracking-tight">
           Grievance
         </h1>
-        <div className="mt-4 h-[2px] w-12 bg-accent" />
+        <div className="mt-4 h-[2px] w-10 bg-accent" />
 
         {/* Content */}
-        <div className="mt-12 space-y-12 text-muted text-sm md:text-base leading-relaxed">
+        <div className="mt-10 md:mt-12 space-y-10 md:space-y-12 text-muted text-[15px] md:text-[15.5px] leading-[1.75] max-w-[920px]">
 
           {/* Policy */}
-          <section className="space-y-4">
-            <h2 className="text-xl md:text-2xl font-semibold text-black">
+          <section className="space-y-3.5">
+            <h2 className="text-[20.5px] md:text-[24px] font-semibold text-black tracking-tight leading-snug">
               Grievance Redressal Policy
             </h2>
 
@@ -74,8 +66,8 @@ export default function GrievancePage() {
           </section>
 
           {/* Mechanism */}
-          <section className="space-y-4">
-            <h2 className="text-xl md:text-2xl font-semibold text-black">
+          <section className="space-y-3.5">
+            <h2 className="text-[20.5px] md:text-[24px] font-semibold text-black tracking-tight leading-snug">
               Grievance Redressal and Dispute Handling Mechanism
             </h2>
 
@@ -88,7 +80,7 @@ export default function GrievancePage() {
             </p>
 
             {/* Contact Box */}
-            <div className="border border-border p-6 space-y-2">
+            <div className="border border-border p-5 md:p-6 space-y-1.5 bg-surface/40">
               <p className="font-medium text-black">Corporate Office:</p>
               <p>Accuracap Consultancy Services Pvt. Ltd.</p>
               <p>

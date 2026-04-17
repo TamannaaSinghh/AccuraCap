@@ -16,32 +16,32 @@ export default async function ContactPage() {
   );
 
   return (
-    <main className="w-full bg-white py-28 px-6">
-      <div className="max-w-[1400px] mx-auto px-0 md:px-10 lg:px-18">
+    <main className="w-full bg-white pt-28 md:pt-32 pb-20 md:pb-24 px-6 md:px-10 lg:px-16">
+      <div className="max-w-[1280px] mx-auto">
 
-        <h1 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
+        <h1 className="text-[30px] sm:text-[34.5px] md:text-[41px] lg:text-[45.5px] text-black leading-[1.18] tracking-tight">
           Contact Us
         </h1>
-        <div className="mt-4 h-[2px] w-12 bg-accent" />
+        <div className="mt-4 h-[2px] w-10 bg-accent" />
 
-        <p className="mt-6 text-sm md:text-base text-black/80">
+        <p className="mt-6 text-[15px] md:text-[16px] text-black/75 max-w-[640px] leading-[1.7]">
           For direct onboarding or any query, please contact us at{" "}
-          <span className="text-black font-medium">info@accuracap.com</span> or{" "}
-          <span className="text-black font-medium">+91 98216 53556</span>
+          <span className="text-black font-medium whitespace-nowrap">info@accuracap.com</span> or{" "}
+          <span className="text-black font-medium whitespace-nowrap">+91 98216 53556</span>
         </p>
 
         {/* Content */}
-        <div className="mt-16 grid md:grid-cols-2 gap-16">
+        <div className="mt-12 md:mt-14 grid md:grid-cols-2 gap-12 md:gap-14">
 
           {/* Form */}
           <ContactForm />
 
           {/* Right side */}
-          <div className="space-y-10">
+          <div className="space-y-8">
 
             <div>
-              <p className="text-black/50 text-xs uppercase tracking-wider mb-2">Corporate Office</p>
-              <p className="text-black/80 text-sm md:text-base leading-relaxed">
+              <p className="text-black/50 text-[12px] uppercase tracking-[0.18em] mb-2">Corporate Office</p>
+              <p className="text-black/75 text-[15px] md:text-[16px] leading-[1.7]">
                 Office Number 919, 9th Floor,
                 <br />
                 Wave Silver Tower, Sector 18,
@@ -54,10 +54,10 @@ export default async function ContactPage() {
 
             {registeredOffice && (
               <div>
-                <p className="text-black/50 text-xs uppercase tracking-wider mb-2">
+                <p className="text-black/50 text-[12px] uppercase tracking-[0.18em] mb-2">
                   {registeredOffice.heading}
                 </p>
-                <p className="text-black/80 text-sm md:text-base leading-relaxed">
+                <p className="text-black/75 text-[15px] md:text-[16px] leading-[1.7]">
                   {registeredOffice.addressLine1}
                   {registeredOffice.addressLine2 && (
                     <>
@@ -78,10 +78,10 @@ export default async function ContactPage() {
         </div>
 
         {/* Map */}
-        <div className="mt-20 border border-border overflow-hidden">
+        <div className="mt-16 md:mt-20 border border-border overflow-hidden">
           <iframe
             src="https://www.google.com/maps?q=Wave%20Silver%20Tower%20Noida&output=embed"
-            className="w-full h-[400px]"
+            className="w-full h-[300px] md:h-[380px]"
             loading="lazy"
           ></iframe>
         </div>

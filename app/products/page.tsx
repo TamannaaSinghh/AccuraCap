@@ -24,33 +24,33 @@ export default async function ProductsPage() {
     <main className="w-full bg-white">
 
       {/* ═══ PMS Section ═══ */}
-      <section id="pms" className="pt-28 px-3 md:px-4">
-        <div className="max-w-[1400px] mx-auto px-0 md:px-4 lg:px-6">
+      <section id="pms" className="pt-28 md:pt-32 pb-16 md:pb-20 px-6 md:px-10 lg:px-16">
+        <div className="max-w-[1280px] mx-auto">
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
+          <h1 className="text-[30px] sm:text-[34.5px] md:text-[41px] lg:text-[45.5px] text-black leading-[1.18] tracking-tight">
             Our PMS Strategies
           </h1>
-          <div className="mt-5 h-[2px] w-16 bg-accent" />
+          <div className="mt-4 h-[2px] w-10 bg-accent" />
 
-          <div className="mt-12 space-y-7">
+          <div className="mt-10 md:mt-12 space-y-6">
             {pmsProducts.map((product) => (
               <div
                 key={product._id}
                 className="border border-border overflow-hidden"
               >
                 {/* Card Header */}
-                <div className="flex items-center gap-4 px-8 py-6 border-b border-border bg-surface border-l-4 border-l-accent">
-                  <h3 className="text-2xl md:text-3xl font-bold text-accent">{product.name}</h3>
+                <div className="flex items-center gap-4 px-6 md:px-8 py-5 border-b border-border bg-surface border-l-4 border-l-accent">
+                  <h3 className="text-[21.5px] md:text-[26px] font-semibold text-accent tracking-tight">{product.name}</h3>
                 </div>
 
                 {/* Card Body */}
-                <div className="px-8 py-8 grid sm:grid-cols-2 gap-x-12 gap-y-7">
+                <div className="px-6 md:px-8 py-7 md:py-8 grid sm:grid-cols-2 gap-x-10 gap-y-6">
                   {product.fields.map((f, i) => (
                     <div key={`${product._id}-${i}`} className={f.fullWidth ? "sm:col-span-2" : ""}>
-                      <p className="text-black/50 text-sm uppercase tracking-wider mb-2 font-medium">
+                      <p className="text-black/50 text-[12px] uppercase tracking-[0.18em] mb-1.5 font-medium">
                         {f.label}
                       </p>
-                      <p className="text-base md:text-lg text-black/75 leading-relaxed whitespace-pre-line">
+                      <p className="text-[15px] md:text-[16px] text-black/75 leading-[1.7] whitespace-pre-line">
                         {f.value}
                       </p>
                     </div>
@@ -63,33 +63,33 @@ export default async function ProductsPage() {
       </section>
 
       {/* ═══ AIF Section ═══ */}
-      <section id="aif" className="bg-surface pb-16 pt-20 md:pt-24 px-3 md:px-4">
-        <div className="max-w-[1400px] mx-auto px-0 md:px-4 lg:px-6">
+      <section id="aif" className="bg-surface pt-20 md:pt-24 pb-20 md:pb-24 px-6 md:px-10 lg:px-16">
+        <div className="max-w-[1280px] mx-auto">
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl text-black leading-tight">
+          <h1 className="text-[30px] sm:text-[34.5px] md:text-[41px] lg:text-[45.5px] text-black leading-[1.18] tracking-tight">
             Our AIF Strategies
           </h1>
-          <div className="mt-5 h-[2px] w-16 bg-accent" />
+          <div className="mt-4 h-[2px] w-10 bg-accent" />
 
-          <div className="mt-12 space-y-7">
+          <div className="mt-10 md:mt-12 space-y-6">
             {aifProducts.map((product) => (
               <div
                 key={product._id}
-                className="border border-border overflow-hidden"
+                className="border border-border overflow-hidden bg-white"
               >
                 {/* Card Header */}
-                <div className="flex items-center gap-4 px-8 py-6 border-b border-border bg-white border-l-4 border-l-accent">
-                  <h3 className="text-2xl md:text-3xl font-bold text-accent">{product.name}</h3>
+                <div className="flex items-center gap-4 px-6 md:px-8 py-5 border-b border-border bg-white border-l-4 border-l-accent">
+                  <h3 className="text-[21.5px] md:text-[26px] font-semibold text-accent tracking-tight">{product.name}</h3>
                 </div>
 
                 {/* Card Body */}
-                <div className="px-8 py-8 grid sm:grid-cols-2 gap-x-12 gap-y-7 bg-white">
+                <div className="px-6 md:px-8 py-7 md:py-8 grid sm:grid-cols-2 gap-x-10 gap-y-6 bg-white">
                   {product.fields.map((f, i) => (
                     <div key={`${product._id}-${i}`} className={f.fullWidth ? "sm:col-span-2" : ""}>
-                      <p className="text-black/50 text-sm uppercase tracking-wider mb-2 font-medium">
+                      <p className="text-black/50 text-[12px] uppercase tracking-[0.18em] mb-1.5 font-medium">
                         {f.label}
                       </p>
-                      <p className="text-base md:text-lg text-black/75 leading-relaxed whitespace-pre-line">
+                      <p className="text-[15px] md:text-[16px] text-black/75 leading-[1.7] whitespace-pre-line">
                         {f.value}
                       </p>
                     </div>

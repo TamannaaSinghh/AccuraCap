@@ -68,7 +68,7 @@ export default function Navbar() {
 
   return (
     <header className="w-full fixed top-0 left-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-[1800px] mx-auto flex items-center px-4 md:px-6 lg:px-14 py-2.5 md:py-3 lg:py-4">
+      <div className="max-w-[1600px] mx-auto flex items-center px-5 md:px-8 lg:px-12 py-3 lg:py-3.5">
 
         {/* Logo */}
         <Link href="/" className="shrink-0">
@@ -78,7 +78,7 @@ export default function Navbar() {
             width={220}
             height={116}
             style={{ height: "auto" }}
-            className="object-contain w-[100px] md:w-[100px] lg:w-[150px]"
+            className="object-contain w-[110px] md:w-[120px] lg:w-[130px]"
           />
         </Link>
 
@@ -88,7 +88,7 @@ export default function Navbar() {
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((v) => !v)}
-          className="md:hidden ml-auto p-2 text-muted hover:text-black"
+          className="lg:hidden ml-auto p-2 text-muted hover:text-black"
         >
           {mobileOpen ? (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,7 +102,7 @@ export default function Navbar() {
         </button>
 
         {/* Menu */}
-        <nav className="hidden md:flex flex-1 items-center justify-end gap-3 lg:gap-8 xl:gap-12 ml-4 lg:ml-8 relative">
+        <nav className="hidden lg:flex flex-1 items-center justify-end gap-6 xl:gap-9 ml-8 relative">
           {menu.map((item, index) => (
             <div
               key={index}
@@ -114,17 +114,17 @@ export default function Navbar() {
               {item.href ? (
                 <Link
                   href={item.href}
-                  className="text-muted hover:text-black transition-colors duration-200 text-[12px] lg:text-base xl:text-lg font-medium whitespace-nowrap"
+                  className="text-muted hover:text-black transition-colors duration-200 text-[14.5px] xl:text-[15.5px] font-medium whitespace-nowrap"
                 >
                   {item.name}
                 </Link>
               ) : (
                 <button
-                  className="flex items-center gap-1 text-muted hover:text-black transition-colors duration-200 text-[12px] lg:text-base xl:text-lg font-medium whitespace-nowrap"
+                  className="flex items-center gap-1 text-muted hover:text-black transition-colors duration-200 text-[14.5px] xl:text-[15.5px] font-medium whitespace-nowrap"
                 >
                   {item.name}
                   <svg
-                    className={`w-3.5 h-3.5 transition-transform duration-200 ${active === index ? "rotate-180" : ""}`}
+                    className={`w-3 h-3 transition-transform duration-200 ${active === index ? "rotate-180" : ""}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -137,7 +137,7 @@ export default function Navbar() {
               {/* Dropdown */}
               {item.children && active === index && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-52 bg-white shadow-lg border border-border p-1.5"
+                  className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg border border-border p-1"
                   onMouseEnter={() => openMenu(index)}
                   onMouseLeave={scheduleClose}
                 >
@@ -145,7 +145,7 @@ export default function Navbar() {
                     <Link
                       key={i}
                       href={child.href || "#"}
-                      className="block px-4 py-2.5 text-sm text-muted hover:text-black hover:bg-surface transition-colors duration-150"
+                      className="block px-3.5 py-2 text-[14px] text-muted hover:text-black hover:bg-surface transition-colors duration-150"
                       onClick={() => setActive(null)}
                     >
                       {child.name}
@@ -161,15 +161,15 @@ export default function Navbar() {
 
       {/* Mobile menu panel */}
       {mobileOpen && (
-        <nav className="md:hidden border-t border-border bg-white max-h-[calc(100vh-70px)] overflow-y-auto">
-          <ul className="flex flex-col px-4 py-2">
+        <nav className="lg:hidden border-t border-border bg-white max-h-[calc(100vh-64px)] overflow-y-auto">
+          <ul className="flex flex-col px-5 py-1">
             {menu.map((item, index) => (
               <li key={index} className="border-b border-border last:border-b-0">
                 {item.href ? (
                   <Link
                     href={item.href}
                     onClick={closeMobile}
-                    className="block py-3 text-muted hover:text-black text-base font-medium"
+                    className="block py-3 text-muted hover:text-black text-[15px] font-medium"
                   >
                     {item.name}
                   </Link>
@@ -180,11 +180,11 @@ export default function Navbar() {
                       onClick={() =>
                         setMobileExpanded(mobileExpanded === index ? null : index)
                       }
-                      className="flex items-center justify-between w-full py-3 text-muted hover:text-black text-base font-medium"
+                      className="flex items-center justify-between w-full py-3 text-muted hover:text-black text-[15px] font-medium"
                     >
                       {item.name}
                       <svg
-                        className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === index ? "rotate-180" : ""}`}
+                        className={`w-3.5 h-3.5 transition-transform duration-200 ${mobileExpanded === index ? "rotate-180" : ""}`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -193,13 +193,13 @@ export default function Navbar() {
                       </svg>
                     </button>
                     {mobileExpanded === index && item.children && (
-                      <ul className="pb-2 pl-4">
+                      <ul className="pb-2 pl-3">
                         {item.children.map((child, i) => (
                           <li key={i}>
                             <Link
                               href={child.href || "#"}
                               onClick={closeMobile}
-                              className="block py-2 text-sm text-muted hover:text-black"
+                              className="block py-2 text-[14px] text-muted hover:text-black"
                             >
                               {child.name}
                             </Link>

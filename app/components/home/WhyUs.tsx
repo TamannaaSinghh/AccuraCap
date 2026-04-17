@@ -42,48 +42,48 @@ const reasons: Reason[] = [
 
 export default function WhyUs() {
   return (
-    <section className="w-full bg-surface pt-6 md:pt-8 lg:pt-10 pb-16 md:pb-20 lg:pb-24 px-6">
-      <div className="max-w-[1400px] mx-auto">
+    <section className="w-full bg-white pt-20 md:pt-24 pb-20 md:pb-24 px-6 md:px-10 lg:px-16">
+      <div className="max-w-[1280px] mx-auto">
 
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black leading-tight">
+        <h2 className="text-[28px] sm:text-[32.5px] md:text-[39px] lg:text-[43px] text-black leading-[1.18] tracking-tight">
           Key Differentiators
         </h2>
 
         {/* Cards */}
-        <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <div className="mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {reasons.map((item, i) => (
             <article
               key={i}
-              className="group relative bg-white border border-border rounded-2xl p-7 md:p-8 hover:shadow-lg hover:border-black/15 hover:-translate-y-1 transition-all duration-300"
+              className="group relative bg-white border border-border rounded-xl p-6 md:p-7 hover:shadow-md hover:border-black/15 hover:-translate-y-0.5 transition-all duration-300"
             >
               {/* Number badge */}
-              <div className="flex items-center gap-3 mb-5">
-                <span className="text-accent text-sm font-bold tracking-wider">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-accent text-[13px] font-bold tracking-[0.18em]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="h-px w-8 bg-accent" />
+                <span className="h-px w-7 bg-accent" />
               </div>
 
               {/* Title */}
-              <h3 className="text-xl md:text-2xl font-bold text-black leading-snug">
+              <h3 className="text-[18.5px] md:text-[20.5px] font-semibold text-black leading-snug">
                 {item.title}
               </h3>
 
               {/* Body */}
               {"points" in item ? (
-                <ul className="mt-4 space-y-3">
+                <ul className="mt-3.5 space-y-2.5">
                   {item.points.map((point, j) => (
                     <li
                       key={j}
-                      className="text-base md:text-[17px] text-black/70 leading-relaxed flex items-start gap-3"
+                      className="text-[14.5px] md:text-[15px] text-black/65 leading-[1.65] flex items-start gap-2.5"
                     >
-                      <span className="text-accent mt-1.5 shrink-0 h-1.5 w-1.5 rounded-full bg-accent" />
+                      <span className="text-accent mt-[7px] shrink-0 h-1 w-1 rounded-full bg-accent" />
                       <span>{point}</span>
                     </li>
                   ))}
                 </ul>
               ) : (
-                <p className="mt-4 text-base md:text-[17px] text-black/70 leading-relaxed">
+                <p className="mt-3.5 text-[14.5px] md:text-[15px] text-black/65 leading-[1.65]">
                   {item.description}
                 </p>
               )}
