@@ -14,33 +14,33 @@ export default async function PMSPage() {
   const allDocs = await client.fetch<PmsDocument[]>(PMS_DOCUMENTS_QUERY);
 
   return (
-    <main className="w-full bg-white pt-28 md:pt-32 pb-20 md:pb-24 px-6 md:px-10 lg:px-16">
+    <main className="w-full bg-white pt-14 md:pt-18 pb-14 md:pb-18 px-6 md:px-10 lg:px-16">
       <div className="max-w-[1280px] mx-auto">
 
-        <h1 className="text-[30px] sm:text-[34.5px] md:text-[41px] lg:text-[45.5px] text-black leading-[1.18] tracking-tight">
+        <h1 className="text-[32.5px] sm:text-[37.5px] md:text-[44.5px] lg:text-[49px] text-black leading-[1.18] tracking-tight">
           PMS
         </h1>
         <div className="mt-4 h-[2px] w-10 bg-accent" />
 
         {/* Details */}
-        <div className="mt-10 md:mt-12 grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+        <div className="mt-8 md:mt-10 grid md:grid-cols-2 gap-10 md:gap-12 items-center">
 
           {/* Left — info */}
           <div className="space-y-5">
             <div>
-              <p className="text-muted/60 text-[12px] uppercase tracking-[0.18em] mb-1.5">SEBI Registration Number</p>
-              <p className="text-[15px] md:text-[16px] text-black">INP000008844</p>
+              <p className="text-muted/60 text-[13px] uppercase tracking-[0.18em] mb-1.5">SEBI Registration Number</p>
+              <p className="text-[16px] md:text-[17.5px] text-black">INP000008844</p>
             </div>
 
             <div>
-              <p className="text-muted/60 text-[12px] uppercase tracking-[0.18em] mb-1.5">UPI ID for Additional Investment</p>
-              <p className="text-[15px] md:text-[16px] text-black font-medium">accuracap.pms@validibl</p>
+              <p className="text-muted/60 text-[13px] uppercase tracking-[0.18em] mb-1.5">UPI ID for Additional Investment</p>
+              <p className="text-[16px] md:text-[17.5px] text-black font-medium">accuracap.pms@validibl</p>
             </div>
 
             <div>
-              <p className="text-muted/60 text-[12px] uppercase tracking-[0.18em] mb-1.5">Authorised Person</p>
-              <p className="text-[15px] md:text-[16px] text-muted">Motilal Oswal Financial Services Pvt Ltd</p>
-              <p className="text-[12.5px] text-muted mt-1">NSE: AP0297117363, BSE: AP01044601104990</p>
+              <p className="text-muted/60 text-[13px] uppercase tracking-[0.18em] mb-1.5">Authorised Person</p>
+              <p className="text-[16px] md:text-[17.5px] text-muted">Motilal Oswal Financial Services Pvt Ltd</p>
+              <p className="text-[13.5px] text-muted mt-1">NSE: AP0297117363, BSE: AP01044601104990</p>
             </div>
           </div>
 
@@ -55,15 +55,15 @@ export default async function PMSPage() {
                 className="object-contain"
               />
             </div>
-            <p className="mt-3 text-[12px] text-muted tracking-[0.18em] uppercase">Scan to invest</p>
+            <p className="mt-3 text-[13px] text-muted tracking-[0.18em] uppercase">Scan to invest</p>
           </div>
 
         </div>
 
         {/* Documents — driven entirely by Sanity CMS */}
         {allDocs.length > 0 && (
-          <div className="mt-16 md:mt-20">
-            <h2 className="text-[24px] sm:text-[28px] md:text-[32.5px] text-black mb-8 md:mb-10 leading-[1.2] tracking-tight">
+          <div className="mt-8 md:mt-10">
+            <h2 className="text-[26px] sm:text-[30px] md:text-[35px] text-black mb-6 md:mb-8 leading-[1.2] tracking-tight">
               Disclosures &amp; Compliance
             </h2>
 
@@ -71,11 +71,11 @@ export default async function PMSPage() {
               {allDocs.map((doc) =>
                 doc.displayType === "download" ? (
                   <div key={doc._id} className="border border-border p-7 flex flex-col items-center justify-center text-center">
-                    <h3 className="text-[15px] md:text-[16px] font-semibold text-black mb-3">{doc.title}</h3>
+                    <h3 className="text-[16px] md:text-[17.5px] font-semibold text-black mb-3">{doc.title}</h3>
                     <a
                       href={`${doc.fileUrl}?dl=`}
                       download
-                      className="text-accent text-[14px] font-medium hover:text-accent-dark transition-colors"
+                      className="text-accent text-[15px] font-medium hover:text-accent-dark transition-colors"
                     >
                       Click here to download
                     </a>
@@ -83,7 +83,7 @@ export default async function PMSPage() {
                 ) : (
                   <div key={doc._id} className="border border-border overflow-hidden">
                     <div className="px-5 md:px-6 py-3.5 bg-surface border-b border-border">
-                      <h3 className="text-[15px] md:text-[16px] font-semibold text-black">{doc.title}</h3>
+                      <h3 className="text-[16px] md:text-[17.5px] font-semibold text-black">{doc.title}</h3>
                     </div>
                     <iframe src={doc.fileUrl} className="w-full h-[260px] md:h-[300px]" />
                   </div>

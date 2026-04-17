@@ -58,7 +58,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
       {fields.map((field) => (
         <div key={field.key}>
-          <label htmlFor={`contact-${field.key}`} className="text-black text-[13.5px] tracking-wide font-medium">
+          <label htmlFor={`contact-${field.key}`} className="text-black text-[14.5px] tracking-wide font-medium">
             {field.label}
           </label>
           <input
@@ -71,13 +71,13 @@ export default function ContactForm() {
             onChange={update(field.key)}
             disabled={isSubmitting}
             required
-            className="w-full mt-1.5 px-4 py-2.5 bg-surface border border-black/10 text-[14.5px] text-black placeholder:text-black/40 focus:outline-none focus:border-black transition-colors disabled:opacity-60"
+            className="w-full mt-1.5 px-4 py-2.5 bg-surface border border-black/10 text-[15.5px] text-black placeholder:text-black/40 focus:outline-none focus:border-black transition-colors disabled:opacity-60"
           />
         </div>
       ))}
 
       <div>
-        <label htmlFor="contact-message" className="text-black text-[13.5px] tracking-wide font-medium">
+        <label htmlFor="contact-message" className="text-black text-[14.5px] tracking-wide font-medium">
           Message
         </label>
         <textarea
@@ -90,7 +90,7 @@ export default function ContactForm() {
           disabled={isSubmitting}
           required
           maxLength={5000}
-          className="w-full mt-1.5 px-4 py-2.5 bg-surface border border-black/10 text-[14.5px] text-black placeholder:text-black/40 focus:outline-none focus:border-black transition-colors disabled:opacity-60"
+          className="w-full mt-1.5 px-4 py-2.5 bg-surface border border-black/10 text-[15.5px] text-black placeholder:text-black/40 focus:outline-none focus:border-black transition-colors disabled:opacity-60"
         />
       </div>
 
@@ -111,18 +111,18 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-black text-white py-3 text-[13px] tracking-[0.14em] uppercase font-medium hover:bg-black/85 transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full bg-black text-white py-3 text-[14px] tracking-[0.14em] uppercase font-medium hover:bg-black/85 transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {isSubmitting ? "Sending…" : "Send Message"}
       </button>
 
       {status === "success" && (
-        <p className="text-[13.5px] text-black/75 border-l-2 border-accent pl-3 py-1" role="status">
+        <p className="text-[14.5px] text-black/75 border-l-2 border-accent pl-3 py-1" role="status">
           Thanks — your message has been sent. We&apos;ll be in touch shortly.
         </p>
       )}
       {status === "error" && (
-        <p className="text-[13.5px] text-accent border-l-2 border-accent pl-3 py-1" role="alert">
+        <p className="text-[14.5px] text-accent border-l-2 border-accent pl-3 py-1" role="alert">
           {errorMsg}
         </p>
       )}

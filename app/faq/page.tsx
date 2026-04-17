@@ -10,16 +10,16 @@ export default function FAQPage() {
   };
 
   return (
-    <main className="w-full bg-white pt-28 md:pt-32 pb-20 md:pb-24 px-6 md:px-10 lg:px-16">
+    <main className="w-full bg-white pt-14 md:pt-18 pb-14 md:pb-18 px-6 md:px-10 lg:px-16">
       <div className="max-w-[1280px] mx-auto">
 
-        <h1 className="text-[30px] sm:text-[34.5px] md:text-[41px] lg:text-[45.5px] text-black leading-[1.18] tracking-tight">
+        <h1 className="text-[32.5px] sm:text-[37.5px] md:text-[44.5px] lg:text-[49px] text-black leading-[1.18] tracking-tight">
           Frequently Asked Questions
         </h1>
         <div className="mt-4 h-[2px] w-10 bg-accent" />
 
         {/* FAQ Items */}
-        <div className="mt-12 md:mt-14 max-w-[820px] border-t border-border">
+        <div className="mt-8 md:mt-10 max-w-[820px] border-t border-border">
           {faqData.map((item, i) => (
             <div key={i} className="border-b border-border">
 
@@ -28,7 +28,7 @@ export default function FAQPage() {
                 onClick={() => toggle(i)}
                 className="w-full flex items-center justify-between gap-4 px-0 py-4 md:py-5 text-left text-black font-medium hover:text-accent transition-colors"
               >
-                <span className="text-[15px] md:text-[16px] leading-snug">{item.q}</span>
+                <span className="text-[16px] md:text-[17.5px] leading-snug">{item.q}</span>
                 <span className="text-lg shrink-0 text-muted">
                   {open === i ? "\u2212" : "+"}
                 </span>
@@ -36,7 +36,7 @@ export default function FAQPage() {
 
               {/* Answer */}
               {open === i && (
-                <div className="pb-5 text-muted text-[14.5px] md:text-[15px] leading-[1.7]">
+                <div className="pb-5 text-muted text-[15.5px] md:text-[16px] leading-[1.7]">
                   {item.a}
                 </div>
               )}
@@ -75,7 +75,7 @@ const faqData = [
     q: "How is PMS different from Mutual fund?",
     a: (
       <div className="overflow-x-auto mt-2">
-        <table className="w-full min-w-[560px] text-[14px] md:text-[14.5px]">
+        <table className="w-full min-w-[560px] text-[15px] md:text-[15.5px]">
           <thead>
             <tr className="border-b border-border">
               <th className="py-2.5 pr-4 text-left text-black font-semibold tracking-wide">Features</th>
@@ -162,7 +162,7 @@ const faqData = [
     q: "What is the fee structure?",
     a: (
       <div className="overflow-x-auto mt-2">
-        <table className="w-full min-w-[560px] text-[14px] md:text-[14.5px]">
+        <table className="w-full min-w-[560px] text-[15px] md:text-[15.5px]">
           <thead>
             <tr className="border-b border-border">
               <th className="py-2.5 pr-4 text-left text-black font-semibold tracking-wide">Category</th>

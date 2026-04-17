@@ -40,13 +40,13 @@ export default function PhilosophyPage() {
     <main className="w-full bg-white">
 
       {/* ═══ Hero / Philosophy ═══ */}
-      <section className="pt-28 md:pt-32 pb-16 md:pb-20 px-6 md:px-10 lg:px-16">
+      <section className="pt-14 md:pt-18 pb-12 md:pb-14 px-6 md:px-10 lg:px-16">
         <div className="max-w-[1280px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
 
             {/* Text — 3 of 5 columns (wider than image) */}
             <div className="text-left order-2 lg:order-1 lg:col-span-3">
-              <h1 className="text-[32.5px] sm:text-[39px] md:text-[45.5px] lg:text-[52px] text-black leading-[1.15] tracking-tight">
+              <h1 className="text-[35px] sm:text-[42px] md:text-[49px] lg:text-[56px] text-black leading-[1.15] tracking-tight">
                 The Art of
                 <br />
                 <span className="italic">Disciplined Investing.</span>
@@ -54,7 +54,7 @@ export default function PhilosophyPage() {
 
               <div className="mt-6 h-[2px] w-12 bg-accent" />
 
-              <p className="mt-7 max-w-[580px] text-[15.5px] md:text-[16.5px] text-black/70 leading-[1.75]">
+              <p className="mt-7 max-w-[580px] text-[16.5px] md:text-[18px] text-black/70 leading-[1.75]">
                 At AccuraCap, we believe the markets move like a pendulum
                 &mdash; swinging between overvaluation and undervaluation. Our
                 philosophy is rooted in capturing these swings through a
@@ -82,33 +82,33 @@ export default function PhilosophyPage() {
       </section>
 
       {/* ═══ Guiding Principles ═══ */}
-      <section className="bg-surface py-20 md:py-24 px-6 md:px-10 lg:px-16 border-b border-border">
+      <section className="bg-surface py-14 md:py-18 px-6 md:px-10 lg:px-16 border-b border-border">
         <div className="max-w-[1180px] mx-auto">
 
           <div className="text-center">
-            <h2 className="text-[28px] sm:text-[32.5px] md:text-[36.5px] text-black leading-[1.18] tracking-tight">
+            <h2 className="text-[30px] sm:text-[35px] md:text-[39.5px] text-black leading-[1.18] tracking-tight">
               Guiding Principles
             </h2>
             <div className="mt-5 mx-auto h-[2px] w-10 bg-accent" />
           </div>
 
-          <div className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-3 gap-px bg-border border border-border">
+          <div className="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-px bg-border border border-border">
             {principles.map((item, i) => (
               <article
                 key={i}
-                className="bg-white px-7 py-10 md:py-11 text-center flex flex-col items-center"
+                className="bg-white px-7 py-8 md:py-9 text-center flex flex-col items-center"
               >
-                <span className="text-[12px] tracking-[0.28em] uppercase text-accent font-medium">
+                <span className="text-[13px] tracking-[0.28em] uppercase text-accent font-medium">
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
-                <h3 className="mt-4 text-[18.5px] md:text-[20.5px] text-black font-semibold leading-snug max-w-[260px]">
+                <h3 className="mt-4 text-[20px] md:text-[22px] text-black font-semibold leading-snug max-w-[260px]">
                   {item.title}
                 </h3>
 
                 <div className="mt-5 h-px w-8 bg-black/20" />
 
-                <p className="mt-5 text-[14.5px] md:text-[15px] text-black/65 leading-[1.7] max-w-[300px]">
+                <p className="mt-5 text-[15.5px] md:text-[16px] text-black/65 leading-[1.7] max-w-[300px]">
                   {item.desc}
                 </p>
               </article>
@@ -118,21 +118,21 @@ export default function PhilosophyPage() {
       </section>
 
       {/* ═══ Core Strategy ═══ */}
-      <section className="py-20 md:py-24 px-6 md:px-10 lg:px-16">
+      <section className="py-14 md:py-18 px-6 md:px-10 lg:px-16">
         <div className="max-w-[1280px] mx-auto">
 
           {/* Heading + image — content-heavy split */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
 
             {/* Text — 3 of 5 columns (wider than image) */}
             <div className="text-left lg:col-span-3">
-              <h2 className="text-[30px] sm:text-[34.5px] md:text-[43px] lg:text-[47.5px] text-black leading-[1.18] tracking-tight">
+              <h2 className="text-[32.5px] sm:text-[37.5px] md:text-[46.5px] lg:text-[51.5px] text-black leading-[1.18] tracking-tight">
                 Our Core Strategy
               </h2>
 
               <div className="mt-6 h-[2px] w-12 bg-accent" />
 
-              <div className="mt-7 max-w-[580px] space-y-4 text-[15.5px] md:text-[16.5px] text-black/70 leading-[1.75]">
+              <div className="mt-7 max-w-[580px] space-y-4 text-[16.5px] md:text-[18px] text-black/70 leading-[1.75]">
                 <p>
                   AccuraCap has developed a unique{" "}
                   <span className="font-semibold text-black">ranking algorithm</span>{" "}
@@ -169,23 +169,23 @@ export default function PhilosophyPage() {
           </div>
 
           {/* Steps */}
-          <div className="mt-14 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-px bg-border border border-border">
+          <div className="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-px bg-border border border-border">
             {steps.map((item, i) => (
               <div
                 key={i}
-                className="bg-white px-7 py-10 md:py-11 text-center flex flex-col items-center"
+                className="bg-white px-7 py-8 md:py-9 text-center flex flex-col items-center"
               >
-                <span className="text-[12px] tracking-[0.28em] uppercase text-accent font-medium">
+                <span className="text-[13px] tracking-[0.28em] uppercase text-accent font-medium">
                   Step {item.step}
                 </span>
 
-                <h3 className="mt-4 text-[18.5px] md:text-[20.5px] text-black font-semibold leading-snug max-w-[260px]">
+                <h3 className="mt-4 text-[20px] md:text-[22px] text-black font-semibold leading-snug max-w-[260px]">
                   {item.title}
                 </h3>
 
                 <div className="mt-5 h-px w-8 bg-black/20" />
 
-                <p className="mt-5 text-[14.5px] md:text-[15px] text-black/65 leading-[1.7] max-w-[300px]">
+                <p className="mt-5 text-[15.5px] md:text-[16px] text-black/65 leading-[1.7] max-w-[300px]">
                   {item.desc}
                 </p>
               </div>

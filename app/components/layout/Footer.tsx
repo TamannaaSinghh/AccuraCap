@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="w-full max-w-[1600px] mx-auto px-5 md:px-8 lg:px-12 py-10 md:py-12 lg:py-14">
 
         {/* Top */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:flex lg:flex-row lg:items-start lg:justify-between gap-y-8 gap-x-6 sm:gap-x-8 lg:gap-12 xl:gap-14">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:flex lg:flex-row lg:items-start lg:justify-between gap-y-6 gap-x-6 sm:gap-x-8 lg:gap-12 xl:gap-14">
 
           {/* Logo */}
           <div className="col-span-2 sm:col-span-4 lg:col-span-1 shrink-0">
@@ -26,8 +26,8 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <p className="text-[11.5px] md:text-[12px] tracking-[0.18em] uppercase text-black/45 mb-3 font-medium">Company</p>
-            <nav className="flex flex-col gap-2 text-[14px] md:text-[14.5px] text-black/70">
+            <p className="text-[12.5px] md:text-[13px] tracking-[0.18em] uppercase text-black/45 mb-3 font-medium">Company</p>
+            <nav className="flex flex-col gap-2 text-[15px] md:text-[15.5px] text-black/70">
               <Link href="/philosophy" className="hover:text-black transition-colors">Our Philosophy</Link>
               <Link href="/people" className="hover:text-black transition-colors">People</Link>
               <Link href="/contact" className="hover:text-black transition-colors">Contact Us</Link>
@@ -35,8 +35,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-[11.5px] md:text-[12px] tracking-[0.18em] uppercase text-black/45 mb-3 font-medium">Products</p>
-            <nav className="flex flex-col gap-2 text-[14px] md:text-[14.5px] text-black/70">
+            <p className="text-[12.5px] md:text-[13px] tracking-[0.18em] uppercase text-black/45 mb-3 font-medium">Products</p>
+            <nav className="flex flex-col gap-2 text-[15px] md:text-[15.5px] text-black/70">
               <Link href="/products/#pms" className="hover:text-black transition-colors">PMS</Link>
               <Link href="/products/#aif" className="hover:text-black transition-colors">AIF</Link>
               <Link href="/faq" className="hover:text-black transition-colors">FAQ</Link>
@@ -44,8 +44,8 @@ export default function Footer() {
           </div>
 
           {/* Office info */}
-          <div className="col-span-2 sm:col-span-2 lg:col-span-1 text-[14px] md:text-[14.5px] text-black/65 leading-relaxed lg:max-w-[280px] xl:max-w-[320px]">
-            <p className="text-[11.5px] md:text-[12px] tracking-[0.18em] uppercase text-black/45 mb-3 font-medium">Corporate Office</p>
+          <div className="col-span-2 sm:col-span-2 lg:col-span-1 text-[15px] md:text-[15.5px] text-black/65 leading-relaxed lg:max-w-[280px] xl:max-w-[320px]">
+            <p className="text-[12.5px] md:text-[13px] tracking-[0.18em] uppercase text-black/45 mb-3 font-medium">Corporate Office</p>
             <p>
               Office Number 919, 9th Floor,
               <br />
@@ -58,11 +58,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-10 md:mt-12 pt-5 border-t border-black/10 flex flex-col-reverse sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-          <p className="text-[12.5px] md:text-[13px] text-black/45">
+        <div className="mt-8 md:mt-10 pt-5 border-t border-black/10 flex flex-col-reverse sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <p className="text-[13.5px] md:text-[14px] text-black/45">
             &copy; {new Date().getFullYear()} AccuraCap. All rights reserved.
           </p>
-          <div className="flex gap-5 text-[12.5px] md:text-[13px] text-black/45">
+          <div className="flex gap-5 text-[13.5px] md:text-[14px] text-black/45">
             <Link href="/grievance" className="hover:text-black/70 transition-colors">Grievance</Link>
             <Link href="/kyc_status_check" className="hover:text-black/70 transition-colors">KYC Status</Link>
           </div>

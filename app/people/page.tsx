@@ -25,7 +25,7 @@ function MemberCard({ member }: { member: Member }) {
   const hasBio = member.bio && member.bio.length > 0;
 
   return (
-    <article className="group flex flex-row gap-5 md:gap-6 bg-white border border-border rounded-xl p-5 md:p-6 hover:shadow-md hover:border-black/15 hover:-translate-y-0.5 transition-all duration-300">
+    <article className="group flex flex-row gap-5 md:gap-6 bg-white border border-border rounded-xl p-4 md:p-5 hover:shadow-md hover:border-black/15 hover:-translate-y-0.5 transition-all duration-300">
       {/* Square photo, fixed size, top-aligned */}
       <div className="relative shrink-0 self-start aspect-square w-20 sm:w-24 md:w-28 lg:w-32 bg-surface overflow-hidden rounded-md">
         {member.image ? (
@@ -47,17 +47,17 @@ function MemberCard({ member }: { member: Member }) {
 
       {/* All text fills the right side, no clipping */}
       <div className="flex-1 min-w-0">
-        <h2 className="text-[16px] md:text-[18.5px] font-semibold text-black leading-snug break-words">
+        <h2 className="text-[17.5px] md:text-[20px] font-semibold text-black leading-snug break-words">
           {member.name}
         </h2>
         {member.role && (
-          <p className="mt-1 text-[13px] md:text-[14px] text-black/55 font-medium tracking-wide break-words">
+          <p className="mt-1 text-[14px] md:text-[15px] text-black/55 font-medium tracking-wide break-words">
             {member.role}
           </p>
         )}
 
         {hasBio && (
-          <div className="mt-3 space-y-2 text-[14px] md:text-[14.5px] text-black/70 leading-[1.7] [&_p]:m-0 [&_p+p]:mt-2 break-words">
+          <div className="mt-3 space-y-2 text-[15px] md:text-[15.5px] text-black/70 leading-[1.7] [&_p]:m-0 [&_p+p]:mt-2 break-words">
             <PortableText value={member.bio!} />
           </div>
         )}
@@ -74,17 +74,17 @@ export default async function PeoplePage() {
 
   return (
     <main className="w-full bg-white">
-      <section className="pt-28 md:pt-32 pb-20 md:pb-24 px-6 md:px-10 lg:px-16">
+      <section className="pt-14 md:pt-18 pb-14 md:pb-18 px-6 md:px-10 lg:px-16">
         <div className="max-w-[1280px] mx-auto">
 
-          <h1 className="text-[30px] sm:text-[34.5px] md:text-[41px] lg:text-[45.5px] text-black leading-[1.18] tracking-tight">
+          <h1 className="text-[32.5px] sm:text-[37.5px] md:text-[44.5px] lg:text-[49px] text-black leading-[1.18] tracking-tight">
             Meet Our Team
           </h1>
           <div className="mt-4 h-[2px] w-10 bg-accent" />
 
           {/* Leadership — one member per row, full width */}
           {leadership.length > 0 && (
-            <div className="mt-10 md:mt-12 flex flex-col gap-4 md:gap-5">
+            <div className="mt-8 md:mt-10 flex flex-col gap-4 md:gap-5">
               {leadership.map((member) => (
                 <MemberCard key={member._id} member={member} />
               ))}
