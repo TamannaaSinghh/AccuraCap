@@ -114,13 +114,13 @@ export default function Navbar() {
               {item.href ? (
                 <Link
                   href={item.href}
-                  className="text-muted hover:text-black transition-colors duration-200 text-[14.5px] xl:text-[15.5px] font-medium whitespace-nowrap"
+                  className="text-muted hover:text-black transition-colors duration-200 text-[15.5px] xl:text-[16.5px] font-medium whitespace-nowrap"
                 >
                   {item.name}
                 </Link>
               ) : (
                 <button
-                  className="flex items-center gap-1 text-muted hover:text-black transition-colors duration-200 text-[14.5px] xl:text-[15.5px] font-medium whitespace-nowrap"
+                  className="flex items-center gap-1 text-muted hover:text-black transition-colors duration-200 text-[15.5px] xl:text-[16.5px] font-medium whitespace-nowrap"
                 >
                   {item.name}
                   <svg
@@ -145,7 +145,7 @@ export default function Navbar() {
                     <Link
                       key={i}
                       href={child.href || "#"}
-                      className="block px-3.5 py-2 text-[14px] text-muted hover:text-black hover:bg-surface transition-colors duration-150"
+                      className="block px-3.5 py-2 text-[15px] text-muted hover:text-black hover:bg-surface transition-colors duration-150"
                       onClick={() => setActive(null)}
                     >
                       {child.name}
@@ -169,7 +169,7 @@ export default function Navbar() {
                   <Link
                     href={item.href}
                     onClick={closeMobile}
-                    className="block py-3 text-muted hover:text-black text-[15px] font-medium"
+                    className="block py-3 text-muted hover:text-black text-[16px] font-medium"
                   >
                     {item.name}
                   </Link>
@@ -180,7 +180,7 @@ export default function Navbar() {
                       onClick={() =>
                         setMobileExpanded(mobileExpanded === index ? null : index)
                       }
-                      className="flex items-center justify-between w-full py-3 text-muted hover:text-black text-[15px] font-medium"
+                      className="flex items-center justify-between w-full py-3 text-muted hover:text-black text-[16px] font-medium"
                     >
                       {item.name}
                       <svg
@@ -199,7 +199,7 @@ export default function Navbar() {
                             <Link
                               href={child.href || "#"}
                               onClick={closeMobile}
-                              className="block py-2 text-[14px] text-muted hover:text-black"
+                              className="block py-2 text-[15px] text-muted hover:text-black"
                             >
                               {child.name}
                             </Link>

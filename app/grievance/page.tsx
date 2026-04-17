@@ -2,20 +2,20 @@
 
 export default function GrievancePage() {
   return (
-    <main className="w-full bg-white pt-28 md:pt-32 pb-20 md:pb-24 px-6 md:px-10 lg:px-16">
+    <main className="w-full bg-white pt-14 md:pt-18 pb-14 md:pb-18 px-6 md:px-10 lg:px-16">
       <div className="max-w-[1280px] mx-auto">
 
-        <h1 className="text-[30px] sm:text-[34.5px] md:text-[41px] lg:text-[45.5px] text-black leading-[1.18] tracking-tight">
+        <h1 className="text-[32.5px] sm:text-[37.5px] md:text-[44.5px] lg:text-[49px] text-black leading-[1.18] tracking-tight">
           Grievance
         </h1>
         <div className="mt-4 h-[2px] w-10 bg-accent" />
 
         {/* Content */}
-        <div className="mt-10 md:mt-12 space-y-10 md:space-y-12 text-muted text-[15px] md:text-[15.5px] leading-[1.75] max-w-[920px]">
+        <div className="mt-8 md:mt-10 space-y-8 md:space-y-10 text-muted text-[16px] md:text-[16.5px] leading-[1.75] max-w-[920px]">
 
           {/* Policy */}
           <section className="space-y-3.5">
-            <h2 className="text-[20.5px] md:text-[24px] font-semibold text-black tracking-tight leading-snug">
+            <h2 className="text-[22px] md:text-[26px] font-semibold text-black tracking-tight leading-snug">
               Grievance Redressal Policy
             </h2>
 
@@ -67,7 +67,7 @@ export default function GrievancePage() {
 
           {/* Mechanism */}
           <section className="space-y-3.5">
-            <h2 className="text-[20.5px] md:text-[24px] font-semibold text-black tracking-tight leading-snug">
+            <h2 className="text-[22px] md:text-[26px] font-semibold text-black tracking-tight leading-snug">
               Grievance Redressal and Dispute Handling Mechanism
             </h2>
 
@@ -80,7 +80,7 @@ export default function GrievancePage() {
             </p>
 
             {/* Contact Box */}
-            <div className="border border-border p-5 md:p-6 space-y-1.5 bg-surface/40">
+            <div className="border border-border p-4 md:p-5 space-y-1.5 bg-surface/40">
               <p className="font-medium text-black">Corporate Office:</p>
               <p>Accuracap Consultancy Services Pvt. Ltd.</p>
               <p>

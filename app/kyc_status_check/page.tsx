@@ -2,27 +2,27 @@
 
 export default function KYCPage() {
   return (
-    <main className="w-full bg-white pt-28 md:pt-32 pb-20 md:pb-24 px-6 md:px-10 lg:px-16">
+    <main className="w-full bg-white pt-14 md:pt-18 pb-14 md:pb-18 px-6 md:px-10 lg:px-16">
       <div className="max-w-[1280px] mx-auto">
 
-        <h1 className="text-[30px] sm:text-[34.5px] md:text-[41px] lg:text-[45.5px] text-black leading-[1.18] tracking-tight">
+        <h1 className="text-[32.5px] sm:text-[37.5px] md:text-[44.5px] lg:text-[49px] text-black leading-[1.18] tracking-tight">
           KYC Status Check
         </h1>
         <div className="mt-4 h-[2px] w-10 bg-accent" />
 
         {/* Alert */}
-        <div className="mt-10 md:mt-12 border border-accent/30 bg-accent/5 px-5 md:px-6 py-3.5 max-w-[920px]">
-          <p className="text-accent font-semibold text-[13.5px] md:text-[14px] uppercase tracking-[0.14em]">
+        <div className="mt-8 md:mt-10 border border-accent/30 bg-accent/5 px-5 md:px-6 py-3.5 max-w-[920px]">
+          <p className="text-accent font-semibold text-[14.5px] md:text-[15px] uppercase tracking-[0.14em]">
             Has your KYC status changed?
           </p>
         </div>
 
         {/* Content */}
-        <div className="mt-10 md:mt-12 space-y-10 md:space-y-12 text-muted text-[15px] md:text-[15.5px] leading-[1.75] max-w-[920px]">
+        <div className="mt-8 md:mt-10 space-y-8 md:space-y-10 text-muted text-[16px] md:text-[16.5px] leading-[1.75] max-w-[920px]">
 
           {/* Section 1 */}
           <section className="space-y-3">
-            <h3 className="font-semibold text-black uppercase text-[12px] tracking-[0.2em]">
+            <h3 className="font-semibold text-black uppercase text-[13px] tracking-[0.2em]">
               What is the change from 1st April 2024?
             </h3>
 
@@ -48,7 +48,7 @@ export default function KYCPage() {
 
           {/* Section 2 */}
           <section className="space-y-3">
-            <h3 className="font-semibold text-black uppercase text-[12px] tracking-[0.2em]">
+            <h3 className="font-semibold text-black uppercase text-[13px] tracking-[0.2em]">
               What are the attributes affecting your KYC status?
             </h3>
 
@@ -60,7 +60,7 @@ export default function KYCPage() {
 
             <div className="flex flex-wrap gap-3">
               {["KYC Validated", "KYC Registered", "KYC On Hold"].map((status) => (
-                <span key={status} className="px-3.5 py-1.5 bg-surface border border-border text-[12px] font-medium text-black uppercase tracking-[0.16em]">
+                <span key={status} className="px-3.5 py-1.5 bg-surface border border-border text-[13px] font-medium text-black uppercase tracking-[0.16em]">
                   {status}
                 </span>
               ))}
@@ -69,12 +69,12 @@ export default function KYCPage() {
 
           {/* Table */}
           <section className="space-y-3">
-            <h3 className="font-semibold text-black uppercase text-[12px] tracking-[0.2em]">
+            <h3 className="font-semibold text-black uppercase text-[13px] tracking-[0.2em]">
               What are the implications?
             </h3>
 
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[600px] text-[14px] md:text-[14.5px]">
+              <table className="w-full min-w-[600px] text-[15px] md:text-[15.5px]">
                 <thead>
                   <tr className="border-b border-border">
                     <th className="py-2.5 pr-4 text-left text-black font-semibold tracking-wide">KYC Status</th>
@@ -113,7 +113,7 @@ export default function KYCPage() {
 
           {/* Section 3 */}
           <section className="space-y-3">
-            <h3 className="font-semibold text-black uppercase text-[12px] tracking-[0.2em]">
+            <h3 className="font-semibold text-black uppercase text-[13px] tracking-[0.2em]">
               How can investors check their KYC status?
             </h3>
 
@@ -129,11 +129,11 @@ export default function KYCPage() {
 
           {/* Links */}
           <section className="space-y-3">
-            <h3 className="font-semibold text-black uppercase text-[12px] tracking-[0.2em]">
+            <h3 className="font-semibold text-black uppercase text-[13px] tracking-[0.2em]">
               KYC Contact Details Validation Links
             </h3>
 
-            <ul className="space-y-2 text-[14.5px] md:text-[15px]">
+            <ul className="space-y-2 text-[15.5px] md:text-[16px]">
               {[
                 { name: "CAMS KRA", url: "https://camskra.com/PanDetailsUpdate.aspx" },
                 { name: "CVL KRA", url: "https://validate.cvlindia.com/CVLKRAVerification_V1" },
@@ -153,11 +153,11 @@ export default function KYCPage() {
 
           {/* PAN Aadhaar Links */}
           <section className="space-y-3">
-            <h3 className="font-semibold text-black uppercase text-[12px] tracking-[0.2em]">
+            <h3 className="font-semibold text-black uppercase text-[13px] tracking-[0.2em]">
               KYC PAN Aadhaar Validation Links
             </h3>
 
-            <ul className="space-y-2 text-[14.5px] md:text-[15px]">
+            <ul className="space-y-2 text-[15.5px] md:text-[16px]">
               {[
                 { name: "CAMS KRA", url: "https://camskra.com/pan_aadhaarlink.aspx" },
                 { name: "CVL KRA", url: "https://validate.cvlindia.com/CVLKRAVerification_V1" },

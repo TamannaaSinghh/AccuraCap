@@ -21,13 +21,13 @@
    A subtle lift for wide displays — kept conservative so type stays
    refined and proportional rather than oversized. */
 @media (min-width: 1280px) {
-  html { font-size: 17px; }
+  html { font-size: 17.5px; }
 }
 @media (min-width: 1536px) {
-  html { font-size: 17.75px; }
+  html { font-size: 18.25px; }
 }
 @media (min-width: 1920px) {
-  html { font-size: 18.5px; }
+  html { font-size: 19px; }
 }
 
 body {
