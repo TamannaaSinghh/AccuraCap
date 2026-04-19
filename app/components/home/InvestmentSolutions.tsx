@@ -1,133 +1,108 @@
-"use client";
+import { client } from "@/sanity/lib/client";
+import {
+  HOME_PMS_CARDS_QUERY,
+  HOME_AIF_CARDS_QUERY,
+  HOME_PMS_DISCLAIMER_QUERY,
+} from "@/sanity/lib/queries";
 
+type HomeCard = {
+  _id: string;
+  title: string;
+  category: string;
+  returns: string;
+  marketCap: string;
+  stocks: string;
+  benchmark: string;
+  order: number;
+};
 
-const products = [
-  {
-    logo: "/ALPHA10-Logo.png",
-    title: "Alpha10",
-    logoClass: "w-[100px] h-[36px]",
-    category: "Large Cap",
-    marketCap: "Top 200 companies",
-    stocks: "10–20",
-    returns: "493%",
-    benchmark: "vs 492% Nifty 50 TRI",
-  },
-  {
-    logo: "/PicoPower-Logo.png",
-    title: "PicoPower",
-    logoClass: "w-[140px] h-[50px]",
-    category: "Mid & Small Cap",
-    marketCap: "Top 100–800",
-    stocks: "30–40",
-    returns: "1,492%",
-    benchmark: "vs 594% S&P BSE 500 TRI",
-  },
-  {
-    logo: "/DYNAMO-Logo_RGB1.png",
-    title: "Dynamo",
-    logoClass: "w-[100px] h-[36px]",
-    category: "Micro Cap",
-    marketCap: "Top 500–800",
-    stocks: "30–40",
-    returns: "518%",
-    benchmark: "vs 267% S&P BSE 500 TRI",
-  },
-  {
-    logo: "/AlphaGen-1.png",
-    title: "AlphaGen",
-    logoClass: "w-[140px] h-[50px]",
-    category: "Multi Cap",
-    marketCap: "Across Market Cap",
-    stocks: "30–50",
-    returns: "231%",
-    benchmark: "vs 285% S&P BSE 500 TRI",
-  },
-];
+type HomePmsDisclaimer = {
+  _id: string;
+  text: string;
+};
 
-const aifFunds = [
-  {
-    name: "Vectra Fund",
-    type: "CAT III Long Only",
-    focus: "Small & Micro Cap",
-    description:
-      "Concentrated portfolio targeting high-growth small and micro cap opportunities with rigorous bottom-up research.",
-  },
-  {
-    name: "AlphaGen Next Fund",
-    type: "CAT III Long Only",
-    focus: "Multi-Cap",
-    description:
-      "Flexible multi-cap strategy designed to capture alpha across market capitalizations through proprietary models.",
-  },
-];
+function gridColsFor(count: number) {
+  if (count >= 4) return "grid-cols-1 sm:grid-cols-2 xl:grid-cols-4";
+  if (count === 3) return "grid-cols-1 sm:grid-cols-2 md:grid-cols-3";
+  if (count === 2) return "grid-cols-1 sm:grid-cols-2";
+  return "grid-cols-1";
+}
 
-export default function InvestmentSolutions() {
+export default async function InvestmentSolutions() {
+  const [pmsCards, aifCards, pmsDisclaimer] = await Promise.all([
+    client.fetch<HomeCard[]>(HOME_PMS_CARDS_QUERY),
+    client.fetch<HomeCard[]>(HOME_AIF_CARDS_QUERY),
+    client.fetch<HomePmsDisclaimer | null>(HOME_PMS_DISCLAIMER_QUERY),
+  ]);
+
+  const renderCard = (p: HomeCard) => (
+    <div
+      key={p._id}
+      className="group bg-white border border-border p-4 md:p-5 flex flex-col hover:bg-surface transition-colors duration-300"
+    >
+      {/* Name */}
+      <h3 className="text-[26px] md:text-[30px] text-accent tracking-tight">
+        {p.title}
+      </h3>
+
+      {/* Category tag */}
+      <span className="text-muted text-[12.5px] tracking-[0.2em] uppercase font-medium pt-1">
+        {p.category}
+      </span>
+
+      {/* Returns — hero number */}
+      <p className="mt-5 text-[30px] md:text-[35px] text-black tracking-tight">
+        {p.returns}
+      </p>
+      <p className="mt-1 text-muted text-[13px]">
+        *Absolute Returns
+      </p>
+
+      {/* Divider */}
+      <div className="my-5 h-px w-full bg-border" />
+
+      {/* Details */}
+      <div className="flex flex-col gap-3.5 text-[15px]">
+        <div>
+          <p className="text-muted/60 text-[12.5px] uppercase tracking-[0.14em] mb-1">Market Cap</p>
+          <p className="text-black/75">{p.marketCap}</p>
+        </div>
+        <div>
+          <p className="text-muted/60 text-[12.5px] uppercase tracking-[0.14em] mb-1">Stocks</p>
+          <p className="text-black/75">{p.stocks}</p>
+        </div>
+        <div>
+          <p className="text-muted/60 text-[12.5px] uppercase tracking-[0.14em] mb-1">Benchmark</p>
+          <p className="text-black/75">{p.benchmark}</p>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <>
       {/* ════════════ PMS — Dark Section ════════════ */}
-      <section id="solutions" className="relative w-full bg-white py-14 md:py-18 px-6 md:px-10 lg:px-16">
+      <section id="solutions" className="relative w-full bg-white py-9 md:py-12 px-6 md:px-10 lg:px-16">
         <div className="max-w-[1280px] mx-auto">
 
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-12">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6 md:mb-8">
             <h2 className="text-[30px] sm:text-[35px] md:text-[42px] lg:text-[46.5px] text-black leading-[1.18] tracking-tight">
-              Portfolio Management
-              <br />
-              Services
+              Portfolio Management <span className="italic font-bold text-accent">Services</span>
             </h2>
           </div>
 
           {/* Product cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-px bg-border">
-            {products.map((p, i) => (
-              <div
-                key={i}
-                className="group bg-white p-4 md:p-5 flex flex-col hover:bg-surface transition-colors duration-300"
-              >
-                {/* Name */}
-                <h3 className="text-[26px] md:text-[30px] text-accent tracking-tight">
-                  {p.title}
-                </h3>
-
-                {/* Category tag */}
-                <span className="text-muted text-[12.5px] tracking-[0.2em] uppercase font-medium pt-1">
-                  {p.category}
-                </span>
-
-                {/* Returns — hero number */}
-                <p className="mt-5 text-[30px] md:text-[35px] text-black tracking-tight">
-                  {p.returns}
-                </p>
-                <p className="mt-1 text-muted text-[13px]">
-                  *Absolute Returns
-                </p>
-
-                {/* Divider */}
-                <div className="my-5 h-px w-full bg-border" />
-
-                {/* Details */}
-                <div className="flex flex-col gap-3.5 text-[15px]">
-                  <div>
-                    <p className="text-muted/60 text-[12.5px] uppercase tracking-[0.14em] mb-1">Market Cap</p>
-                    <p className="text-black/75">{p.marketCap}</p>
-                  </div>
-                  <div>
-                    <p className="text-muted/60 text-[12.5px] uppercase tracking-[0.14em] mb-1">Stocks</p>
-                    <p className="text-black/75">{p.stocks}</p>
-                  </div>
-                  <div>
-                    <p className="text-muted/60 text-[12.5px] uppercase tracking-[0.14em] mb-1">Benchmark</p>
-                    <p className="text-black/75">{p.benchmark}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className={`grid ${gridColsFor(pmsCards.length)} gap-4 md:gap-5`}>
+            {pmsCards.map(renderCard)}
           </div>
 
           {/* Disclaimer + CTA */}
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between mt-8 md:mt-10 gap-5">
-            <p className="text-[13.5px] text-muted">
-              *as on 31st Jan 2026 &middot; net of all expenses/fees
-            </p>
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between mt-5 md:mt-7 gap-5">
+            {pmsDisclaimer?.text && (
+              <p className="text-[13.5px] text-muted">
+                {pmsDisclaimer.text}
+              </p>
+            )}
             <a
               href="/products"
               className="inline-block px-6 md:px-7 py-3 bg-black text-white text-[14px] tracking-[0.14em] uppercase font-medium hover:bg-black/85 transition-colors duration-300"
@@ -140,45 +115,18 @@ export default function InvestmentSolutions() {
       </section>
 
       {/* ════════════ AIF — Light Section ════════════ */}
-      <section className="relative w-full bg-surface py-14 md:py-18 px-6 md:px-10 lg:px-16">
+      <section className="relative w-full bg-surface py-9 md:py-12 px-6 md:px-10 lg:px-16">
         <div className="max-w-[1280px] mx-auto">
 
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-12">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6 md:mb-8">
             <h2 className="text-[30px] sm:text-[35px] md:text-[42px] lg:text-[46.5px] text-black leading-[1.18] tracking-tight">
-              Alternative Investment
-              <br />
-              Funds
+              Alternative Investment <span className="italic font-bold text-accent">Funds</span>
             </h2>
           </div>
 
-          {/* AIF cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
-            {aifFunds.map((fund, i) => (
-              <div
-                key={i}
-                className="group bg-white p-4 md:p-5 flex flex-col hover:bg-surface transition-colors duration-300"
-              >
-                {/* Fund name */}
-                <h3 className="text-[26px] md:text-[30px] text-accent tracking-tight">
-                  {fund.name}
-                </h3>
-
-                {/* Divider */}
-                <div className="my-5 h-px w-full bg-border" />
-
-                {/* Details */}
-                <div className="flex flex-col gap-3.5 text-[15px]">
-                  <div>
-                    <p className="text-muted/60 text-[12.5px] uppercase tracking-[0.14em] mb-1">Focus</p>
-                    <p className="text-black/75">{fund.focus}</p>
-                  </div>
-                  <div>
-                    <p className="text-muted/60 text-[12.5px] uppercase tracking-[0.14em] mb-1">Strategy</p>
-                    <p className="text-black/75 leading-relaxed">{fund.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          {/* AIF cards — same structure as PMS */}
+          <div className={`grid ${gridColsFor(aifCards.length)} gap-4 md:gap-5`}>
+            {aifCards.map(renderCard)}
           </div>
 
         </div>

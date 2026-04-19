@@ -5,6 +5,9 @@ import { aifDocument } from "./aifDocument";
 import { registeredOffice } from "./registeredOffice";
 import { pmsProduct } from "./pmsProduct";
 import { aifProduct } from "./aifProduct";
+import { homePmsCard } from "./homePmsCard";
+import { homeAifCard } from "./homeAifCard";
+import { homePmsDisclaimer } from "./homePmsDisclaimer";
 
 export const schemaTypes = [
   teamMember,
@@ -14,4 +17,7 @@ export const schemaTypes = [
   registeredOffice,
   pmsProduct,
   aifProduct,
+  homePmsCard,
+  homeAifCard,
+  homePmsDisclaimer,
 ];

@@ -2,28 +2,28 @@
 
 export default function KYCPage() {
   return (
-    <main className="w-full bg-white pt-14 md:pt-18 pb-14 md:pb-18 px-6 md:px-10 lg:px-16">
+    <main className="w-full bg-white pt-9 md:pt-12 pb-9 md:pb-12 px-6 md:px-10 lg:px-16">
       <div className="max-w-[1280px] mx-auto">
 
         <h1 className="text-[32.5px] sm:text-[37.5px] md:text-[44.5px] lg:text-[49px] text-black leading-[1.18] tracking-tight">
-          KYC Status Check
+          KYC Status <span className="italic font-bold text-accent">Check</span>
         </h1>
         <div className="mt-4 h-[2px] w-10 bg-accent" />
 
         {/* Alert */}
-        <div className="mt-8 md:mt-10 border border-accent/30 bg-accent/5 px-5 md:px-6 py-3.5 max-w-[920px]">
+        <div className="mt-5 md:mt-7 border border-accent/30 bg-accent/5 px-5 md:px-6 py-3.5 max-w-[920px]">
           <p className="text-accent font-semibold text-[14.5px] md:text-[15px] uppercase tracking-[0.14em]">
             Has your KYC status changed?
           </p>
         </div>
 
         {/* Content */}
-        <div className="mt-8 md:mt-10 space-y-8 md:space-y-10 text-muted text-[16px] md:text-[16.5px] leading-[1.75] max-w-[920px]">
+        <div className="mt-5 md:mt-7 space-y-5 md:space-y-7 text-muted text-[16px] md:text-[16.5px] leading-[1.75] max-w-[920px]">
 
           {/* Section 1 */}
           <section className="space-y-3">
             <h3 className="font-semibold text-black uppercase text-[13px] tracking-[0.2em]">
-              What is the change from 1st April 2024?
+              What is the change from <span className="text-[18px]">1</span><sup>st</sup> April 2024?
             </h3>
 
             <p>

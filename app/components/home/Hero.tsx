@@ -15,7 +15,7 @@ export default async function Hero() {
   const stats = await client.fetch<HeroStat[]>(HERO_STATS_QUERY);
 
   return (
-    <section className="relative w-full min-h-[680px] md:min-h-[760px] lg:min-h-screen flex items-center overflow-hidden pt-14 md:pt-18 lg:pt-28 pb-10 md:pb-12 lg:pb-14">
+    <section className="relative w-full min-h-[680px] md:min-h-[760px] lg:min-h-screen flex items-center overflow-hidden pt-9 md:pt-12 lg:pt-20 pb-7 md:pb-9 lg:pb-10">
       {/* Background Image */}
       <Image src="/background.png" alt="" fill priority className="object-cover" />
 
@@ -36,7 +36,7 @@ export default async function Hero() {
         <h1 className="text-[37.5px] sm:text-[44.5px] md:text-[53.5px] lg:text-[65.5px] text-[#1a1a1a] leading-[1.15] tracking-tight max-w-[920px]">
           Boutique Fund Management
           <br />
-          for Long-Term Investors
+          <span className="italic font-bold text-accent">for Long-Term Investors</span>
         </h1>
 
         {/* Red accent line below heading */}
@@ -47,13 +47,11 @@ export default async function Hero() {
           AccuraCap is a SEBI-registered Portfolio Management Service and
           Category III Alternative Investment Fund manager. We manage long-only
           equity portfolios through proprietary, AI-driven algorithms that have
-          consistently outperformed benchmark returns. We serve high-net-worth
-          individuals, family offices, and institutions seeking disciplined,
-          systematic investment management.
+          consistently outperformed benchmark returns.
         </p>
 
         {/* CTA */}
-        <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-3 md:gap-4">
+        <div className="mt-5 md:mt-6 flex flex-wrap items-center gap-3 md:gap-4">
           <a
             href="/products"
             className="inline-block px-6 md:px-7 py-3 bg-[#1a1a1a] text-white text-[14px] tracking-[0.14em] uppercase font-medium hover:bg-[#1a1a1a]/85 transition-colors duration-300"
@@ -70,7 +68,7 @@ export default async function Hero() {
 
         {/* Stats strip — driven entirely by Sanity CMS */}
         {stats.length > 0 && (
-          <div className="mt-8 md:mt-12 lg:mt-14 border-t border-[#1a1a1a]/15 pt-6 md:pt-11">
+          <div className="mt-5 md:mt-8 lg:mt-10 relative rounded-md bg-[#d8d8d8]/70 backdrop-blur-md ring-1 ring-[#1a1a1a]/10 shadow-[0_6px_20px_-12px_rgba(0,0,0,0.15)] px-3 md:px-5 pt-4 md:pt-6 pb-3 md:pb-4">
             <div className="grid grid-cols-3 w-full">
               {stats.map((stat, index) => (
                 <div
@@ -81,14 +79,14 @@ export default async function Hero() {
                       : ""
                   }`}
                 >
-                  <p className="text-[21.5px] sm:text-[26px] md:text-[34.5px] lg:text-[39px] text-accent tracking-tight font-bold leading-none">
+                  <p className="text-[21.5px] sm:text-[26px] md:text-[34.5px] lg:text-[39px] text-black tracking-tight font-bold leading-none">
                     {stat.value}
                   </p>
-                  <p className="mt-1.5 md:mt-2 text-[#1a1a1a]/85 text-[11px] sm:text-[12px] md:text-[13.5px] tracking-[0.14em] md:tracking-[0.16em] uppercase font-medium leading-tight">
+                  <p className="mt-1.5 md:mt-2 text-black text-[11px] sm:text-[12px] md:text-[13.5px] tracking-[0.14em] md:tracking-[0.16em] uppercase font-medium leading-tight">
                     {stat.heading}
                   </p>
                   {stat.subheading && (
-                    <p className="mt-1 text-[#1a1a1a]/55 text-[11px] sm:text-[11.5px] md:text-[13px] leading-tight">{stat.subheading}</p>
+                    <p className="mt-1 text-black text-[11px] sm:text-[11.5px] md:text-[13px] leading-tight">{stat.subheading}</p>
                   )}
                 </div>
               ))}

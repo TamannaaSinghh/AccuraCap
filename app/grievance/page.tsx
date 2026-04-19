@@ -2,7 +2,7 @@
 
 export default function GrievancePage() {
   return (
-    <main className="w-full bg-white pt-14 md:pt-18 pb-14 md:pb-18 px-6 md:px-10 lg:px-16">
+    <main className="w-full bg-white pt-9 md:pt-12 pb-9 md:pb-12 px-6 md:px-10 lg:px-16">
       <div className="max-w-[1280px] mx-auto">
 
         <h1 className="text-[32.5px] sm:text-[37.5px] md:text-[44.5px] lg:text-[49px] text-black leading-[1.18] tracking-tight">
@@ -11,7 +11,7 @@ export default function GrievancePage() {
         <div className="mt-4 h-[2px] w-10 bg-accent" />
 
         {/* Content */}
-        <div className="mt-8 md:mt-10 space-y-8 md:space-y-10 text-muted text-[16px] md:text-[16.5px] leading-[1.75] max-w-[920px]">
+        <div className="mt-5 md:mt-7 space-y-5 md:space-y-7 text-muted text-[16px] md:text-[16.5px] leading-[1.75] max-w-[920px]">
 
           {/* Policy */}
           <section className="space-y-3.5">
@@ -85,7 +85,7 @@ export default function GrievancePage() {
               <p>Accuracap Consultancy Services Pvt. Ltd.</p>
               <p>
                 <span className="font-medium text-black">Mobile:</span>{" "}
-                90155 25932 / 77389 76675
+                90155 25932 / 9821653556
               </p>
               <p>
                 <span className="font-medium text-black">Email:</span>{" "}

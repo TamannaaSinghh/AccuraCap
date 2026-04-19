@@ -42,51 +42,64 @@ const reasons: Reason[] = [
 
 export default function WhyUs() {
   return (
-    <section className="w-full bg-white pt-14 md:pt-18 pb-14 md:pb-18 px-6 md:px-10 lg:px-16">
+    <section className="w-full bg-white pt-9 md:pt-12 pb-9 md:pb-12 px-6 md:px-10 lg:px-16">
       <div className="max-w-[1280px] mx-auto">
 
         <h2 className="text-[30px] sm:text-[35px] md:text-[42px] lg:text-[46.5px] text-black leading-[1.18] tracking-tight">
-          Key Differentiators
+          Key <span className="italic font-bold">Differentiators</span>
         </h2>
 
         {/* Cards */}
-        <div className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <div className="mt-5 md:mt-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {reasons.map((item, i) => (
             <article
               key={i}
-              className="group relative bg-white border border-border rounded-xl p-4 md:p-5 hover:shadow-md hover:border-black/15 hover:-translate-y-0.5 transition-all duration-300"
+              className="group relative bg-white border border-border/70 rounded-2xl p-6 md:p-7 overflow-hidden shadow-[0_1px_2px_rgba(17,24,39,0.04),0_12px_28px_-14px_rgba(17,24,39,0.16)] hover:shadow-[0_6px_14px_rgba(17,24,39,0.08),0_36px_60px_-24px_rgba(17,24,39,0.28)] hover:border-accent/30 hover:-translate-y-1.5 transition-all duration-500 ease-out"
             >
-              {/* Number badge */}
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-accent text-[14px] font-bold tracking-[0.18em]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="h-px w-7 bg-accent" />
+              {/* Gradient sheen overlay */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white via-white to-surface opacity-90" />
+
+              {/* Subtle top highlight line */}
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
+
+              {/* Accent glow corner — appears on hover */}
+              <div className="pointer-events-none absolute -top-16 -right-16 w-40 h-40 rounded-full bg-accent/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              {/* Accent side-bar — grows on hover */}
+              <span className="pointer-events-none absolute left-0 top-6 bottom-6 w-[3px] bg-gradient-to-b from-accent to-accent/40 rounded-r-full origin-top scale-y-[0.35] group-hover:scale-y-100 transition-transform duration-500 ease-out" />
+
+              {/* Content */}
+              <div className="relative">
+                {/* Accent bar */}
+                <div className="mb-4 flex items-center gap-2">
+                  <span className="block h-[2px] w-8 bg-accent rounded-full" />
+                  <span className="block h-[2px] w-1.5 bg-accent/40 rounded-full" />
+                </div>
+
+                {/* Title */}
+                <h3 className="text-[20px] md:text-[22px] font-semibold text-black leading-snug tracking-tight">
+                  {item.title}
+                </h3>
+
+                {/* Body */}
+                {"points" in item ? (
+                  <ul className="mt-4 space-y-3">
+                    {item.points.map((point, j) => (
+                      <li
+                        key={j}
+                        className="text-[15.5px] md:text-[16px] text-black/65 leading-[1.65] flex items-start gap-2.5"
+                      >
+                        <span className="mt-[9px] shrink-0 h-1.5 w-1.5 rounded-full bg-accent/80 ring-2 ring-accent/15" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="mt-4 text-[15.5px] md:text-[16px] text-black/65 leading-[1.65]">
+                    {item.description}
+                  </p>
+                )}
               </div>
-
-              {/* Title */}
-              <h3 className="text-[20px] md:text-[22px] font-semibold text-black leading-snug">
-                {item.title}
-              </h3>
-
-              {/* Body */}
-              {"points" in item ? (
-                <ul className="mt-3.5 space-y-2.5">
-                  {item.points.map((point, j) => (
-                    <li
-                      key={j}
-                      className="text-[15.5px] md:text-[16px] text-black/65 leading-[1.65] flex items-start gap-2.5"
-                    >
-                      <span className="text-accent mt-[7px] shrink-0 h-1 w-1 rounded-full bg-accent" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="mt-3.5 text-[15.5px] md:text-[16px] text-black/65 leading-[1.65]">
-                  {item.description}
-                </p>
-              )}
             </article>
           ))}
         </div>

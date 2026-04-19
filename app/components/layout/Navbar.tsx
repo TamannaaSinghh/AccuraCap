@@ -77,6 +77,8 @@ export default function Navbar() {
             alt="Logo"
             width={220}
             height={116}
+            priority
+            fetchPriority="high"
             style={{ height: "auto" }}
             className="object-contain w-[110px] md:w-[120px] lg:w-[130px]"
           />

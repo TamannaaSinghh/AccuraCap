@@ -70,3 +70,30 @@ export const AIF_PRODUCTS_QUERY = `*[_type == "aifProduct"] | order(order asc) {
   },
   order
 }`;
+
+export const HOME_PMS_CARDS_QUERY = `*[_type == "homePmsCard"] | order(order asc) {
+  _id,
+  title,
+  category,
+  returns,
+  marketCap,
+  stocks,
+  benchmark,
+  order
+}`;
+
+export const HOME_AIF_CARDS_QUERY = `*[_type == "homeAifCard"] | order(order asc) {
+  _id,
+  title,
+  category,
+  returns,
+  marketCap,
+  stocks,
+  benchmark,
+  order
+}`;
+
+export const HOME_PMS_DISCLAIMER_QUERY = `*[_type == "homePmsDisclaimer"] | order(_createdAt asc)[0] {
+  _id,
+  text
+}`;

@@ -14,7 +14,7 @@ export default async function PMSPage() {
   const allDocs = await client.fetch<PmsDocument[]>(PMS_DOCUMENTS_QUERY);
 
   return (
-    <main className="w-full bg-white pt-14 md:pt-18 pb-14 md:pb-18 px-6 md:px-10 lg:px-16">
+    <main className="w-full bg-white pt-9 md:pt-12 pb-9 md:pb-12 px-6 md:px-10 lg:px-16">
       <div className="max-w-[1280px] mx-auto">
 
         <h1 className="text-[32.5px] sm:text-[37.5px] md:text-[44.5px] lg:text-[49px] text-black leading-[1.18] tracking-tight">
@@ -23,7 +23,7 @@ export default async function PMSPage() {
         <div className="mt-4 h-[2px] w-10 bg-accent" />
 
         {/* Details */}
-        <div className="mt-8 md:mt-10 grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+        <div className="mt-5 md:mt-7 grid md:grid-cols-2 gap-7 md:gap-9 items-center">
 
           {/* Left — info */}
           <div className="space-y-5">
@@ -62,7 +62,7 @@ export default async function PMSPage() {
 
         {/* Documents — driven entirely by Sanity CMS */}
         {allDocs.length > 0 && (
-          <div className="mt-8 md:mt-10">
+          <div className="mt-5 md:mt-7">
             <h2 className="text-[26px] sm:text-[30px] md:text-[35px] text-black mb-6 md:mb-8 leading-[1.2] tracking-tight">
               Disclosures &amp; Compliance
             </h2>

@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="w-full bg-[#F4F4F4] border-t border-black/10">
-      <div className="w-full max-w-[1600px] mx-auto px-5 md:px-8 lg:px-12 py-10 md:py-12 lg:py-14">
+      <div className="w-full max-w-[1600px] mx-auto px-5 md:px-8 lg:px-12 py-7 md:py-9 lg:py-10">
 
         {/* Top */}
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:flex lg:flex-row lg:items-start lg:justify-between gap-y-6 gap-x-6 sm:gap-x-8 lg:gap-12 xl:gap-14">
@@ -53,12 +53,12 @@ export default function Footer() {
               <br />
               Noida, Uttar Pradesh 201301
             </p>
-            <p className="mt-3 text-black font-medium">+91 77389 76675</p>
+            <p className="mt-3 text-black font-medium">+91 9821653556</p>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="mt-8 md:mt-10 pt-5 border-t border-black/10 flex flex-col-reverse sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+        <div className="mt-6 md:mt-7 pt-4 border-t border-black/10 flex flex-col-reverse sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
           <p className="text-[13.5px] md:text-[14px] text-black/45">
             &copy; {new Date().getFullYear()} AccuraCap. All rights reserved.
           </p>

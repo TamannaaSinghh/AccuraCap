@@ -16,11 +16,11 @@ export default async function ContactPage() {
   );
 
   return (
-    <main className="w-full bg-white pt-14 md:pt-18 pb-14 md:pb-18 px-6 md:px-10 lg:px-16">
+    <main className="w-full bg-white pt-9 md:pt-12 pb-9 md:pb-12 px-6 md:px-10 lg:px-16">
       <div className="max-w-[1280px] mx-auto">
 
         <h1 className="text-[32.5px] sm:text-[37.5px] md:text-[44.5px] lg:text-[49px] text-black leading-[1.18] tracking-tight">
-          Contact Us
+          Contact <span className="italic font-bold text-accent">Us</span>
         </h1>
         <div className="mt-4 h-[2px] w-10 bg-accent" />
 
@@ -31,13 +31,13 @@ export default async function ContactPage() {
         </p>
 
         {/* Content */}
-        <div className="mt-8 md:mt-10 grid md:grid-cols-2 gap-10 md:gap-12">
+        <div className="mt-5 md:mt-7 grid md:grid-cols-2 gap-7 md:gap-9">
 
           {/* Form */}
           <ContactForm />
 
           {/* Right side */}
-          <div className="space-y-8">
+          <div className="space-y-6">
 
             <div>
               <p className="text-black/50 text-[13px] uppercase tracking-[0.18em] mb-2">Corporate Office</p>
@@ -78,7 +78,7 @@ export default async function ContactPage() {
         </div>
 
         {/* Map */}
-        <div className="mt-8 md:mt-10 border border-border overflow-hidden">
+        <div className="mt-5 md:mt-7 border border-border overflow-hidden">
           <iframe
             src="https://www.google.com/maps?q=Wave%20Silver%20Tower%20Noida&output=embed"
             className="w-full h-[300px] md:h-[380px]"

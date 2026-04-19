@@ -74,17 +74,17 @@ export default async function PeoplePage() {
 
   return (
     <main className="w-full bg-white">
-      <section className="pt-14 md:pt-18 pb-14 md:pb-18 px-6 md:px-10 lg:px-16">
+      <section className="pt-9 md:pt-12 pb-9 md:pb-12 px-6 md:px-10 lg:px-16">
         <div className="max-w-[1280px] mx-auto">
 
           <h1 className="text-[32.5px] sm:text-[37.5px] md:text-[44.5px] lg:text-[49px] text-black leading-[1.18] tracking-tight">
-            Meet Our Team
+            Meet Our <span className="italic font-bold text-accent">Team</span>
           </h1>
           <div className="mt-4 h-[2px] w-10 bg-accent" />
 
           {/* Leadership — one member per row, full width */}
           {leadership.length > 0 && (
-            <div className="mt-8 md:mt-10 flex flex-col gap-4 md:gap-5">
+            <div className="mt-5 md:mt-7 flex flex-col gap-4 md:gap-5">
               {leadership.map((member) => (
                 <MemberCard key={member._id} member={member} />
               ))}
