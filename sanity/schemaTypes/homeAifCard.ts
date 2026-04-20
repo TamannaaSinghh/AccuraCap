@@ -38,7 +38,6 @@ export const homeAifCard = defineType({
       title: "Stocks",
       type: "string",
       description: 'e.g. "30\u201350"',
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "benchmark",

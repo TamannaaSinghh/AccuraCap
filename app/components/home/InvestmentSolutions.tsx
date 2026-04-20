@@ -3,6 +3,7 @@ import {
   HOME_PMS_CARDS_QUERY,
   HOME_AIF_CARDS_QUERY,
   HOME_PMS_DISCLAIMER_QUERY,
+  HOME_AIF_DISCLAIMER_QUERY,
 } from "@/sanity/lib/queries";
 
 type HomeCard = {
@@ -11,12 +12,12 @@ type HomeCard = {
   category: string;
   returns: string;
   marketCap: string;
-  stocks: string;
+  stocks?: string;
   benchmark: string;
   order: number;
 };
 
-type HomePmsDisclaimer = {
+type HomeDisclaimer = {
   _id: string;
   text: string;
 };
@@ -29,10 +30,11 @@ function gridColsFor(count: number) {
 }
 
 export default async function InvestmentSolutions() {
-  const [pmsCards, aifCards, pmsDisclaimer] = await Promise.all([
+  const [pmsCards, aifCards, pmsDisclaimer, aifDisclaimer] = await Promise.all([
     client.fetch<HomeCard[]>(HOME_PMS_CARDS_QUERY),
     client.fetch<HomeCard[]>(HOME_AIF_CARDS_QUERY),
-    client.fetch<HomePmsDisclaimer | null>(HOME_PMS_DISCLAIMER_QUERY),
+    client.fetch<HomeDisclaimer | null>(HOME_PMS_DISCLAIMER_QUERY),
+    client.fetch<HomeDisclaimer | null>(HOME_AIF_DISCLAIMER_QUERY),
   ]);
 
   const renderCard = (p: HomeCard) => (
@@ -67,10 +69,12 @@ export default async function InvestmentSolutions() {
           <p className="text-muted/60 text-[12.5px] uppercase tracking-[0.14em] mb-1">Market Cap</p>
           <p className="text-black/75">{p.marketCap}</p>
         </div>
-        <div>
-          <p className="text-muted/60 text-[12.5px] uppercase tracking-[0.14em] mb-1">Stocks</p>
-          <p className="text-black/75">{p.stocks}</p>
-        </div>
+        {p.stocks && (
+          <div>
+            <p className="text-muted/60 text-[12.5px] uppercase tracking-[0.14em] mb-1">Stocks</p>
+            <p className="text-black/75">{p.stocks}</p>
+          </div>
+        )}
         <div>
           <p className="text-muted/60 text-[12.5px] uppercase tracking-[0.14em] mb-1">Benchmark</p>
           <p className="text-black/75">{p.benchmark}</p>
@@ -128,6 +132,12 @@ export default async function InvestmentSolutions() {
           <div className={`grid ${gridColsFor(aifCards.length)} gap-4 md:gap-5`}>
             {aifCards.map(renderCard)}
           </div>
+
+          {aifDisclaimer?.text && (
+            <p className="mt-5 md:mt-7 text-[13.5px] text-muted">
+              {aifDisclaimer.text}
+            </p>
+          )}
 
         </div>
       </section>

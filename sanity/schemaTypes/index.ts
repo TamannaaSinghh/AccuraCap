@@ -8,6 +8,7 @@ import { aifProduct } from "./aifProduct";
 import { homePmsCard } from "./homePmsCard";
 import { homeAifCard } from "./homeAifCard";
 import { homePmsDisclaimer } from "./homePmsDisclaimer";
+import { homeAifDisclaimer } from "./homeAifDisclaimer";
 
 export const schemaTypes = [
   teamMember,
@@ -20,4 +21,5 @@ export const schemaTypes = [
   homePmsCard,
   homeAifCard,
   homePmsDisclaimer,
+  homeAifDisclaimer,
 ];

@@ -97,3 +97,8 @@ export const HOME_PMS_DISCLAIMER_QUERY = `*[_type == "homePmsDisclaimer"] | orde
   _id,
   text
 }`;
+
+export const HOME_AIF_DISCLAIMER_QUERY = `*[_type == "homeAifDisclaimer"] | order(_createdAt asc)[0] {
+  _id,
+  text
+}`;
