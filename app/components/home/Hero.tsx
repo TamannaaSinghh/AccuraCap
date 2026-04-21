@@ -1,7 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";
-import { HERO_STATS_QUERY } from "@/sanity/lib/queries";
+import {
+  HERO_STATS_QUERY,
+  HERO_STATS_DISCLAIMER_QUERY,
+} from "@/sanity/lib/queries";
 
 type HeroStat = {
   _id: string;
@@ -11,8 +14,16 @@ type HeroStat = {
   order: number;
 };
 
+type HeroStatsDisclaimer = {
+  _id: string;
+  text: string;
+};
+
 export default async function Hero() {
-  const stats = await client.fetch<HeroStat[]>(HERO_STATS_QUERY);
+  const [stats, disclaimer] = await Promise.all([
+    client.fetch<HeroStat[]>(HERO_STATS_QUERY),
+    client.fetch<HeroStatsDisclaimer | null>(HERO_STATS_DISCLAIMER_QUERY),
+  ]);
 
   return (
     <section className="relative w-full min-h-[680px] md:min-h-[760px] lg:min-h-screen flex items-center overflow-hidden pt-9 md:pt-12 lg:pt-20 pb-7 md:pb-9 lg:pb-10">
@@ -46,8 +57,8 @@ export default async function Hero() {
         <p className="mt-6 text-[#1a1a1a]/80 max-w-[620px] text-[16.5px] md:text-[18px] leading-[1.7]">
           AccuraCap is a SEBI-registered Portfolio Management Service and
           Category III Alternative Investment Fund manager. We manage long-only
-          equity portfolios through proprietary, AI-driven algorithms that have
-          consistently outperformed benchmark returns.
+          equity portfolios through proprietary quantitative, AI-driven algorithms that have
+          consistently outperformed benchmark returns across multiple periods.
         </p>
 
         {/* CTA */}
@@ -92,6 +103,12 @@ export default async function Hero() {
               ))}
             </div>
           </div>
+        )}
+
+        {disclaimer?.text && (
+          <p className="mt-3 md:mt-4 text-[12.5px] md:text-[13.5px] text-[#1a1a1a]/70">
+            {disclaimer.text}
+          </p>
         )}
       </div>
     </section>

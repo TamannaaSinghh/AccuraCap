@@ -5,7 +5,7 @@ import Image from "next/image";
 const principles = [
   {
     title: "Data Over Intuition",
-    desc: "Our systematic model removes emotional bias and human error, relying on data and proven mathematical frameworks back-tested since 1999.",
+    desc: "Our systematic model removes emotional bias and human preferences, relying on data and proven mathematical frameworks back-tested since 1999.",
   },
   {
     title: "Patience as a Strategy",
@@ -21,7 +21,7 @@ const steps = [
   {
     step: "I",
     title: "Universe Selection",
-    desc: "We track the top 500\u2013800 companies by market cap, filtering out weak or poorly governed entities.",
+    desc: "We track the top 800 companies by market cap, filtering out weak or poorly governed entities.",
   },
   {
     step: "II",
@@ -160,7 +160,8 @@ export default function PhilosophyPage() {
                   <span className="font-semibold text-black">&ldquo;Pendulum Hypothesis&rdquo;</span>,
                   we buy high-quality businesses at reasonable valuations
                   &mdash; forming equi-weight portfolios designed to hold
-                  winners and weed out losers with minimal manual intervention.
+                  winners and systematically exit
+underperformers with minimal manual intervention.
                 </p>
               </div>
             </div>

@@ -26,6 +26,11 @@ export const HERO_STATS_QUERY = `*[_type == "heroStat"] | order(order asc) {
   order
 }`;
 
+export const HERO_STATS_DISCLAIMER_QUERY = `*[_type == "heroStatsDisclaimer"] | order(_createdAt asc)[0] {
+  _id,
+  text
+}`;
+
 export const AIF_DOCUMENTS_QUERY = `*[_type == "aifDocument"] | order(order asc) {
   _id,
   title,
@@ -99,6 +104,11 @@ export const HOME_PMS_DISCLAIMER_QUERY = `*[_type == "homePmsDisclaimer"] | orde
 }`;
 
 export const HOME_AIF_DISCLAIMER_QUERY = `*[_type == "homeAifDisclaimer"] | order(_createdAt asc)[0] {
+  _id,
+  text
+}`;
+
+export const PRODUCTS_AIF_DISCLAIMER_QUERY = `*[_type == "productsAifDisclaimer"] | order(_createdAt asc)[0] {
   _id,
   text
 }`;

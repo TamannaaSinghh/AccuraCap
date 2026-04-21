@@ -14,7 +14,7 @@ const reasons: Reason[] = [
   {
     title: "Top Performing Fund",
     points: [
-      "Consistently in Top 10 Performing PMS in 10Y, 5Y and 3Y returns (PMSBazaar, Altport Experts, PMS AIF world).",
+      "Top 10 Performing PMS in 10Y, 5Y and 3Y returns (PMSBazaar, Altport Experts, PMS AIF world).",
       "#1 Risk Adjusted PMS for 10 years (2021 and 2022, by PMS AIF world)",
     ],
   },
@@ -26,7 +26,7 @@ const reasons: Reason[] = [
   {
     title: "Rules-Based",
     description:
-      "Decisions made independent of individual biases, generally based on systemic rules.",
+      "Decisions made independent of individual biases, based on systemic rules.",
   },
   {
     title: "Always Invested",
@@ -36,7 +36,7 @@ const reasons: Reason[] = [
   {
     title: "Skin in the Game",
     description:
-      "Started as a family office, with proprietary wealth invested alongside clients.",
+      "Started as a family office, with proprietary capital invested in the samemodels that power client portfolios.",
   },
 ];
 

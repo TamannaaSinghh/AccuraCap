@@ -1,5 +1,9 @@
 import { client } from "@/sanity/lib/client";
-import { PMS_PRODUCTS_QUERY, AIF_PRODUCTS_QUERY } from "@/sanity/lib/queries";
+import {
+  PMS_PRODUCTS_QUERY,
+  AIF_PRODUCTS_QUERY,
+  PRODUCTS_AIF_DISCLAIMER_QUERY,
+} from "@/sanity/lib/queries";
 
 type ProductField = {
   label: string;
@@ -14,10 +18,16 @@ type Product = {
   order: number;
 };
 
+type ProductsDisclaimer = {
+  _id: string;
+  text: string;
+};
+
 export default async function ProductsPage() {
-  const [pmsProducts, aifProducts] = await Promise.all([
+  const [pmsProducts, aifProducts, aifDisclaimer] = await Promise.all([
     client.fetch<Product[]>(PMS_PRODUCTS_QUERY),
     client.fetch<Product[]>(AIF_PRODUCTS_QUERY),
+    client.fetch<ProductsDisclaimer | null>(PRODUCTS_AIF_DISCLAIMER_QUERY),
   ]);
 
   return (
@@ -98,6 +108,12 @@ export default async function ProductsPage() {
               </div>
             ))}
           </div>
+
+          {aifDisclaimer?.text && (
+            <p className="mt-6 md:mt-8 text-[13.5px] md:text-[14px] text-muted leading-[1.7] whitespace-pre-line">
+              {aifDisclaimer.text}
+            </p>
+          )}
         </div>
       </section>
 
