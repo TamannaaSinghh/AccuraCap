@@ -46,7 +46,7 @@ export default function WhyUs() {
       <div className="max-w-[1280px] mx-auto">
 
         <h2 className="text-[30px] sm:text-[35px] md:text-[42px] lg:text-[46.5px] text-black leading-[1.18] tracking-tight">
-          Key <span className="italic font-bold">Differentiators</span>
+          Key <span className="italic">Differentiators</span>
         </h2>
 
         {/* Cards */}
@@ -70,14 +70,8 @@ export default function WhyUs() {
 
               {/* Content */}
               <div className="relative">
-                {/* Accent bar */}
-                <div className="mb-4 flex items-center gap-2">
-                  <span className="block h-[2px] w-8 bg-accent rounded-full" />
-                  <span className="block h-[2px] w-1.5 bg-accent/40 rounded-full" />
-                </div>
-
                 {/* Title */}
-                <h3 className="text-[20px] md:text-[22px] font-semibold text-black leading-snug tracking-tight">
+                <h3 className="text-[20px] md:text-[22px] text-black leading-snug tracking-tight">
                   {item.title}
                 </h3>
 
@@ -87,10 +81,9 @@ export default function WhyUs() {
                     {item.points.map((point, j) => (
                       <li
                         key={j}
-                        className="text-[15.5px] md:text-[16px] text-black/65 leading-[1.65] flex items-start gap-2.5"
+                        className="text-[15.5px] md:text-[16px] text-black/65 leading-[1.65]"
                       >
-                        <span className="mt-[9px] shrink-0 h-1.5 w-1.5 rounded-full bg-accent/80 ring-2 ring-accent/15" />
-                        <span>{point}</span>
+                        {point}
                       </li>
                     ))}
                   </ul>

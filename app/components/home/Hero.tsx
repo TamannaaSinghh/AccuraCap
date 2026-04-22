@@ -47,7 +47,7 @@ export default async function Hero() {
         <h1 className="text-[37.5px] sm:text-[44.5px] md:text-[53.5px] lg:text-[65.5px] text-[#1a1a1a] leading-[1.15] tracking-tight max-w-[920px]">
           Boutique Fund Management
           <br />
-          <span className="italic font-bold text-accent">for Long-Term Investors</span>
+          <span className="italic  text-accent">for Long-Term Investors</span>
         </h1>
 
         {/* Red accent line below heading */}
