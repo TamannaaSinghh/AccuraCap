@@ -50,7 +50,7 @@ export default async function ProductsPage() {
               >
                 {/* Card Header */}
                 <div className="flex items-center gap-4 px-6 md:px-8 py-5 border-b border-border bg-surface border-l-4 border-l-accent">
-                  <h3 className="text-[23px] md:text-[28px] font-semibold text-black tracking-tight">{product.name}</h3>
+                  <h3 className="text-[23px] md:text-[28px] font-normal text-black tracking-tight">{product.name}</h3>
                 </div>
 
                 {/* Card Body */}
@@ -89,7 +89,7 @@ export default async function ProductsPage() {
               >
                 {/* Card Header */}
                 <div className="flex items-center gap-4 px-6 md:px-8 py-5 border-b border-border bg-surface border-l-4 border-l-accent">
-                  <h3 className="text-[23px] md:text-[28px] font-semibold text-black tracking-tight">{product.name}</h3>
+                  <h3 className="text-[23px] md:text-[28px] font-normal text-black tracking-tight">{product.name}</h3>
                 </div>
 
                 {/* Card Body */}

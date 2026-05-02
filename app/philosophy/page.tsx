@@ -42,19 +42,19 @@ export default function PhilosophyPage() {
       {/* ═══ Hero: Philosophy + Guiding Principles side-by-side ═══ */}
       <section className="relative pt-9 md:pt-12 pb-9 md:pb-12 px-6 md:px-10 lg:px-16 bg-gradient-to-b from-surface/40 to-white">
         <div className="max-w-[1280px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-10 items-stretch">
 
             {/* ─── Philosophy (left) ─── */}
-            <div className="text-left lg:col-span-7">
+            <div className="text-left lg:col-span-7 flex flex-col">
               <h1 className="text-[35px] sm:text-[42px] md:text-[49px] lg:text-[56px] text-black leading-[1.15] tracking-tight">
                 The Art of
                 <br />
-                <span className="italic font-bold text-accent">Disciplined Investing.</span>
+                <span className="italic text-accent">Disciplined Investing.</span>
               </h1>
 
               <div className="mt-6 h-[2px] w-12 bg-accent" />
 
-              <p className="mt-7 max-w-[580px] text-[16.5px] md:text-[18px] text-black/70 leading-[1.75]">
+              <p className="mt-7 text-[16.5px] md:text-[18px] text-black/70 leading-[1.75]">
                 At AccuraCap, we believe the markets move like a pendulum
                 &mdash; swinging between overvaluation and undervaluation. Our
                 philosophy is rooted in capturing these swings through a
@@ -62,9 +62,9 @@ export default function PhilosophyPage() {
               </p>
 
               {/* Image below text */}
-              <div className="group relative mt-7 w-full aspect-[16/9] overflow-hidden rounded-2xl cursor-pointer shadow-[0_1px_2px_rgba(17,24,39,0.04),0_16px_40px_-20px_rgba(17,24,39,0.22)]">
+              <div className="group relative mt-7 w-full flex-1 min-h-[300px] overflow-hidden rounded-2xl cursor-pointer shadow-[0_1px_2px_rgba(17,24,39,0.04),0_16px_40px_-20px_rgba(17,24,39,0.22)]">
                 <Image
-                  src="/p1.jpg"
+                  src="/Philosophy page.png"
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 56vw, 100vw"
@@ -82,9 +82,6 @@ export default function PhilosophyPage() {
                 <span className="text-[13px] tracking-[0.28em] uppercase text-accent font-medium">
                   Guiding Principles
                 </span>
-                <h2 className="mt-3 text-[28px] sm:text-[32px] md:text-[36px] text-black leading-[1.18] tracking-tight">
-                  What shapes every <span className="italic font-bold">decision we make.</span>
-                </h2>
                 <div className="mt-5 h-[2px] w-10 bg-accent" />
               </div>
 
@@ -140,7 +137,7 @@ export default function PhilosophyPage() {
             {/* Text */}
             <div className="text-left lg:col-span-3">
               <h2 className="text-[32.5px] sm:text-[37.5px] md:text-[46.5px] lg:text-[51.5px] text-black leading-[1.18] tracking-tight">
-                Our Core <span className="italic font-bold text-accent">Strategy</span>
+                Our Core <span className="italic text-accent">Strategy</span>
               </h2>
 
               <div className="mt-6 h-[2px] w-12 bg-accent" />
@@ -170,7 +167,7 @@ underperformers with minimal manual intervention.
             <div className="lg:col-span-2">
               <div className="group relative w-full aspect-[16/10] md:aspect-[4/3] overflow-hidden rounded-2xl cursor-pointer shadow-[0_1px_2px_rgba(17,24,39,0.04),0_16px_40px_-20px_rgba(17,24,39,0.22)]">
                 <Image
-                  src="/p2.jpg"
+                  src="/p1.jpg"
                   alt=""
                   fill
                   sizes="(min-width: 768px) 40vw, 100vw"
@@ -185,7 +182,7 @@ underperformers with minimal manual intervention.
           {/* Steps heading */}
           <div className="mt-8 md:mt-10 text-left">
             <h3 className="text-[26px] sm:text-[30px] md:text-[34px] text-black leading-[1.18] tracking-tight">
-              Step by Step <span className="italic font-bold">Process</span>
+              Step by Step <span className="italic">Process</span>
             </h3>
             <div className="mt-5 h-[2px] w-10 bg-accent" />
           </div>
